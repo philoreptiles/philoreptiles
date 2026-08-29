@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Philoreptiles | Cuidados en Cautiverio</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- CSS Principal (Sube un nivel con ../) -->
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <style>
+    /* Estilos del Menú Interactivo de Cuidados */
+    .care-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .care-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .care-nav {
+      background-color: var(--bg-dark-card);
+      border-radius: 8px;
+      border: 1px solid rgba(196, 146, 62, 0.25);
+      padding: 1rem;
+      height: fit-content;
+    }
+
+    .care-nav h3 {
+      color: var(--color-mostaza);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(196, 146, 62, 0.2);
+    }
+
+    .care-btn {
+      width: 100%;
+      text-align: left;
+      padding: 0.8rem 1rem;
+      background: transparent;
+      border: none;
+      color: var(--color-hueso);
+      font-family: var(--font-rubik);
+      font-size: 0.95rem;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: all 0.2s ease;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .care-btn:hover {
+      background-color: rgba(196, 146, 62, 0.15);
+      color: var(--color-mostaza);
+    }
+
+    .care-btn.active-tab {
+      background-color: var(--color-mostaza);
+      color: var(--color-chocolate);
+      font-weight: 700;
+    }
+
+    /* Ocultar/Mostrar paneles */
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .tab-panel.active-panel {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+
+  <!-- Favicon y Accesos Directos (Sube un nivel con ../) -->
+<link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
+
+</head>
+<body>
+
+  <!-- Encabezado Principal -->
+  <header class="main-header">
+    <div class="container header-content">
+      <a href="../index.html" class="logo-text">Philoreptiles</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+<li><a href="../sobre-nosotros.html">Sobre nosotros</a></li>
+<li><a href="../boas.html" class="active">Boas</a></li>
+<li><a href="../blog.html">Blog</a></li>
+<li><a href="../ejemplares.html">Ejemplares</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Encabezado de la página -->
+  <section class="page-title">
+    <div class="container">
+      <h1>Cuidados en Cautiverio</h1>
+      <p>Explora las pautas de manejo, parámetros ambientales y mantenimiento responsable.</p>
+    </div>
+  </section>
+
+  <!-- Interfaz de Navegación Interactiva -->
+  <main class="container care-layout" style="padding-bottom: 4rem;">
+    
+    <!-- Menú Lateral / Selector de Secciones -->
+    <aside class="care-nav">
+      <h3>Guía de Cuidados</h3>
+      <button class="care-btn active-tab" onclick="switchTab(event, 'parametros')">Temperatura y Humedad</button>
+      <button class="care-btn" onclick="switchTab(event, 'alimentacion')">Alimentación</button>
+      <button class="care-btn" onclick="switchTab(event, 'recintos')">Recintos y Sustrato</button>
+      <button class="care-btn" onclick="switchTab(event, 'salud')">Salud y Prevención</button>
+    </aside>
+
+    <!-- Área de Contenido Dinámico -->
+    <section style="background-color: var(--bg-dark-card); padding: 2rem; border-radius: 8px; border: 1px solid rgba(196, 146, 62, 0.25);">
+      
+      <!-- Panel 1: Temperatura y Humedad -->
+      <div id="parametros" class="tab-panel active-panel">
+        <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Temperatura y Humedad</h2>
+        <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Parámetros ambientales indispensables</p>
+        
+        <p>
+          Como animales ectotérmicos, las boas dependen totalmente de los gradientes ambientales para regular sus funciones metabólicas y digestivas.
+        </p>
+        <p>
+          <strong>Zona Caliente (Hot Spot):</strong> Debe mantenerse entre 31°C y 33°C utilizando placas térmicas, mantas o paneles radiantes siempre controlados por un termostato.
+        </p>
+        <p>
+          <strong>Zona Fresca / Ambiente:</strong> Entre 24°C y 26°C. Es fundamental proveer este espacio para que el ejemplar pueda termorregular libremente.
+        </p>
+        <p>
+          <strong>Humedad:</strong> El rango ideal se sitúa entre el 60% y el 70%. Durante el proceso de ecdisis (muda de piel), se recomienda elevarla ligeramente o proveer un refugio húmedo.
+        </p>
+      </div>
+
+      <!-- Panel 2: Alimentación -->
+      <div id="alimentacion" class="tab-panel">
+        <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Alimentación Responsable</h2>
+        <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Raciones y frecuencias adecuadas</p>
+        
+        <p>
+          El metabolismo de las boas es considerablemente más lento que el de otros reptiles. Evitar la sobrealimentación (<em>powerfeeding</em>) es crucial para garantizar una vida saludable y prolongada.
+        </p>
+        <p>
+          <strong>Neonatos y Juveniles:</strong> Presas (ratones o ratas jóvenes) acordes al grosor de la parte más ancha del cuerpo, ofrecidas cada 10 a 14 días.
+        </p>
+        <p>
+          <strong>Subadultos y Adultos:</strong> Ratas de tamaño adecuado o conejos pequeños, distanciando las tomas a cada 3 o 4 semanas según el tamaño y condición corporal del ejemplar.
+        </p>
+      </div>
+
+      <!-- Panel 3: Recintos y Sustrato -->
+      <div id="recintos" class="tab-panel">
+        <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Recintos y Sustratos</h2>
+        <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Alojamiento, ventilación y refugios</p>
+        
+        <p>
+          El terrario o sistema de racks debe ser ante todo a prueba de fugas y contar con ventilación cruzada para prevenir la acumulación de humedad estancada y hongos.
+        </p>
+        <p>
+          <strong>Sustratos recomendados:</strong> Fibra de coco, sustrato de corteza de pino tratado (como ReptiChip) o papel periódico/sanitario para una limpieza rápida y monitoreo de deposiciones.
+        </p>
+        <p>
+          <strong>Elementos clave:</strong> Al menos dos refugios idénticos (uno en la zona caliente y otro en la zona fresca) y un plato de agua lo suficientemente grande para que la boa pueda beber o sumergirse si lo desea.
+        </p>
+      </div>
+
+      <!-- Panel 4: Salud y Prevención -->
+      <div id="salud" class="tab-panel">
+        <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Salud y Prevención</h2>
+        <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Monitoreo constante e higiene</p>
+        
+        <p>
+          La observación regular permite detectar a tiempo cualquier anomalía física o de comportamiento.
+        </p>
+        <p>
+          <strong>Signos de salud:</strong> Ojos claros, piel firme, escamas limpias, respiración silenciosa (sin burbujas en la nariz o mucosidad en la boca) y actitud alerta.
+        </p>
+        <p>
+          <strong>Mantenimiento:</strong> Retirar deposiciones de inmediato y realizar una desinfección profunda del recinto periódicamente. Mantener en cuarentena estricta a cualquier ejemplar nuevo antes de integrarlo al área principal.
+        </p>
+      </div>
+
+      <!-- Botón de regreso -->
+      <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(196, 146, 62, 0.2);">
+        <a href="../boas.html" class="btn btn-secondary">&larr; Volver al Menú de Boas</a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Philoreptiles. Todos los derechos reservados.</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/philoreptiles/" target="_blank">Instagram</a>
+        <a href="https://www.youtube.com/@philoreptiles" target="_blank">YouTube</a>
+        <a href="https://www.facebook.com/profile.php?id=61590517358268" target="_blank">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Código JavaScript para la interactividad de Pestañas -->
+  <script>
+    function switchTab(event, tabId) {
+      // 1. Ocultar todos los paneles de contenido
+      const panels = document.querySelectorAll('.tab-panel');
+      panels.forEach(panel => panel.classList.remove('active-panel'));
+
+      // 2. Desactivar el estilo de todos los botones
+      const buttons = document.querySelectorAll('.care-btn');
+      buttons.forEach(btn => btn.classList.remove('active-tab'));
+
+      // 3. Activar el panel seleccionado y su botón
+      document.getElementById(tabId).classList.add('active-panel');
+      event.currentTarget.classList.add('active-tab');
+    }
+  </script>
+
+</body>
+</html>

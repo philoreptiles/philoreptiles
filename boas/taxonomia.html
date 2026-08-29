@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Philoreptiles | Taxonomía de Boas</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <style>
+    /* Estilos del Menú Interactivo de Especies */
+    .taxonomy-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .taxonomy-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .species-nav {
+      background-color: var(--bg-dark-card);
+      border-radius: 8px;
+      border: 1px solid rgba(196, 146, 62, 0.25);
+      padding: 1rem;
+      height: fit-content;
+    }
+
+    .species-nav h3 {
+      color: var(--color-mostaza);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(196, 146, 62, 0.2);
+    }
+
+    .species-btn {
+      width: 100%;
+      text-align: left;
+      padding: 0.8rem 1rem;
+      background: transparent;
+      border: none;
+      color: var(--color-hueso);
+      font-family: var(--font-rubik);
+      font-size: 0.95rem;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: all 0.2s ease;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .species-btn:hover {
+      background-color: rgba(196, 146, 62, 0.15);
+      color: var(--color-mostaza);
+    }
+
+    .species-btn.active-tab {
+      background-color: var(--color-mostaza);
+      color: var(--color-chocolate);
+      font-weight: 700;
+    }
+
+    /* Ocultar/Mostrar paneles */
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .tab-panel.active-panel {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+
+  <!-- Favicon y Accesos Directos (Sube un nivel con ../) -->
+<link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
+
+</head>
+<body>
+
+  <!-- Encabezado Principal -->
+  <header class="main-header">
+    <div class="container header-content">
+      <a href="../index.html" class="logo-text">Philoreptiles</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+<li><a href="../sobre-nosotros.html">Sobre nosotros</a></li>
+<li><a href="../boas.html" class="active">Boas</a></li>
+<li><a href="../blog.html">Blog</a></li>
+<li><a href="../ejemplares.html">Ejemplares</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Encabezado de la página -->
+  <section class="page-title">
+    <div class="container">
+      <h1>Taxonomía del Género <em>Boa</em></h1>
+      <p>Selecciona cualquier especie o subespecie del menú para ver su información sin salir de la página.</p>
+    </div>
+  </section>
+
+  <!-- Interfaz de Navegación Interactiva -->
+  <main class="container taxonomy-layout" style="padding-bottom: 4rem;">
+    
+    <!-- Menú Lateral / Selector de Especies -->
+    <aside class="species-nav">
+      <h3>Especies y Localidades</h3>
+      <button class="species-btn active-tab" onclick="switchTab(event, 'imperator')">Boa imperator</button>
+      <button class="species-btn" onclick="switchTab(event, 'constrictor')">Boa constrictor (BCC)</button>
+      <button class="species-btn" onclick="switchTab(event, 'sigmoidea')">Boa sigmoidea</button>
+      <button class="species-btn" onclick="switchTab(event, 'mexicanas')">Localidades de México</button>
+    </aside>
+
+    <!-- Área de Contenido Dinámico -->
+    <section style="background-color: var(--bg-dark-card); padding: 2rem; border-radius: 8px; border: 1px solid rgba(196, 146, 62, 0.25);">
+      
+      <!-- Panel 1: Boa imperator -->
+      <div id="imperator" class="tab-panel active-panel">
+        <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;"><em>Boa imperator</em></h2>
+        <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Boa común de América Central y del Sur</p>
+        
+        <p>
+          La <em>Boa imperator</em> es ampliamente reconocida como una especie independiente. Se distribuye desde el sur de México hasta Colombia y Ecuador.
+        </p>
+        <p>
+          Presenta una adaptabilidad excepcional y un tamaño promedio menor que el de <em>Boa constrictor</em>. Destaca en la herpetocultura por su inmensa variabilidad de mutaciones genéticas.
+        </p>
+      </div>
+
+      <!-- Panel 2: Boa constrictor -->
+      <div id="constrictor" class="tab-panel">
+        <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;"><em>Boa constrictor</em> (BCC)</h2>
+        <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Boa de Cola Roja (Red-Tailed Boa)</p>
+        
+        <p>
+          Conocida como la "boa verdadera de cola roja", habita en la cuenca del Amazonas y el norte de Sudamérica (Surinam, Guyana, Perú, Brasil).
+        </p>
+        <p>
+          Tienen patrones geométricos muy marcados y un color rojo intenso o escarlata en la cola. Alcanzan tallas considerablemente mayores y requieren parámetros de humedad más altos.
+        </p>
+      </div>
+
+      <!-- Panel 3: Boa sigmoidea -->
+      <div id="sigmoidea" class="tab-panel">
+        <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;"><em>Boa sigmoidea</em></h2>
+        <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Boa Mexicana del Pacífico</p>
+        
+        <p>
+          Especie revalidada en estudios taxonómicos recientes para designar a las poblaciones de boas distribuidas a lo largo de la vertiente del Pacífico y sur de México.
+        </p>
+        <p>
+          Presentan rasgos morfológicos distintivos en el conteo de escamas y patrones de coloración adaptados a zonas de bosque seco y templado.
+        </p>
+      </div>
+
+      <!-- Panel 4: Localidades Mexicanas -->
+      <div id="mexicanas" class="tab-panel">
+        <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Localidades Nativas de México</h2>
+        <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Variedades geográficas</p>
+        
+        <p>
+          México cuenta con una de las mayores diversidades geográficas de boas. Algunas de las localidades más notables incluyen:
+        </p>
+        <ul>
+          <li><strong>Tarahumara:</strong> Una de las boas dwarf (enanas) más pequeñas y resistentes al frío.</li>
+          <li><strong>Tamaulipas:</strong> Tonalidades oscuras y patrones muy contrastados.</li>
+          <li><strong>Veracruz:</strong> Boa imperator de tamaño mediano con tonalidades cálidas.</li>
+        </ul>
+      </div>
+
+      <!-- Botón de regreso -->
+      <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(196, 146, 62, 0.2);">
+        <a href="../boas.html" class="btn btn-secondary">&larr; Volver al Menú de Boas</a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Philoreptiles. Todos los derechos reservados.</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/philoreptiles/" target="_blank">Instagram</a>
+        <a href="https://www.youtube.com/@philoreptiles" target="_blank">YouTube</a>
+        <a href="https://www.facebook.com/profile.php?id=61590517358268" target="_blank">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Código JavaScript para la interactividad de Pestañas -->
+  <script>
+    function switchTab(event, tabId) {
+      // 1. Ocultar todos los paneles de contenido
+      const panels = document.querySelectorAll('.tab-panel');
+      panels.forEach(panel => panel.classList.remove('active-panel'));
+
+      // 2. Desactivar el estilo de todos los botones
+      const buttons = document.querySelectorAll('.species-btn');
+      buttons.forEach(btn => btn.classList.remove('active-tab'));
+
+      // 3. Activar el panel seleccionado y su botón
+      document.getElementById(tabId).classList.add('active-panel');
+      event.currentTarget.classList.add('active-tab');
+    }
+  </script>
+
+</body>
+</html>

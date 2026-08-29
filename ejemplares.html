@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Meta Tags Primarias -->
+<title>Philoreptiles | Colección y Ejemplares</title>
+<meta name="title" content="Philoreptiles | Colección y Ejemplares">
+<meta name="description" content="Conoce los ejemplares y proyectos genéticos que forman parte de Philoreptiles.">
+
+<!-- Open Graph / Facebook / WhatsApp / Instagram -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://philoreptiles.com/ejemplares.html">
+<meta property="og:title" content="Philoreptiles | Colección y Ejemplares">
+<meta property="og:description" content="Conoce los ejemplares y proyectos genéticos que forman parte de Philoreptiles.">
+<meta property="og:image" content="https://philoreptiles.com/img/og-preview.jpg">
+
+<!-- Twitter / X -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://philoreptiles.com/ejemplares.html">
+<meta property="twitter:title" content="Philoreptiles | Colección y Ejemplares">
+<meta property="twitter:description" content="Conoce los ejemplares y proyectos genéticos que forman parte de Philoreptiles.">
+<meta property="twitter:image" content="https://philoreptiles.com/img/og-preview.jpg">
+
+  <!-- Fuente de Google Fonts: Rubik -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Hoja de estilos local -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Favicon y Accesos Directos -->
+<link rel="icon" type="image/x-icon" href="img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+
+</head>
+<body>
+
+  <!-- Encabezado Principal -->
+  <header class="main-header">
+    <div class="container header-content">
+      <!-- 1. Cierre corregido -->
+      <a href="index.html" class="logo-text">Philoreptiles</a>
+      
+      <!-- 4. Botón hamburguesa añadido para móvil -->
+      <button class="nav-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+          <li><a href="boas.html">Boas</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="ejemplares.html" class="active">Ejemplares</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner de Sección -->
+  <section class="page-title container">
+    <h1>Nuestra colección</h1>
+    <p>Explora una parte de los ejemplares que están bajo nuestro cuidado y aprende sobre su genética y comportamiento.</p>
+  </section>
+
+  <!-- Cuadrícula de Ejemplares -->
+  <main class="container catalog-section">
+    <div class="specimen-grid">
+
+      <!-- Ficha 1 -->
+      <article class="specimen-card">
+        <div class="card-image">
+          <!-- 3. Clase lightbox-trigger añadida -->
+          <img src="img/Marcelus.jpg" alt="Marcelus" class="lightbox-trigger" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/2B1A12/FFF2D9?text=Marcelus'">
+          <span class="badge badge-collection">Colección personal</span>
+        </div>
+        <div class="card-body">
+          <h3>Marcelus</h3>
+          <p class="genetics"><strong>Genética:</strong> Pastel Het Albino (Kahl)</p>
+          <div class="specimen-meta">
+            <span><strong>Sexo:</strong> Macho (1.0)</span>
+            <span><strong>Nacimiento:</strong> 2026</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Ficha 2 -->
+      <article class="specimen-card">
+        <div class="card-image">
+          <img src="img/Alfred.jpg" alt="Alfred - Jungle Het Sterling" class="lightbox-trigger" onerror="this.src='https://via.placeholder.com/400x300/2B1A12/FFF2D9?text=Alfred'">
+          <span class="badge badge-collection">Colección personal</span>
+        </div>
+        <div class="card-body">
+          <h3>Alfred</h3>
+          <p class="genetics"><strong>Genética:</strong> Jungle Het Sterling</p>
+          <div class="specimen-meta">
+            <span><strong>Sexo:</strong> Macho (1.0)</span>
+            <span><strong>Nacimiento:</strong> 2026</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Philoreptiles. Todos los derechos reservados.</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/philoreptiles/" target="_blank">Instagram</a>
+        <a href="https://www.youtube.com/@philoreptiles" target="_blank">YouTube</a>
+        <a href="https://www.facebook.com/profile.php?id=61590517358268" target="_blank">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Lightbox con Flechas de Navegación -->
+<div id="image-modal" class="modal-lightbox">
+  <span class="modal-close">&times;</span>
+  <button class="modal-nav-btn modal-prev" aria-label="Imagen anterior">&#10094;</button>
+  <button class="modal-nav-btn modal-next" aria-label="Imagen siguiente">&#10095;</button>
+  <img class="modal-content" id="modal-img" alt="Vista ampliada">
+  <div id="modal-caption" class="modal-caption"></div>
+</div>
+
+  <!-- 2. Script de JS vinculado -->
+  <script src="js/main.js"></script>
+</body>
+</html>

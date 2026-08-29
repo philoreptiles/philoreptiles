@@ -1,0 +1,697 @@
+/* ==========================================================================
+   1. REGISTRO DE FUENTES PERSONALIZADAS Y VARIABLES
+   ========================================================================== */
+@font-face {
+  font-family: 'Peach Club';
+  src: url('PeachClub.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  /* Paleta Oficial Philoreptiles */
+  --color-chocolate: #2B1A12;  /* Fondo Principal / Texto de Logo */
+  --color-hueso: #FFF2D9;      /* Texto y Contraste Secundario */
+  --color-mostaza: #C4923E;    /* Acento / Botones / Destacados */
+  
+  /* Variantes de apoyo para UI */
+  --bg-dark-card: #1f120c;     /* Tarjetas oscuras */
+  --text-muted: #d6c5a9;       /* Texto hueso suavizado */
+  
+  /* Tipografías */
+  --font-rubik: 'Rubik', sans-serif;
+  --font-logo: 'Peach Club', cursive;
+}
+
+/* ==========================================================================
+   2. REINICIO GLOBAL Y ESTILOS BASE
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-chocolate);
+  color: var(--color-hueso);
+  font-family: var(--font-rubik);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-rubik);
+  font-weight: 700;
+  color: var(--color-hueso);
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   3. ENCABEZADO Y NAVEGACIÓN
+   ========================================================================== */
+.main-header {
+  background-color: var(--color-hueso);
+  border-bottom: 2px solid var(--color-mostaza);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-text {
+  font-family: var(--font-logo);
+  font-size: 2.4rem;
+  color: var(--color-chocolate);
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.logo-text span {
+  color: var(--color-chocolate);
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.8rem;
+}
+
+.main-nav a {
+  color: var(--color-chocolate);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover, .main-nav a.active {
+  color: var(--color-mostaza);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   4. SECCIÓN HERO (Banner de Bienvenida)
+   ========================================================================== */
+.hero {
+  background: linear-gradient(135deg, rgba(43, 26, 18, 0.92), rgba(31, 18, 12, 0.95)), 
+              url('../img/banner.jpg') center/cover no-repeat;
+  padding: 6rem 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(196, 146, 62, 0.2);
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  color: var(--color-hueso);
+  margin-bottom: 1rem;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 720px;
+  margin: 0 auto 2rem auto;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 6px;
+  font-family: var(--font-rubik);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-mostaza);
+  color: var(--color-chocolate);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-hueso);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(196, 146, 62, 0.4);
+}
+
+.btn-secondary {
+  border: 2px solid var(--color-mostaza);
+  color: var(--color-hueso);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-mostaza);
+  color: var(--color-chocolate);
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   5. SECCIONES GENERALES
+   ========================================================================== */
+.about-summary {
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.about-summary h2 {
+  font-size: 2.2rem;
+  color: var(--color-mostaza);
+  margin-bottom: 1.5rem;
+}
+
+.about-summary p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  color: var(--color-hueso);
+}
+
+.page-title {
+  padding: 3rem 0 1.5rem 0;
+  text-align: center;
+}
+
+.page-title h1 {
+  font-size: 2.4rem;
+  color: var(--color-mostaza);
+  margin-bottom: 0.5rem;
+}
+
+.page-title p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   6. PIE DE PÁGINA (Footer)
+   ========================================================================== */
+.main-footer {
+  background-color: var(--bg-dark-card);
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(196, 146, 62, 0.3);
+  margin-top: 3rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-content p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.social-links a {
+  color: var(--color-hueso);
+  text-decoration: none;
+  margin-left: 1.2rem;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--color-mostaza);
+}
+
+/* ==========================================================================
+   7. CATÁLOGO Y FICHAS DE EJEMPLARES (Corregido)
+   ========================================================================== */
+.catalog-section {
+  padding: 2rem 0 5rem 0;
+}
+
+.specimen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.8rem;
+}
+
+.specimen-card {
+  background-color: var(--bg-dark-card);
+  border: 1px solid rgba(196, 146, 62, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.specimen-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 10px rgba(196, 146, 62, 0.2);
+}
+
+.card-image {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  background-color: #120a06;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Insignias/Etiquetas sobre la foto */
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 10; /* Fuerza a la etiqueta a estar visible por encima de la foto */
+  pointer-events: none; /* Permite dar clic a la foto a través de la etiqueta */
+}
+
+.badge-collection {
+  background-color: var(--color-chocolate);
+  color: var(--color-hueso);
+  border: 1px solid var(--color-mostaza);
+}
+
+.badge-available {
+  background-color: var(--color-mostaza);
+  color: var(--color-chocolate);
+}
+
+.badge-project {
+  background-color: #3e261a;
+  color: var(--color-hueso);
+  border: 1px solid rgba(255, 242, 217, 0.3);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1.5rem;
+}
+
+.specimen-id {
+  font-size: 0.75rem;
+  color: var(--color-mostaza);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.card-body h3 {
+  font-size: 1.2rem;
+  margin: 0.2rem 0 0.6rem 0;
+  color: var(--color-hueso);
+}
+
+.genetics {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+
+.specimen-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  background-color: rgba(43, 26, 18, 0.6);
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: var(--color-hueso);
+  margin-bottom: 1rem;
+}
+
+.card-body .btn-card {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   8. SECCIÓN SOBRE NOSOTROS
+   ========================================================================== */
+.about-page-content {
+  max-width: 850px;
+  padding: 1rem 0 5rem 0;
+}
+
+.about-block {
+  margin-bottom: 2.5rem;
+}
+
+.about-block h2 {
+  font-size: 1.6rem;
+  color: var(--color-mostaza);
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(196, 146, 62, 0.2);
+  padding-bottom: 0.4rem;
+}
+
+.about-block p {
+  color: var(--color-hueso);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.about-block .lead-text {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+}
+
+.about-cta {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(196, 146, 62, 0.3);
+}
+
+/* ==========================================================================
+   9. SECCIÓN BLOG
+   ========================================================================== */
+.blog-section {
+  padding: 1rem 0 5rem 0;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.blog-card {
+  background-color: var(--bg-dark-card);
+  border: 1px solid rgba(196, 146, 62, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 10px rgba(196, 146, 62, 0.2);
+}
+
+.blog-image {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  background-color: #120a06;
+  overflow: hidden;
+}
+
+.blog-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.blog-category {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: var(--color-mostaza);
+  color: var(--color-chocolate);
+  padding: 0.25rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.blog-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.blog-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.blog-body h3 {
+  font-size: 1.25rem;
+  color: var(--color-hueso);
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+}
+
+.blog-body p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+  flex-grow: 1;
+}
+
+.read-more {
+  color: var(--color-mostaza);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.read-more:hover {
+  color: var(--color-hueso);
+}
+
+/* Configura la tarjeta completa para ocupar el alto adecuado */
+.specimen-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* El cuerpo interno de la tarjeta se estira verticalmente */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Ocupa todo el espacio vertical disponible */
+  padding: 1.5rem;
+}
+
+/* Empuja el botón al fondo del contenedor */
+.card-body .btn-card {
+  margin-top: auto; 
+}
+
+/* Estilo para el enlace activo en el menú */
+.main-nav a.active {
+  color: var(--color-mostaza);
+  font-weight: 700;
+  border-bottom: 2px solid var(--color-mostaza);
+  padding-bottom: 4px;
+}
+
+/* ==========================================================================
+   10. ANIMACIONES
+   ========================================================================== */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   ESTILOS LIGHTBOX Y MÓVIL
+   ========================================== */
+.lightbox-trigger {
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.lightbox-trigger:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.modal-lightbox {
+  display: none; 
+  position: fixed;
+  z-index: 2000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 85%;
+  max-height: 80vh;
+  border-radius: 8px;
+  border: 2px solid var(--color-mostaza);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  animation: zoomIn 0.3s ease;
+}
+
+.modal-caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: var(--color-hueso);
+  padding: 12px 0;
+  font-family: var(--font-rubik);
+  font-size: 1rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  color: var(--color-hueso);
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: var(--color-mostaza);
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Botones de navegación del modal */
+.modal-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(43, 26, 18, 0.7);
+  color: var(--color-hueso);
+  border: 1px solid var(--color-mostaza);
+  font-size: 2rem;
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  z-index: 2001;
+  user-select: none;
+}
+
+.modal-nav-btn:hover {
+  background-color: var(--color-mostaza);
+  color: var(--color-chocolate);
+}
+
+.modal-prev {
+  left: 20px;
+}
+
+.modal-next {
+  right: 20px;
+}
+
+/* Ajustes responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .modal-prev {
+    left: 10px;
+  }
+  .modal-next {
+    right: 10px;
+  }
+  .modal-nav-btn {
+    font-size: 1.5rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+/* ==========================================================================
+   ESTILOS PÁGINA DE ERROR 404
+   ========================================================================== */
+.error-page {
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.error-content {
+  max-width: 600px;
+}
+
+.error-code {
+  display: block;
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--color-mostaza);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.error-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-hueso);
+}
+
+.error-content p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.error-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
