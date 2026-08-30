@@ -3,95 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Philoreptiles | Cuidados en Cautiverio</title>
+  <title>Philoreptiles | Guía de cuidados</title>
 
   <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   
-  <!-- CSS Principal (Sube un nivel con ../) -->
+  <!-- CSS -->
   <link rel="stylesheet" href="../css/styles.css">
 
-  <style>
-    /* Estilos del Menú Interactivo de Cuidados */
+ <style>
+  /* Layout del Menú Interactivo de Cuidados */
+  .care-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 2rem;
+    margin-top: 2.5rem;
+    align-items: start; /* Permite que el menú lateral se desplace */
+  }
+
+  @media (max-width: 768px) {
     .care-layout {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 2rem;
-      margin-top: 2rem;
+      grid-template-columns: 1fr;
     }
+  }
 
-    @media (max-width: 768px) {
-      .care-layout {
-        grid-template-columns: 1fr;
-      }
-    }
+  /* Menú Lateral Pegajoso */
+  .care-nav {
+    background-color: var(--bg-dark-card);
+    border-radius: 8px;
+    border: 1px solid rgba(196, 146, 62, 0.25);
+    padding: 1rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 90px; /* Se ancla justo debajo de la barra de navegación */
+    align-self: start;
+    height: max-content;
+    z-index: 80;
+  }
 
-    .care-nav {
-      background-color: var(--bg-dark-card);
-      border-radius: 8px;
-      border: 1px solid rgba(196, 146, 62, 0.25);
-      padding: 1rem;
-      height: fit-content;
-    }
+  .care-nav h3 {
+    color: var(--color-mostaza);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(196, 146, 62, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
 
-    .care-nav h3 {
-      color: var(--color-mostaza);
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid rgba(196, 146, 62, 0.2);
-    }
+  .care-btn {
+    width: 100%;
+    text-align: left;
+    padding: 0.8rem 1rem;
+    background: transparent;
+    border: none;
+    color: var(--color-hueso);
+    font-family: var(--font-rubik);
+    font-size: 0.95rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
 
-    .care-btn {
-      width: 100%;
-      text-align: left;
-      padding: 0.8rem 1rem;
-      background: transparent;
-      border: none;
-      color: var(--color-hueso);
-      font-family: var(--font-rubik);
-      font-size: 0.95rem;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: all 0.2s ease;
-      display: block;
-      margin-bottom: 0.3rem;
-    }
+  .care-btn:hover {
+    background-color: rgba(196, 146, 62, 0.15);
+    color: var(--color-mostaza);
+  }
 
-    .care-btn:hover {
-      background-color: rgba(196, 146, 62, 0.15);
-      color: var(--color-mostaza);
-    }
+  .care-btn.active-tab {
+    background-color: var(--color-mostaza);
+    color: var(--color-chocolate);
+    font-weight: 700;
+  }
 
-    .care-btn.active-tab {
-      background-color: var(--color-mostaza);
-      color: var(--color-chocolate);
-      font-weight: 700;
-    }
+  /* Paneles de Contenido */
+  .tab-panel {
+    display: none;
+    animation: fadeIn 0.3s ease;
+    scroll-margin-top: 6rem; /* Desplazamiento suave al hacer clic */
+  }
 
-    /* Ocultar/Mostrar paneles */
-    .tab-panel {
-      display: none;
-      animation: fadeIn 0.3s ease;
-    }
+  .tab-panel.active-panel {
+    display: block;
+  }
 
-    .tab-panel.active-panel {
-      display: block;
-    }
+  .intro-text-block p {
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+    color: var(--color-hueso);
+  }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(5px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
 
-  <!-- Favicon y Accesos Directos (Sube un nivel con ../) -->
-<link rel="icon" type="image/x-icon" href="../img/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon.png">
-<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
-
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
 </head>
 <body>
 
@@ -102,10 +117,10 @@
       <nav class="main-nav">
         <ul>
           <li><a href="../index.html">Inicio</a></li>
-<li><a href="../sobre-nosotros.html">Sobre nosotros</a></li>
-<li><a href="../boas.html" class="active">Boas</a></li>
-<li><a href="../blog.html">Blog</a></li>
-<li><a href="../ejemplares.html">Ejemplares</a></li>
+          <li><a href="../sobre-nosotros.html">Sobre nosotros</a></li>
+          <li><a href="../boas.html" class="active">Boas</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../ejemplares.html">Ejemplares</a></li>
         </ul>
       </nav>
     </div>
@@ -114,98 +129,167 @@
   <!-- Encabezado de la página -->
   <section class="page-title">
     <div class="container">
-      <h1>Cuidados en Cautiverio</h1>
-      <p>Explora las pautas de manejo, parámetros ambientales y mantenimiento responsable.</p>
+      <h1>Guía de cuidados</h1>
+      <p>Pautas esenciales para asegurar el bienestar de tu ejemplar.</p>
     </div>
+  </section>
+
+  <!-- Texto Introductorio -->
+  <section class="container intro-text-block" style="max-width: 900px; margin-top: 1rem;">
+    <p>Mantener una boa en cautiverio es una experiencia fascinante y sumamente gratificante, pero también requiere compromiso, observación y, sobre todo, información correcta. El objetivo de esta guía es ofrecerte un punto de partida sólido y claro con las pautas esenciales para que puedas asegurar el bienestar de tu ejemplar desde el primer día.</p>
+    
+    <p>Es importante tener en cuenta que los parámetros que encontrarás aquí deben tomarse como una orientación general. En la herpetocultura no existen fórmulas mágicas ni reglas escritas en piedra: cada ejemplar es un individuo único con su propio ritmo, temperamento y necesidades particulares. Lo que funciona a la perfección para una boa, tal vez requiera pequeños ajustes para otra.</p>
+    
+    <p>Además, tu ubicación geográfica juega un papel determinante. El clima de tu entorno influirá directamente en el esfuerzo y los recursos que necesitarás para recrear el hábitat ideal dentro del recinto:</p>
+    
+    <p>No es lo mismo mantener una boa en regiones cálidas y húmedas, donde las condiciones ambientales juegan a tu favor y facilitan el mantenimiento de la humedad y la temperatura a mantenerla en zonas de clima templado o frío, donde los descensos bruscos de temperatura o la baja humedad ambiental representan un reto mayor y, de no controlarse adecuadamente con el equipo correcto, pueden resultar fatales para el animal.</p>
+    
+    <p>Aprender a "leer" a tu reptil y adaptar su entorno a las condiciones de tu ciudad es la verdadera clave del éxito. Utiliza esta guía como tu mapa inicial, observa a tu ejemplar y ajusta sus parámetros siempre en función de su salud y comportamiento.</p>
   </section>
 
   <!-- Interfaz de Navegación Interactiva -->
   <main class="container care-layout" style="padding-bottom: 4rem;">
     
-    <!-- Menú Lateral / Selector de Secciones -->
+    <!-- Menú Lateral -->
     <aside class="care-nav">
-      <h3>Guía de Cuidados</h3>
-      <button class="care-btn active-tab" onclick="switchTab(event, 'parametros')">Temperatura y Humedad</button>
-      <button class="care-btn" onclick="switchTab(event, 'alimentacion')">Alimentación</button>
-      <button class="care-btn" onclick="switchTab(event, 'recintos')">Recintos y Sustrato</button>
-      <button class="care-btn" onclick="switchTab(event, 'salud')">Salud y Prevención</button>
+      <h3>Apartados</h3>
+      <button class="care-btn active-tab" onclick="switchTab(event, 'encierro')">Encierro</button>
+      <button class="care-btn" onclick="switchTab(event, 'temperatura')">Temperatura</button>
+      <button class="care-btn" onclick="switchTab(event, 'humedad')">Humedad</button>
     </aside>
 
     <!-- Área de Contenido Dinámico -->
     <section style="background-color: var(--bg-dark-card); padding: 2rem; border-radius: 8px; border: 1px solid rgba(196, 146, 62, 0.25);">
       
-      <!-- Panel 1: Temperatura y Humedad -->
-      <div id="parametros" class="tab-panel active-panel">
-        <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Temperatura y Humedad</h2>
-        <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Parámetros ambientales indispensables</p>
-        
-        <p>
-          Como animales ectotérmicos, las boas dependen totalmente de los gradientes ambientales para regular sus funciones metabólicas y digestivas.
-        </p>
-        <p>
-          <strong>Zona Caliente (Hot Spot):</strong> Debe mantenerse entre 31°C y 33°C utilizando placas térmicas, mantas o paneles radiantes siempre controlados por un termostato.
-        </p>
-        <p>
-          <strong>Zona Fresca / Ambiente:</strong> Entre 24°C y 26°C. Es fundamental proveer este espacio para que el ejemplar pueda termorregular libremente.
-        </p>
-        <p>
-          <strong>Humedad:</strong> El rango ideal se sitúa entre el 60% y el 70%. Durante el proceso de ecdisis (muda de piel), se recomienda elevarla ligeramente o proveer un refugio húmedo.
-        </p>
+      <!-- Panel 1: Encierro -->
+<div id="encierro" class="tab-panel active-panel">
+  <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">¿Dónde y cómo alojar a tu boa?</h2>
+  <p style="margin-bottom: 1.5rem; line-height: 1.7;">
+    En la herpetocultura moderna, el recinto de una boa no es definitivo desde el primer día: se debe adaptar progresivamente al ritmo de crecimiento del ejemplar.<br><br>
+    Para ejemplares en desarrollo (crías y juveniles), las cajas o tinas plásticas organizadoras tipo "zapatera" son la herramienta más práctica y eficiente. Nos permiten mantener los parámetros de temperatura y humedad en niveles óptimos, facilitan enormemente la higiene y reducen el estrés del animal.
+  </p>
+
+  <h3 style="color: var(--color-mostaza); margin-top: 2rem; margin-bottom: 1rem;">Etapas de alojamiento recomendadas</h3>
+  
+  <!-- Tabla de Etapas -->
+  <div style="overflow-x: auto; margin-bottom: 1.5rem;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; background-color: rgba(0, 0, 0, 0.2); border-radius: 6px; overflow: hidden;">
+      <thead>
+        <tr style="background-color: rgba(196, 146, 62, 0.2); color: var(--color-mostaza);">
+          <th style="padding: 0.8rem 1rem; border-bottom: 1px solid rgba(196, 146, 62, 0.3);">Etapa</th>
+          <th style="padding: 0.8rem 1rem; border-bottom: 1px solid rgba(196, 146, 62, 0.3);">Edad estimada</th>
+          <th style="padding: 0.8rem 1rem; border-bottom: 1px solid rgba(196, 146, 62, 0.3);">Tipo de recinto</th>
+          <th style="padding: 0.8rem 1rem; border-bottom: 1px solid rgba(196, 146, 62, 0.3);">Dimensiones approx.</th>
+        </tr>
+      </thead>
+      <tbody style="color: var(--color-hueso);">
+        <tr style="border-bottom: 1px solid rgba(196, 146, 62, 0.1);">
+          <td style="padding: 0.8rem 1rem; font-weight: bold; color: var(--color-mostaza);">Etapa 1</td>
+          <td style="padding: 0.8rem 1rem;">0 a 12 meses</td>
+          <td style="padding: 0.8rem 1rem;">Caja plástica zapatera chica</td>
+          <td style="padding: 0.8rem 1rem;">~35 x 20 x 12 cm</td>
+        </tr>
+        <tr style="border-bottom: 1px solid rgba(196, 146, 62, 0.1);">
+          <td style="padding: 0.8rem 1rem; font-weight: bold; color: var(--color-mostaza);">Etapa 2</td>
+          <td style="padding: 0.8rem 1rem;">12 a 24 meses</td>
+          <td style="padding: 0.8rem 1rem;">Caja plástica mediana</td>
+          <td style="padding: 0.8rem 1rem;">~58 x 42 x 15 cm</td>
+        </tr>
+        <tr style="border-bottom: 1px solid rgba(196, 146, 62, 0.1);">
+          <td style="padding: 0.8rem 1rem; font-weight: bold; color: var(--color-mostaza);">Etapa 3</td>
+          <td style="padding: 0.8rem 1rem;">A partir de 2 años</td>
+          <td style="padding: 0.8rem 1rem;">Caja plástica grande</td>
+          <td style="padding: 0.8rem 1rem;">~74 x 45 x 15 cm</td>
+        </tr>
+        <tr style="border-bottom: 1px solid rgba(196, 146, 62, 0.1);">
+          <td style="padding: 0.8rem 1rem; font-weight: bold; color: var(--color-mostaza);">Etapa 4 (Machos)</td>
+          <td style="padding: 0.8rem 1rem;">Adultos</td>
+          <td style="padding: 0.8rem 1rem;">Caja plástica grande / Terrario (Definitivo)</td>
+          <td style="padding: 0.8rem 1rem;">~74 x 45 x 15 cm</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.8rem 1rem; font-weight: bold; color: var(--color-mostaza);">Etapa 4 (Hembras)</td>
+          <td style="padding: 0.8rem 1rem;">Adultas</td>
+          <td style="padding: 0.8rem 1rem;">Terrario de PVC / Madera / Vidrio (Mínimo)</td>
+          <td style="padding: 0.8rem 1rem;">120 x 60 x 25 cm</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Aclaración clave y dimorfismo sexual -->
+  <div style="background-color: rgba(0, 0, 0, 0.25); padding: 1.2rem; border-radius: 6px; border-left: 4px solid var(--color-mostaza); margin-bottom: 1.5rem;">
+    <h4 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Aclaración clave sobre las etapas:</h4>
+    <p style="margin-bottom: 0.8rem; font-size: 0.95rem;">La edad de los ejemplares en la tabla es únicamente un estimado de referencia. La decisión de cambiar de recinto depende completamente de la talla y longitud física de tu boa, no de sus meses de vida. Recuerda que el ritmo de crecimiento está estrechamente ligado al régimen de alimentación del animal (frecuencia y tamaño de la presa). Monitorea el cuerpo de tu serpiente y avanza de etapa cuando el recinto actual comience a quedarle justo.</p>
+    
+    <h4 style="color: var(--color-mostaza); margin-bottom: 0.5rem; margin-top: 1rem;">Nota importante sobre el dimorfismo sexual:</h4>
+    <p style="font-size: 0.95rem;">Los machos pueden vivir cómodamente toda su vida en una caja grande de la Etapa 3. Sin embargo, para las hembras adultas es muy complicado encontrar contenedores plásticos comerciales con las dimensiones adecuadas, por lo que será obligatorio adquirir o construir un terrario definitivo de al menos 120 cm de largo. En total, se calcula que un macho utilizará 3 encierros a lo largo de su vida, mientras que una hembra requerirá 4.</p>
+  </div>
+
+  <!-- Experiencia y tamaño -->
+  <h3 style="color: var(--color-mostaza); margin-top: 2rem; margin-bottom: 0.5rem;">¿Por qué mantener a los ejemplares en espacios reducidos?</h3>
+  <p style="margin-bottom: 1rem;">A menudo caemos en el error de pensar que un recinto más grande siempre es mejor. Sin embargo, en serpientes jóvenes, los espacios amplios suelen generar inseguridad y estrés elevado.</p>
+
+  <div style="background-color: rgba(196, 146, 62, 0.08); border: 1px solid rgba(196, 146, 62, 0.2); padding: 1.2rem; border-radius: 6px; margin-bottom: 2rem;">
+    <h4 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Nuestra experiencia:</h4>
+    <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">En una ocasión alojamos a dos crías en contenedores de 41 x 28 x 13 cm (un poco más grandes de lo sugerido para su edad). Una de ellas se adaptó perfecto: comía, mudaba y mantenía la calma. La otra, en cambio, se mostraba constantemente en alerta, siseaba, rechazaba alimento y presentó problemas de muda debido al estrés.</p>
+    <p style="font-size: 0.95rem;"><strong>La solución:</strong> Cubrimos las paredes del contenedor para restarle visibilidad y hacer que el espacio se sintiera más cerrado. Rápidamente volvió a la normalidad. Para las crías, un espacio reducido equivale a protección.</p>
+  </div>
+
+  <!-- Elementos básicos -->
+  <h3 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Elementos básicos dentro del recinto</h3>
+  <p style="margin-bottom: 1rem;">Un contenedor vacío no es suficiente. Para garantizar la salud de tu boa, necesitas acondicionar el interior con tres elementos clave:</p>
+
+  <ul style="list-style: none; padding-left: 0; margin-bottom: 2.5rem;">
+    <li style="margin-bottom: 1rem; background-color: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px;">
+      <strong style="color: var(--color-mostaza);">1. Bebedero (Fundamental):</strong> Debe contener agua potable limpia en todo momento. Se recomienda cambiar el agua mínimo una vez por semana, o de inmediato si el ejemplar defeca dentro (un comportamiento muy común) o la contamina con sustrato.
+    </li>
+    <li style="margin-bottom: 1rem; background-color: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px;">
+      <strong style="color: var(--color-mostaza);">2. Sustrato (Fundamental):</strong> Debe ajustarse a tus rutinas de limpieza y a las necesidades de humedad del reptil.
+      <br><br>
+      <span style="color: #a3e635;">✔ Aptos y seguros:</span> Servitoallas, papel estraza, aspen chip (viruta de álamo) o coco chip (fibra de coco en cubo), entre otros.
+      <br>
+      <span style="color: #f87171;">⚠ Sustratos prohibidos:</span> Nunca utilices viruta de pino, cedro ni aserrín sin procesar. Estas maderas liberan aceites y gases aromáticos (fenoles) que resultan altamente tóxicos y causan daños irreversibles en las vías respiratorias de las serpientes.
+    </li>
+    <li style="margin-bottom: 1rem; background-color: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px;">
+      <strong style="color: var(--color-mostaza);">3. Escondite o refugio (Opcional según el ejemplar):</strong> Si mantienes a tu boa en un terrario de paredes transparentes o notas que es un individuo tímido y movedizo, un refugio es estrictamente necesario para que pueda resguardarse y sentirse segura.
+    </li>
+  </ul>
+
+  <!-- Galería de 3 Imágenes Finales -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; justify-items: center; margin-top: 2rem;">
+    <div style="width: 100%; max-width: 280px; aspect-ratio: 4/3; border-radius: 8px; overflow: hidden; border: 1px solid rgba(196, 146, 62, 0.3);">
+      <img src="../img/sustrato.png" alt="Recinto de boa 1" class="lightbox-trigger" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy">
+    </div>
+    <div style="width: 100%; max-width: 280px; aspect-ratio: 4/3; border-radius: 8px; overflow: hidden; border: 1px solid rgba(196, 146, 62, 0.3);">
+      <img src="../img/bebedero.png" alt="Recinto de boa 2" class="lightbox-trigger" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy">
+    </div>
+    <div style="width: 100%; max-width: 280px; aspect-ratio: 4/3; border-radius: 8px; overflow: hidden; border: 1px solid rgba(196, 146, 62, 0.3);">
+      <img src="../img/escondite.png" alt="Recinto de boa 3" class="lightbox-trigger" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy">
+    </div>
+  </div>
+
+</div>
+
+      <!-- Panel 2: Temperatura -->
+      <div id="temperatura" class="tab-panel">
+        <h2 style="color: var(--color-mostaza); margin-bottom: 1rem;">Temperatura y Gradiente Térmico</h2>
+        <p>Próximamente información detallada sobre el lado caliente, lado frío, puntos de asoleamiento y métodos de calefacción (placas, focos, termostatos).</p>
       </div>
 
-      <!-- Panel 2: Alimentación -->
-      <div id="alimentacion" class="tab-panel">
-        <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Alimentación Responsable</h2>
-        <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Raciones y frecuencias adecuadas</p>
-        
-        <p>
-          El metabolismo de las boas es considerablemente más lento que el de otros reptiles. Evitar la sobrealimentación (<em>powerfeeding</em>) es crucial para garantizar una vida saludable y prolongada.
-        </p>
-        <p>
-          <strong>Neonatos y Juveniles:</strong> Presas (ratones o ratas jóvenes) acordes al grosor de la parte más ancha del cuerpo, ofrecidas cada 10 a 14 días.
-        </p>
-        <p>
-          <strong>Subadultos y Adultos:</strong> Ratas de tamaño adecuado o conejos pequeños, distanciando las tomas a cada 3 o 4 semanas según el tamaño y condición corporal del ejemplar.
-        </p>
+      <!-- Panel 3: Humedad -->
+      <div id="humedad" class="tab-panel">
+        <h2 style="color: var(--color-mostaza); margin-bottom: 1rem;">Humedad y MUDAS</h2>
+        <p>Próximamente información detallada sobre rangos idóneos de humedad, recipientes de agua, ecdisis (muda de piel) y refugios húmedos.</p>
       </div>
 
-      <!-- Panel 3: Recintos y Sustrato -->
-      <div id="recintos" class="tab-panel">
-        <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Recintos y Sustratos</h2>
-        <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Alojamiento, ventilación y refugios</p>
-        
-        <p>
-          El terrario o sistema de racks debe ser ante todo a prueba de fugas y contar con ventilación cruzada para prevenir la acumulación de humedad estancada y hongos.
-        </p>
-        <p>
-          <strong>Sustratos recomendados:</strong> Fibra de coco, sustrato de corteza de pino tratado (como ReptiChip) o papel periódico/sanitario para una limpieza rápida y monitoreo de deposiciones.
-        </p>
-        <p>
-          <strong>Elementos clave:</strong> Al menos dos refugios idénticos (uno en la zona caliente y otro en la zona fresca) y un plato de agua lo suficientemente grande para que la boa pueda beber o sumergirse si lo desea.
-        </p>
-      </div>
-
-      <!-- Panel 4: Salud y Prevención -->
-      <div id="salud" class="tab-panel">
-        <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Salud y Prevención</h2>
-        <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Monitoreo constante e higiene</p>
-        
-        <p>
-          La observación regular permite detectar a tiempo cualquier anomalía física o de comportamiento.
-        </p>
-        <p>
-          <strong>Signos de salud:</strong> Ojos claros, piel firme, escamas limpias, respiración silenciosa (sin burbujas en la nariz o mucosidad en la boca) y actitud alerta.
-        </p>
-        <p>
-          <strong>Mantenimiento:</strong> Retirar deposiciones de inmediato y realizar una desinfección profunda del recinto periódicamente. Mantener en cuarentena estricta a cualquier ejemplar nuevo antes de integrarlo al área principal.
-        </p>
-      </div>
-
-      <!-- Botón de regreso -->
-      <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(196, 146, 62, 0.2);">
-        <a href="../boas.html" class="btn btn-secondary">&larr; Volver al Menú de Boas</a>
-      </div>
-
+              <!-- Botón de retorno al menú principal de Boas -->
+    <div style="text-align: center; margin-top: 3rem; margin-bottom: 1rem;">
+        <a href="../boas.html" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+        <span>&larr;</span> Volver al menú de Boas
+         </a>
+    </div>
+    
     </section>
 
   </main>
@@ -222,19 +306,20 @@
     </div>
   </footer>
 
-  <!-- Código JavaScript para la interactividad de Pestañas -->
+  <!-- Código JavaScript para las Pestañas -->
   <script>
     function switchTab(event, tabId) {
-      // 1. Ocultar todos los paneles de contenido
       const panels = document.querySelectorAll('.tab-panel');
       panels.forEach(panel => panel.classList.remove('active-panel'));
 
-      // 2. Desactivar el estilo de todos los botones
       const buttons = document.querySelectorAll('.care-btn');
       buttons.forEach(btn => btn.classList.remove('active-tab'));
 
-      // 3. Activar el panel seleccionado y su botón
-      document.getElementById(tabId).classList.add('active-panel');
+      const activePanel = document.getElementById(tabId);
+      if (activePanel) {
+        activePanel.classList.add('active-panel');
+      }
+
       event.currentTarget.classList.add('active-tab');
     }
   </script>

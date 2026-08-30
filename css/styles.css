@@ -246,17 +246,22 @@ img {
   display: grid;
   grid-template-columns: 260px 1fr;
   gap: 2.5rem;
-  align-items: start;
+  align-items: start; /* OBLIGATORIO para que position:sticky funcione en CSS Grid */
 }
 
-/* Menú Lateral de Especies */
+/* Menú Lateral de Especies / Apartados */
 .species-nav {
   background-color: var(--bg-dark-card);
   border: 1px solid rgba(196, 146, 62, 0.25);
   border-radius: 10px;
   padding: 1.5rem;
+
+  /* Copia exacta de la estructura de Taxonomía */
   position: sticky;
-  top: 90px;
+  top: 80px; /* Se pega justo debajo del header principal (que mide ~70px) */
+  align-self: start; /* Importante: le indica al Grid que no se estire */
+  height: max-content;
+  z-index: 90;
 }
 
 .species-nav h3 {
