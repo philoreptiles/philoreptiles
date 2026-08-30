@@ -10,98 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   
-  <!-- CSS -->
+  <!-- CSS Principal -->
   <link rel="stylesheet" href="../css/styles.css">
-
- <style>
-  /* Layout del Menú Interactivo de Cuidados */
-  .care-layout {
-    display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: 2rem;
-    margin-top: 2.5rem;
-    align-items: start; /* Permite que el menú lateral se desplace */
-  }
-
-  @media (max-width: 768px) {
-    .care-layout {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  /* Menú Lateral Pegajoso */
-  .care-nav {
-    background-color: var(--bg-dark-card);
-    border-radius: 8px;
-    border: 1px solid rgba(196, 146, 62, 0.25);
-    padding: 1rem;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 90px; /* Se ancla justo debajo de la barra de navegación */
-    align-self: start;
-    height: max-content;
-    z-index: 80;
-  }
-
-  .care-nav h3 {
-    color: var(--color-mostaza);
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(196, 146, 62, 0.2);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .care-btn {
-    width: 100%;
-    text-align: left;
-    padding: 0.8rem 1rem;
-    background: transparent;
-    border: none;
-    color: var(--color-hueso);
-    font-family: var(--font-rubik);
-    font-size: 0.95rem;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: all 0.2s ease;
-    display: block;
-    margin-bottom: 0.3rem;
-  }
-
-  .care-btn:hover {
-    background-color: rgba(196, 146, 62, 0.15);
-    color: var(--color-mostaza);
-  }
-
-  .care-btn.active-tab {
-    background-color: var(--color-mostaza);
-    color: var(--color-chocolate);
-    font-weight: 700;
-  }
-
-  /* Paneles de Contenido */
-  .tab-panel {
-    display: none;
-    animation: fadeIn 0.3s ease;
-    scroll-margin-top: 6rem; /* Desplazamiento suave al hacer clic */
-  }
-
-  .tab-panel.active-panel {
-    display: block;
-  }
-
-  .intro-text-block p {
-    margin-bottom: 1.2rem;
-    line-height: 1.7;
-    color: var(--color-hueso);
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(5px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style>
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
@@ -153,143 +63,290 @@
     <!-- Menú Lateral -->
     <aside class="care-nav">
       <h3>Apartados</h3>
-      <button class="care-btn active-tab" onclick="switchTab(event, 'encierro')">Encierro</button>
-      <button class="care-btn" onclick="switchTab(event, 'temperatura')">Temperatura</button>
-      <button class="care-btn" onclick="switchTab(event, 'humedad')">Humedad</button>
+      <button class="care-btn active-tab" data-tab="encierro">Encierro</button>
+      <button class="care-btn" data-tab="temperatura">Temperatura</button>
+      <button class="care-btn" data-tab="humedad">Humedad</button>
     </aside>
 
     <!-- Área de Contenido Dinámico -->
     <section style="background-color: var(--bg-dark-card); padding: 2rem; border-radius: 8px; border: 1px solid rgba(196, 146, 62, 0.25);">
       
       <!-- Panel 1: Encierro -->
-<div id="encierro" class="tab-panel active-panel">
-  <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">¿Dónde y cómo alojar a tu boa?</h2>
-  <p style="margin-bottom: 1.5rem; line-height: 1.7;">
-    En la herpetocultura moderna, el recinto de una boa no es definitivo desde el primer día: se debe adaptar progresivamente al ritmo de crecimiento del ejemplar.<br><br>
-    Para ejemplares en desarrollo (crías y juveniles), las cajas o tinas plásticas organizadoras tipo "zapatera" son la herramienta más práctica y eficiente. Nos permiten mantener los parámetros de temperatura y humedad en niveles óptimos, facilitan enormemente la higiene y reducen el estrés del animal.
-  </p>
+      <div id="encierro" class="tab-panel active-panel">
+        <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">¿Dónde y cómo alojar a tu boa?</h2>
+        <p style="margin-bottom: 1.5rem; line-height: 1.7;">
+          En la herpetocultura moderna, el recinto de una boa no es definitivo desde el primer día: se debe adaptar progresivamente al ritmo de crecimiento del ejemplar.<br><br>
+          Para ejemplares en desarrollo (crías y juveniles), las cajas o tinas plásticas organizadoras tipo "zapatera" son la herramienta más práctica y eficiente. Nos permiten mantener los parámetros de temperatura y humedad en niveles óptimos, facilitan enormemente la higiene y reducen el estrés del animal.
+        </p>
 
-  <h3 style="color: var(--color-mostaza); margin-top: 2rem; margin-bottom: 1rem;">Etapas de alojamiento recomendadas</h3>
-  
-  <!-- Tabla de Etapas -->
-  <div style="overflow-x: auto; margin-bottom: 1.5rem;">
-    <table style="width: 100%; border-collapse: collapse; text-align: left; background-color: rgba(0, 0, 0, 0.2); border-radius: 6px; overflow: hidden;">
-      <thead>
-        <tr style="background-color: rgba(196, 146, 62, 0.2); color: var(--color-mostaza);">
-          <th style="padding: 0.8rem 1rem; border-bottom: 1px solid rgba(196, 146, 62, 0.3);">Etapa</th>
-          <th style="padding: 0.8rem 1rem; border-bottom: 1px solid rgba(196, 146, 62, 0.3);">Edad estimada</th>
-          <th style="padding: 0.8rem 1rem; border-bottom: 1px solid rgba(196, 146, 62, 0.3);">Tipo de recinto</th>
-          <th style="padding: 0.8rem 1rem; border-bottom: 1px solid rgba(196, 146, 62, 0.3);">Dimensiones approx.</th>
-        </tr>
-      </thead>
-      <tbody style="color: var(--color-hueso);">
-        <tr style="border-bottom: 1px solid rgba(196, 146, 62, 0.1);">
-          <td style="padding: 0.8rem 1rem; font-weight: bold; color: var(--color-mostaza);">Etapa 1</td>
-          <td style="padding: 0.8rem 1rem;">0 a 12 meses</td>
-          <td style="padding: 0.8rem 1rem;">Caja plástica zapatera chica</td>
-          <td style="padding: 0.8rem 1rem;">~35 x 20 x 12 cm</td>
-        </tr>
-        <tr style="border-bottom: 1px solid rgba(196, 146, 62, 0.1);">
-          <td style="padding: 0.8rem 1rem; font-weight: bold; color: var(--color-mostaza);">Etapa 2</td>
-          <td style="padding: 0.8rem 1rem;">12 a 24 meses</td>
-          <td style="padding: 0.8rem 1rem;">Caja plástica mediana</td>
-          <td style="padding: 0.8rem 1rem;">~58 x 42 x 15 cm</td>
-        </tr>
-        <tr style="border-bottom: 1px solid rgba(196, 146, 62, 0.1);">
-          <td style="padding: 0.8rem 1rem; font-weight: bold; color: var(--color-mostaza);">Etapa 3</td>
-          <td style="padding: 0.8rem 1rem;">A partir de 2 años</td>
-          <td style="padding: 0.8rem 1rem;">Caja plástica grande</td>
-          <td style="padding: 0.8rem 1rem;">~74 x 45 x 15 cm</td>
-        </tr>
-        <tr style="border-bottom: 1px solid rgba(196, 146, 62, 0.1);">
-          <td style="padding: 0.8rem 1rem; font-weight: bold; color: var(--color-mostaza);">Etapa 4 (Machos)</td>
-          <td style="padding: 0.8rem 1rem;">Adultos</td>
-          <td style="padding: 0.8rem 1rem;">Caja plástica grande / Terrario (Definitivo)</td>
-          <td style="padding: 0.8rem 1rem;">~74 x 45 x 15 cm</td>
-        </tr>
-        <tr>
-          <td style="padding: 0.8rem 1rem; font-weight: bold; color: var(--color-mostaza);">Etapa 4 (Hembras)</td>
-          <td style="padding: 0.8rem 1rem;">Adultas</td>
-          <td style="padding: 0.8rem 1rem;">Terrario de PVC / Madera / Vidrio (Mínimo)</td>
-          <td style="padding: 0.8rem 1rem;">120 x 60 x 25 cm</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+        <h3 style="color: var(--color-mostaza); margin-top: 2rem; margin-bottom: 1rem;">Etapas de alojamiento recomendadas</h3>
+        
+        <!-- Tabla de Etapas -->
+        <div style="overflow-x: auto; margin-bottom: 1.5rem;">
+          <table style="width: 100%; border-collapse: collapse; text-align: left; background-color: rgba(0, 0, 0, 0.2); border-radius: 6px; overflow: hidden;">
+            <thead>
+              <tr style="background-color: rgba(196, 146, 62, 0.2); color: var(--color-mostaza);">
+                <th style="padding: 0.8rem 1rem; border-bottom: 1px solid rgba(196, 146, 62, 0.3);">Etapa</th>
+                <th style="padding: 0.8rem 1rem; border-bottom: 1px solid rgba(196, 146, 62, 0.3);">Edad estimada</th>
+                <th style="padding: 0.8rem 1rem; border-bottom: 1px solid rgba(196, 146, 62, 0.3);">Tipo de recinto</th>
+                <th style="padding: 0.8rem 1rem; border-bottom: 1px solid rgba(196, 146, 62, 0.3);">Dimensiones approx.</th>
+              </tr>
+            </thead>
+            <tbody style="color: var(--color-hueso);">
+              <tr style="border-bottom: 1px solid rgba(196, 146, 62, 0.1);">
+                <td style="padding: 0.8rem 1rem; font-weight: bold; color: var(--color-mostaza);">Etapa 1</td>
+                <td style="padding: 0.8rem 1rem;">0 a 12 meses</td>
+                <td style="padding: 0.8rem 1rem;">Caja plástica zapatera chica</td>
+                <td style="padding: 0.8rem 1rem;">~35 x 20 x 12 cm</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(196, 146, 62, 0.1);">
+                <td style="padding: 0.8rem 1rem; font-weight: bold; color: var(--color-mostaza);">Etapa 2</td>
+                <td style="padding: 0.8rem 1rem;">12 a 24 meses</td>
+                <td style="padding: 0.8rem 1rem;">Caja plástica mediana</td>
+                <td style="padding: 0.8rem 1rem;">~58 x 42 x 15 cm</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(196, 146, 62, 0.1);">
+                <td style="padding: 0.8rem 1rem; font-weight: bold; color: var(--color-mostaza);">Etapa 3</td>
+                <td style="padding: 0.8rem 1rem;">A partir de 2 años</td>
+                <td style="padding: 0.8rem 1rem;">Caja plástica grande</td>
+                <td style="padding: 0.8rem 1rem;">~74 x 45 x 15 cm</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(196, 146, 62, 0.1);">
+                <td style="padding: 0.8rem 1rem; font-weight: bold; color: var(--color-mostaza);">Etapa 4 (Machos)</td>
+                <td style="padding: 0.8rem 1rem;">Adultos</td>
+                <td style="padding: 0.8rem 1rem;">Caja plástica grande / Terrario (Definitivo)</td>
+                <td style="padding: 0.8rem 1rem;">~74 x 45 x 15 cm</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.8rem 1rem; font-weight: bold; color: var(--color-mostaza);">Etapa 4 (Hembras)</td>
+                <td style="padding: 0.8rem 1rem;">Adultas</td>
+                <td style="padding: 0.8rem 1rem;">Terrario de PVC / Madera / Vidrio (Mínimo)</td>
+                <td style="padding: 0.8rem 1rem;">120 x 60 x 25 cm</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-  <!-- Aclaración clave y dimorfismo sexual -->
-  <div style="background-color: rgba(0, 0, 0, 0.25); padding: 1.2rem; border-radius: 6px; border-left: 4px solid var(--color-mostaza); margin-bottom: 1.5rem;">
-    <h4 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Aclaración clave sobre las etapas:</h4>
-    <p style="margin-bottom: 0.8rem; font-size: 0.95rem;">La edad de los ejemplares en la tabla es únicamente un estimado de referencia. La decisión de cambiar de recinto depende completamente de la talla y longitud física de tu boa, no de sus meses de vida. Recuerda que el ritmo de crecimiento está estrechamente ligado al régimen de alimentación del animal (frecuencia y tamaño de la presa). Monitorea el cuerpo de tu serpiente y avanza de etapa cuando el recinto actual comience a quedarle justo.</p>
-    
-    <h4 style="color: var(--color-mostaza); margin-bottom: 0.5rem; margin-top: 1rem;">Nota importante sobre el dimorfismo sexual:</h4>
-    <p style="font-size: 0.95rem;">Los machos pueden vivir cómodamente toda su vida en una caja grande de la Etapa 3. Sin embargo, para las hembras adultas es muy complicado encontrar contenedores plásticos comerciales con las dimensiones adecuadas, por lo que será obligatorio adquirir o construir un terrario definitivo de al menos 120 cm de largo. En total, se calcula que un macho utilizará 3 encierros a lo largo de su vida, mientras que una hembra requerirá 4.</p>
-  </div>
+        <!-- Aclaración clave y dimorfismo sexual -->
+        <div style="background-color: rgba(0, 0, 0, 0.25); padding: 1.2rem; border-radius: 6px; border-left: 4px solid var(--color-mostaza); margin-bottom: 1.5rem;">
+          <h4 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Aclaración clave sobre las etapas:</h4>
+          <p style="margin-bottom: 0.8rem; font-size: 0.95rem;">La edad de los ejemplares en la tabla es únicamente un estimado de referencia. La decisión de cambiar de recinto depende completamente de la talla y longitud física de tu boa, no de sus meses de vida. Recuerda que el ritmo de crecimiento está estrechamente ligado al régimen de alimentación del animal (frecuencia y tamaño de la presa). Monitorea el cuerpo de tu serpiente y avanza de etapa cuando el recinto actual comience a quedarle justo.</p>
+          
+          <h4 style="color: var(--color-mostaza); margin-bottom: 0.5rem; margin-top: 1rem;">Nota importante sobre el dimorfismo sexual:</h4>
+          <p style="font-size: 0.95rem;">Los machos pueden vivir cómodamente toda su vida en una caja grande de la Etapa 3. Sin embargo, para las hembras adultas es muy complicado encontrar contenedores plásticos comerciales con las dimensiones adecuadas, por lo que será obligatorio adquirir o construir un terrario definitivo de al menos 120 cm de largo. En total, se calcula que un macho utilizará 3 encierros a lo largo de su vida, mientras que una hembra requerirá 4.</p>
+        </div>
 
-  <!-- Experiencia y tamaño -->
-  <h3 style="color: var(--color-mostaza); margin-top: 2rem; margin-bottom: 0.5rem;">¿Por qué mantener a los ejemplares en espacios reducidos?</h3>
-  <p style="margin-bottom: 1rem;">A menudo caemos en el error de pensar que un recinto más grande siempre es mejor. Sin embargo, en serpientes jóvenes, los espacios amplios suelen generar inseguridad y estrés elevado.</p>
+        <!-- Experiencia y tamaño -->
+        <h3 style="color: var(--color-mostaza); margin-top: 2rem; margin-bottom: 0.5rem;">¿Por qué mantener a los ejemplares en espacios reducidos?</h3>
+        <p style="margin-bottom: 1rem;">A menudo caemos en el error de pensar que un recinto más grande siempre es mejor. Sin embargo, en serpientes jóvenes, los espacios amplios suelen generar inseguridad y estrés elevado.</p>
 
-  <div style="background-color: rgba(196, 146, 62, 0.08); border: 1px solid rgba(196, 146, 62, 0.2); padding: 1.2rem; border-radius: 6px; margin-bottom: 2rem;">
-    <h4 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Nuestra experiencia:</h4>
-    <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">En una ocasión alojamos a dos crías en contenedores de 41 x 28 x 13 cm (un poco más grandes de lo sugerido para su edad). Una de ellas se adaptó perfecto: comía, mudaba y mantenía la calma. La otra, en cambio, se mostraba constantemente en alerta, siseaba, rechazaba alimento y presentó problemas de muda debido al estrés.</p>
-    <p style="font-size: 0.95rem;"><strong>La solución:</strong> Cubrimos las paredes del contenedor para restarle visibilidad y hacer que el espacio se sintiera más cerrado. Rápidamente volvió a la normalidad. Para las crías, un espacio reducido equivale a protección.</p>
-  </div>
+        <div style="background-color: rgba(196, 146, 62, 0.08); border: 1px solid rgba(196, 146, 62, 0.2); padding: 1.2rem; border-radius: 6px; margin-bottom: 2rem;">
+          <h4 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Nuestra experiencia:</h4>
+          <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">En una ocasión alojamos a dos crías en contenedores de 41 x 28 x 13 cm (un poco más grandes de lo sugerido para su edad). Una de ellas se adaptó perfecto: comía, mudaba y mantenía la calma. La otra, en cambio, se mostraba constantemente en alerta, siseaba, rechazaba alimento y presentó problemas de muda debido al estrés.</p>
+          <p style="font-size: 0.95rem;"><strong>La solución:</strong> Cubrimos las paredes del contenedor para restarle visibilidad y hacer que el espacio se sintiera más cerrado. Rápidamente volvió a la normalidad. Para las crías, un espacio reducido equivale a protección.</p>
+        </div>
 
-  <!-- Elementos básicos -->
-  <h3 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Elementos básicos dentro del recinto</h3>
-  <p style="margin-bottom: 1rem;">Un contenedor vacío no es suficiente. Para garantizar la salud de tu boa, necesitas acondicionar el interior con tres elementos clave:</p>
+        <!-- Elementos básicos -->
+        <h3 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Elementos básicos dentro del recinto</h3>
+        <p style="margin-bottom: 1rem;">Un contenedor vacío no es suficiente. Para garantizar la salud de tu boa, necesitas acondicionar el interior con tres elementos clave:</p>
 
-  <ul style="list-style: none; padding-left: 0; margin-bottom: 2.5rem;">
-    <li style="margin-bottom: 1rem; background-color: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px;">
-      <strong style="color: var(--color-mostaza);">1. Bebedero (Fundamental):</strong> Debe contener agua potable limpia en todo momento. Se recomienda cambiar el agua mínimo una vez por semana, o de inmediato si el ejemplar defeca dentro (un comportamiento muy común) o la contamina con sustrato.
-    </li>
-    <li style="margin-bottom: 1rem; background-color: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px;">
-      <strong style="color: var(--color-mostaza);">2. Sustrato (Fundamental):</strong> Debe ajustarse a tus rutinas de limpieza y a las necesidades de humedad del reptil.
-      <br><br>
-      <span style="color: #a3e635;">✔ Aptos y seguros:</span> Servitoallas, papel estraza, aspen chip (viruta de álamo) o coco chip (fibra de coco en cubo), entre otros.
-      <br>
-      <span style="color: #f87171;">⚠ Sustratos prohibidos:</span> Nunca utilices viruta de pino, cedro ni aserrín sin procesar. Estas maderas liberan aceites y gases aromáticos (fenoles) que resultan altamente tóxicos y causan daños irreversibles en las vías respiratorias de las serpientes.
-    </li>
-    <li style="margin-bottom: 1rem; background-color: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px;">
-      <strong style="color: var(--color-mostaza);">3. Escondite o refugio (Opcional según el ejemplar):</strong> Si mantienes a tu boa en un terrario de paredes transparentes o notas que es un individuo tímido y movedizo, un refugio es estrictamente necesario para que pueda resguardarse y sentirse segura.
-    </li>
-  </ul>
+        <ul style="list-style: none; padding-left: 0; margin-bottom: 2.5rem;">
+          <li style="margin-bottom: 1rem; background-color: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px;">
+            <strong style="color: var(--color-mostaza);">1. Bebedero (Fundamental):</strong> Debe contener agua potable limpia en todo momento. Se recomienda cambiar el agua mínimo una vez por semana, o de inmediato si el ejemplar defeca dentro (un comportamiento muy común) o la contamina con sustrato.
+          </li>
+          <li style="margin-bottom: 1rem; background-color: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px;">
+            <strong style="color: var(--color-mostaza);">2. Sustrato (Fundamental):</strong> Debe ajustarse a tus rutinas de limpieza y a las necesidades de humedad del reptil.
+            <br><br>
+            <span style="color: #a3e635;">✔ Aptos y seguros:</span> Servitoallas, papel estraza, aspen chip (viruta de álamo) o coco chip (fibra de coco en cubo), entre otros.
+            <br>
+            <span style="color: #f87171;">⚠ Sustratos prohibidos:</span> Nunca utilices viruta de pino, cedro ni aserrín sin procesar. Estas maderas liberan aceites y gases aromáticos (fenoles) que resultan altamente tóxicos y causan daños irreversibles en las vías respiratorias de las serpientes.
+          </li>
+          <li style="margin-bottom: 1rem; background-color: rgba(0,0,0,0.2); padding: 1rem; border-radius: 6px;">
+            <strong style="color: var(--color-mostaza);">3. Escondite o refugio (Opcional según el ejemplar):</strong> Si mantienes a tu boa en un terrario de paredes transparentes o notas que es un individuo tímido y movedizo, un refugio es estrictamente necesario para que pueda resguardarse y sentirse segura.
+          </li>
+        </ul>
 
-  <!-- Galería de 3 Imágenes Finales -->
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; justify-items: center; margin-top: 2rem;">
-    <div style="width: 100%; max-width: 280px; aspect-ratio: 4/3; border-radius: 8px; overflow: hidden; border: 1px solid rgba(196, 146, 62, 0.3);">
-      <img src="../img/sustrato.png" alt="Recinto de boa 1" class="lightbox-trigger" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy">
-    </div>
-    <div style="width: 100%; max-width: 280px; aspect-ratio: 4/3; border-radius: 8px; overflow: hidden; border: 1px solid rgba(196, 146, 62, 0.3);">
-      <img src="../img/bebedero.png" alt="Recinto de boa 2" class="lightbox-trigger" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy">
-    </div>
-    <div style="width: 100%; max-width: 280px; aspect-ratio: 4/3; border-radius: 8px; overflow: hidden; border: 1px solid rgba(196, 146, 62, 0.3);">
-      <img src="../img/escondite.png" alt="Recinto de boa 3" class="lightbox-trigger" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy">
-    </div>
-  </div>
+        <!-- Galería de 3 Imágenes Finales -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; justify-items: center; margin-top: 2rem;">
+          <div style="width: 100%; max-width: 280px; aspect-ratio: 4/3; border-radius: 8px; overflow: hidden; border: 1px solid rgba(196, 146, 62, 0.3);">
+            <img src="../img/sustrato.png" alt="Recinto de boa 1" class="lightbox-trigger" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy">
+          </div>
+          <div style="width: 100%; max-width: 280px; aspect-ratio: 4/3; border-radius: 8px; overflow: hidden; border: 1px solid rgba(196, 146, 62, 0.3);">
+            <img src="../img/bebedero.png" alt="Recinto de boa 2" class="lightbox-trigger" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy">
+          </div>
+          <div style="width: 100%; max-width: 280px; aspect-ratio: 4/3; border-radius: 8px; overflow: hidden; border: 1px solid rgba(196, 146, 62, 0.3);">
+            <img src="../img/escondite.png" alt="Recinto de boa 3" class="lightbox-trigger" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy">
+          </div>
+        </div>
 
-</div>
+      </div>
 
       <!-- Panel 2: Temperatura -->
       <div id="temperatura" class="tab-panel">
-        <h2 style="color: var(--color-mostaza); margin-bottom: 1rem;">Temperatura y Gradiente Térmico</h2>
-        <p>Próximamente información detallada sobre el lado caliente, lado frío, puntos de asoleamiento y métodos de calefacción (placas, focos, termostatos).</p>
+        <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">El motor metabólico de tu boa</h2>
+        <p style="margin-bottom: 1.5rem; line-height: 1.7;">
+          Como la gran mayoría sabe, las serpientes son ectotermas (de "sangre fría"). Esto significa que carecen de la capacidad metabólica para generar su propio calor corporal, por lo que dependen al 100% de fuentes externas para digerir sus alimentos, mantener fuerte su sistema inmune y realizar sus funciones vitales.<br><br>
+          Aquí es donde nuestro papel como cuidadores se vuelve fundamental: debemos recrear un entorno térmico adecuado mediante un <strong>gradiente de temperatura</strong>.
+        </p>
+
+        <h3 style="color: var(--color-mostaza); margin-top: 2rem; margin-bottom: 1rem;">El Gradiente térmico: Zona caliente vs. Zona fresca</h3>
+        <p style="margin-bottom: 1rem;">
+          No debemos calentar todo el terrario por igual. Tu boa necesita elegir en qué parte del recinto estar según sus necesidades de cada momento. Para ello, crearemos dos zonas bien definidas:
+        </p>
+
+        <!-- Tarjetas del Gradiente Térmico -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+          <div style="background-color: rgba(220, 38, 38, 0.1); border-left: 4px solid #ef4444; padding: 1.2rem; border-radius: 6px;">
+            <h4 style="color: #f87171; margin-bottom: 0.5rem; font-size: 1.1rem;">🔥 Punto caliente: 29°C - 32°C</h4>
+            <p style="font-size: 0.95rem; line-height: 1.5;">Ocupa máximo 1/3 de la superficie total del recinto. Es la zona donde la boa se posará para digerir sus presas.</p>
+          </div>
+          
+          <div style="background-color: rgba(37, 99, 235, 0.1); border-left: 4px solid #60a5fa; padding: 1.2rem; border-radius: 6px;">
+            <h4 style="color: #93c5fd; margin-bottom: 0.5rem; font-size: 1.1rem;">❄️ Zona fresca: 24°C - 26°C</h4>
+            <p style="font-size: 0.95rem; line-height: 1.5;">El resto del recinto. Permite a la boa descender su temperatura cuando ha recibido suficiente calor.</p>
+          </div>
+        </div>
+
+        <!-- Herramientas de Calefacción -->
+        <h3 style="color: var(--color-mostaza); margin-bottom: 1rem;">Herramientas de calefacción: ¿Qué opciones existen?</h3>
+        
+        <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2.5rem;">
+          
+          <div style="background-color: rgba(0,0,0,0.2); padding: 1.2rem; border-radius: 6px; border: 1px solid rgba(196, 146, 62, 0.15);">
+            <h4 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">1. Placas térmicas</h4>
+            <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">Son la opción más práctica y utilizada en sistemas de cajas o racks.</p>
+            <p style="font-size: 0.95rem; margin-bottom: 0.3rem;"><strong>Ubicación:</strong> Se colocan siempre por la parte exterior e inferior del contenedor, cubriendo únicamente un tercio de la base.</p>
+            <p style="font-size: 0.95rem;"><span style="color: #a3e635;">✔ Ventaja:</span> No consumen espacio interno ni resecan el ambiente drásticamente.</p>
+          </div>
+
+          <div style="background-color: rgba(0,0,0,0.2); padding: 1.2rem; border-radius: 6px; border: 1px solid rgba(196, 146, 62, 0.15);">
+            <h4 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">2. Focos y cerámicas</h4>
+            <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">Ideales para terrarios definitivos o de paredes altas.</p>
+            <p style="font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Tipos:</strong> Existen bombillas cerámicas (solo emiten calor) y focos de luz infrarroja o UVA. La ventaja de estos últimos es que proveen luz visible para el ejemplar, ayudando a marcar sus ciclos de día y noche (ritmos circadianos).</p>
+            <p style="font-size: 0.95rem;"><span style="color: #f87171;">⚠ Seguridad:</span> Deben mantenerse completamente fuera del alcance de la serpiente o protegidos con rejillas de seguridad antiquemaduras. Una boa puede enroscarse en un foco encendido y sufrir quemaduras de gravedad.</p>
+          </div>
+
+        </div>
+
+        <!-- Regla de Oro / Termostato -->
+        <div style="background-color: rgba(239, 68, 68, 0.12); border: 2px solid #ef4444; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+          <h3 style="color: #f87171; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+            ⚠ Regla de Oro: Medición y Control de Seguridad
+          </h3>
+          <h4 style="color: var(--color-hueso); font-size: 1.1rem; margin-bottom: 0.8rem; letter-spacing: 0.5px;">
+            ¡EL TERMOSTATO NO ES OPCIONAL!
+          </h4>
+          <p style="font-size: 0.95rem; margin-bottom: 0.8rem; line-height: 1.6;">
+            Una placa térmica conectada directamente a la corriente puede alcanzar temperaturas superiores a los 60°C, provocando quemaduras fatales en el vientre de tu ejemplar.
+          </p>
+          <p style="font-size: 0.95rem; margin-bottom: 1.2rem; line-height: 1.6;">
+            Es strictly obligatorio conectar cualquier fuente de calor a un termostato. Este aparato apagará o regulará la energía automáticamente al alcanzar la temperatura programada.
+          </p>
+          
+          <div style="background-color: rgba(0, 0, 0, 0.3); padding: 1rem; border-radius: 6px; border-left: 3px solid var(--color-mostaza);">
+            <h5 style="color: var(--color-mostaza); font-size: 0.95rem; margin-bottom: 0.3rem;">Medición complementaria:</h5>
+            <p style="font-size: 0.9rem; margin: 0;">
+              Apóyate siempre de una pistola de temperatura infrarroja (termómetro láser). Es la herramienta más precisa para tomar lecturas al instante en la superficie del punto caliente y verificar que la calibración de tu termostato sea la correcta.
+            </p>
+          </div>
+        </div>
+
+        <!-- Galería de 3 Imágenes Finales -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; justify-items: center; margin-top: 2rem;">
+          <div style="width: 100%; max-width: 280px; aspect-ratio: 4/3; border-radius: 8px; overflow: hidden; border: 1px solid rgba(196, 146, 62, 0.3);">
+            <img src="../img/placa.png" alt="Placa térmica" class="lightbox-trigger" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy">
+          </div>
+          <div style="width: 100%; max-width: 280px; aspect-ratio: 4/3; border-radius: 8px; overflow: hidden; border: 1px solid rgba(196, 146, 62, 0.3);">
+            <img src="../img/termostato.png" alt="Termostato" class="lightbox-trigger" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy">
+          </div>
+          <div style="width: 100%; max-width: 280px; aspect-ratio: 4/3; border-radius: 8px; overflow: hidden; border: 1px solid rgba(196, 146, 62, 0.3);">
+            <img src="../img/pistola.png" alt="Pistola de temperatura infrarroja" class="lightbox-trigger" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy">
+          </div>
+        </div>
       </div>
 
       <!-- Panel 3: Humedad -->
       <div id="humedad" class="tab-panel">
-        <h2 style="color: var(--color-mostaza); margin-bottom: 1rem;">Humedad y MUDAS</h2>
-        <p>Próximamente información detallada sobre rangos idóneos de humedad, recipientes de agua, ecdisis (muda de piel) y refugios húmedos.</p>
+        <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Humedad: Un parámetro dinámico</h2>
+        <p style="margin-bottom: 1.5rem; line-height: 1.7;">
+          A diferencia de la temperatura, la humedad en el recinto de tu boa no debe ser rígida ni constante. Debe fluctuar de acuerdo con el estado biológico de la serpiente para favorecer su salud.
+        </p>
+
+        <h3 style="color: var(--color-mostaza); margin-top: 2rem; margin-bottom: 1rem;">Rangos ideales y cuándo ajustarlos</h3>
+
+        <!-- Tarjetas de Rangos de Humedad -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+          <div style="background-color: rgba(37, 99, 235, 0.1); border-left: 4px solid #60a5fa; padding: 1.2rem; border-radius: 6px;">
+            <h4 style="color: #93c5fd; margin-bottom: 0.5rem; font-size: 1.1rem;">💧 Humedad base (diaria): 50% - 60%</h4>
+            <p style="font-size: 0.95rem; line-height: 1.5;">Es el rango óptimo de rutina. Permite que el ejemplar se mantenga hidratado sin saturar el ambiente.</p>
+          </div>
+          
+          <div style="background-color: rgba(16, 185, 129, 0.1); border-left: 4px solid #34d399; padding: 1.2rem; border-radius: 6px;">
+            <h4 style="color: #6ee7b7; margin-bottom: 0.5rem; font-size: 1.1rem;">🐍 Durante la muda (Ecdisis): 70% - 80%</h4>
+            <p style="font-size: 0.95rem; line-height: 1.5;">Eleva la humedad cuando sus ojos se tornen azulados/grisáceos o la piel se vea opaca. Esto garantizará una muda en una sola pieza.</p>
+          </div>
+        </div>
+
+        <!-- Riesgos por Humedad Incorrecta -->
+        <h3 style="color: var(--color-mostaza); margin-bottom: 1rem;">¿Qué ocurre si la humedad es incorrecta?</h3>
+        <p style="margin-bottom: 1rem;">
+          La humedad puede ser un parámetro traicionero. Tanto la falta como el exceso generan complicaciones severas en la salud de la serpiente:
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 2.5rem;">
+          
+          <!-- Exceso -->
+          <div style="background-color: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); padding: 1.2rem; border-radius: 8px;">
+            <h4 style="color: #f87171; margin-bottom: 0.8rem; font-size: 1.05rem;">❌ Por exceso (sustrato encharcado):</h4>
+            <ul style="padding-left: 1.2rem; margin: 0; font-size: 0.95rem; line-height: 1.6;">
+              <li style="margin-bottom: 0.5rem;">
+                <strong>Proliferación de hongos y moho:</strong> Deteriora el ambiente y crea un foco de infección en el recinto.
+              </li>
+              <li>
+                <strong>Pudrición de escamas (Scale Rot):</strong> Ampollas e infecciones bacterianas graves en el vientre por contacto directo constante con el agua.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Falta -->
+          <div style="background-color: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); padding: 1.2rem; border-radius: 8px;">
+            <h4 style="color: #fbbf24; margin-bottom: 0.8rem; font-size: 1.05rem;">⚠️ Por falta (ambiente muy seco):</h4>
+            <ul style="padding-left: 1.2rem; margin: 0; font-size: 0.95rem; line-height: 1.6;">
+              <li style="margin-bottom: 0.5rem;">
+                <strong>Infecciones Respiratorias Agudas (IRA):</strong> El aire seco irrita las mucosas respiratorias, volviendo al animal vulnerable a bacterias y virus.
+              </li>
+              <li>
+                <strong>Mudas retenidas (Disecdisis):</strong> La piel se rompe en parches pegados al cuerpo, pudiendo estrangular la circulación en el extremo de la cola.
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Consejos Prácticos -->
+        <h3 style="color: var(--color-mostaza); margin-bottom: 1rem;">Consejos prácticos para controlar la humedad</h3>
+        <div style="background-color: rgba(0,0,0,0.2); padding: 1.2rem; border-radius: 6px; border: 1px solid rgba(196, 146, 62, 0.15); margin-bottom: 2.5rem;">
+          <ul style="padding-left: 1.2rem; margin: 0; font-size: 0.95rem; line-height: 1.7;">
+            <li style="margin-bottom: 0.6rem;">
+              <strong>Juega con el bebedero:</strong> Si colocas el plato de agua cerca del punto caliente, la evaporación elevará la humedad del aire. Si lo colocas en la zona fresca, la humedad bajará.
+            </li>
+            <li style="margin-bottom: 0.6rem;">
+              <strong>Atomización puntual:</strong> Utiliza un aspersor con agua limpia para rociar suavemente las paredes del recinto o el sustrato únicamente cuando se aproxime el periodo de muda.
+            </li>
+            <li>
+              <strong>Monitoreo:</strong> Utiliza siempre un higrómetro digital con sonda para medir la humedad real al nivel donde habita la serpiente.
+            </li>
+          </ul>
+        </div>
       </div>
 
-              <!-- Botón de retorno al menú principal de Boas -->
-    <div style="text-align: center; margin-top: 3rem; margin-bottom: 1rem;">
+      <!-- Botón de retorno -->
+      <div style="text-align: center; margin-top: 3rem; margin-bottom: 1rem;">
         <a href="../boas.html" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-        <span>&larr;</span> Volver al menú de Boas
-         </a>
-    </div>
-    
+          <span>&larr;</span> Volver al menú de Boas
+        </a>
+      </div>
+
     </section>
 
   </main>
@@ -306,23 +363,33 @@
     </div>
   </footer>
 
-  <!-- Código JavaScript para las Pestañas -->
+  <!-- Script de Control de Pestañas -->
   <script>
-    function switchTab(event, tabId) {
-      const panels = document.querySelectorAll('.tab-panel');
-      panels.forEach(panel => panel.classList.remove('active-panel'));
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.care-btn');
+    const panels = document.querySelectorAll('.tab-panel');
 
-      const buttons = document.querySelectorAll('.care-btn');
-      buttons.forEach(btn => btn.classList.remove('active-tab'));
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-tab');
 
-      const activePanel = document.getElementById(tabId);
-      if (activePanel) {
-        activePanel.classList.add('active-panel');
-      }
+        // Quitar estado activo de botones y paneles
+        buttons.forEach(btn => btn.classList.remove('active-tab'));
+        panels.forEach(panel => panel.classList.remove('active-panel'));
 
-      event.currentTarget.classList.add('active-tab');
-    }
-  </script>
+        // Activar el botón presionado
+        button.classList.add('active-tab');
+        
+        // Mostrar y desplazar la pantalla al panel correspondiente
+        const activePanel = document.getElementById(targetId);
+        if (activePanel) {
+          activePanel.classList.add('active-panel');
+          activePanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  });
+</script>
 
 </body>
 </html>

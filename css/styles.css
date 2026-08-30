@@ -201,7 +201,7 @@ img {
 }
 
 /* ==========================================================================
-   5. SECCIONES GENERALES Y PÁGINA DE BOAS (LAYOUT CORREGIDO)
+   5. LAYOUT DE NAVEGACIÓN Y PESTAÑAS (BOAS, CUIDADOS, TAXONOMÍA)
    ========================================================================== */
 .about-summary {
   padding: 5rem 0;
@@ -237,34 +237,33 @@ img {
   font-size: 1.1rem;
 }
 
-/* --- ESTRUCTURA DE PESTAÑAS (PÁGINA BOAS) --- */
-.boas-section {
+/* Estructura Grid Compartida para Boas, Cuidados y Taxonomía */
+.boas-section, .care-section {
   padding: 2rem 0 5rem 0;
 }
 
-.boas-layout {
+.boas-layout, .care-layout, .taxonomy-layout {
   display: grid;
   grid-template-columns: 260px 1fr;
   gap: 2.5rem;
-  align-items: start; /* OBLIGATORIO para que position:sticky funcione en CSS Grid */
+  align-items: start; /* Vital para permitir el desplazamiento del sticky */
 }
 
-/* Menú Lateral de Especies / Apartados */
-.species-nav {
+/* Menú Lateral Pegajoso (Sticky) Unificado */
+.species-nav, .care-nav, .taxonomy-nav {
   background-color: var(--bg-dark-card);
   border: 1px solid rgba(196, 146, 62, 0.25);
   border-radius: 10px;
   padding: 1.5rem;
-
-  /* Copia exacta de la estructura de Taxonomía */
+  position: -webkit-sticky;
   position: sticky;
-  top: 80px; /* Se pega justo debajo del header principal (que mide ~70px) */
-  align-self: start; /* Importante: le indica al Grid que no se estire */
+  top: 90px; /* Anclaje debajo de la barra fija */
+  align-self: start;
   height: max-content;
   z-index: 90;
 }
 
-.species-nav h3 {
+.species-nav h3, .care-nav h3, .taxonomy-nav h3 {
   font-size: 1.1rem;
   color: var(--color-mostaza);
   margin-bottom: 1rem;
@@ -279,7 +278,8 @@ img {
   gap: 0.5rem;
 }
 
-.tab-btn {
+/* Botones de Pestañas Unificados */
+.tab-btn, .care-btn {
   width: 100%;
   text-align: left;
   background: transparent;
@@ -291,14 +291,15 @@ img {
   font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: block;
 }
 
-.tab-btn:hover {
+.tab-btn:hover, .care-btn:hover {
   background-color: rgba(196, 146, 62, 0.15);
   color: var(--color-mostaza);
 }
 
-.tab-btn.active-tab {
+.tab-btn.active-tab, .care-btn.active-tab {
   background-color: var(--color-mostaza);
   color: var(--color-chocolate);
   font-weight: 700;
@@ -314,6 +315,7 @@ img {
 
 .tab-panel {
   display: none;
+  scroll-margin-top: 110px; /* Evita que el header tape el contenido tras el scroll */
 }
 
 .tab-panel.active-panel {
@@ -743,12 +745,12 @@ img {
 
 /* Tablet y Móvil */
 @media (max-width: 992px) {
-  .boas-layout {
+  .boas-layout, .care-layout, .taxonomy-layout {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
   
-  .species-nav {
+  .species-nav, .care-nav, .taxonomy-nav {
     position: static;
   }
   
@@ -758,7 +760,7 @@ img {
     padding-bottom: 0.5rem;
   }
 
-  .tab-btn {
+  .tab-btn, .care-btn {
     white-space: nowrap;
   }
 }
