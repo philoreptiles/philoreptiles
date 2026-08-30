@@ -695,3 +695,31 @@ h1, h2, h3, h4 {
   gap: 1.2rem;
   flex-wrap: wrap;
 }
+
+/* ==========================================================================
+   DISPOSICIÓN DE TEXTO E IMAGEN AL COSTADO
+   ========================================================================== */
+.content-with-image {
+  display: grid;
+  grid-template-columns: 1fr 300px; /* Texto ocupa el espacio restante, imagen 300px */
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.image-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+/* Adaptación responsive para celulares */
+@media (max-width: 768px) {
+  .content-with-image {
+    grid-template-columns: 1fr; /* Pasa a una sola columna en pantallas pequeñas */
+    gap: 1.5rem;
+  }
+}

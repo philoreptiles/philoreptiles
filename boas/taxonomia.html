@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Philoreptiles | Taxonomía de Boas</title>
+  <title>Philoreptiles | Taxonomía del género Boa</title>
 
   <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -114,8 +114,8 @@
   <!-- Encabezado de la página -->
   <section class="page-title">
     <div class="container">
-      <h1>Taxonomía del Género <em>Boa</em></h1>
-      <p>Selecciona cualquier especie o subespecie del menú para ver su información sin salir de la página.</p>
+      <h1>Taxonomía del género <em>Boa</em></h1>
+      <p>Selecciona cualquier especie del menú para ver su información.</p>
     </div>
   </section>
 
@@ -124,11 +124,13 @@
     
     <!-- Menú Lateral / Selector de Especies -->
     <aside class="species-nav">
-      <h3>Especies y Localidades</h3>
+      <h3>Especies</h3>
       <button class="species-btn active-tab" onclick="switchTab(event, 'imperator')">Boa imperator</button>
-      <button class="species-btn" onclick="switchTab(event, 'constrictor')">Boa constrictor (BCC)</button>
-      <button class="species-btn" onclick="switchTab(event, 'sigmoidea')">Boa sigmoidea</button>
-      <button class="species-btn" onclick="switchTab(event, 'mexicanas')">Localidades de México</button>
+      <button class="species-btn" onclick="switchTab(event, 'constrictor')">Boa constrictor</button>
+      <button class="species-btn" onclick="switchTab(event, 'sigma')">Boa sigma</button>
+      <button class="species-btn" onclick="switchTab(event, 'nebulosa')">Boa nebulosa</button>
+      <button class="species-btn" onclick="switchTab(event, 'orophias')">Boa orophias</button>
+
     </aside>
 
     <!-- Área de Contenido Dinámico -->
@@ -136,34 +138,52 @@
       
       <!-- Panel 1: Boa imperator -->
       <div id="imperator" class="tab-panel active-panel">
-        <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;"><em>Boa imperator</em></h2>
-        <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Boa común de América Central y del Sur</p>
-        
+  
+  <!-- Encabezado del Panel -->
+  <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;"><em>Boa imperator</em></h2>
+  <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Boa de América Central / Boa común</p>
+  
+  <!-- Bloque 1: Descripción principal con Imagen al costado -->
+  <div class="content-with-image">
+    <div class="text-content">
+      <p>Durante mucho tiempo fue considerada una subespecie, pero hoy en día los estudios de ADN la reconocen como una especie independiente por derecho propio. A diferencia de la boa de cola roja (Boa constrictor), suele ser de un tamaño más moderado y compacto, con diferencias visibles en el diseño de las manchas de su lomo. Su hábitat abarca desde el este y sur de México (incluyendo la costa del Golfo y la península de Yucatán), cruzando toda América Central hasta llegar a Colombia y Ecuador. Por su carácter dócil y la increíble variedad de colores y patrones (morfos) que presenta, es la boa más famosa y criada del mundo.</p>
+    </div>
+    <div class="image-content">
+    <img src="../img/imperator.png" alt="Boa imperator" class="lightbox-trigger" loading="lazy"> </div>
+  </div>
+
+  <!-- Bloque 2: Localidad Hog Island -->
+  <div class="content-with-image">
+    <div class="text-content">
+        <h2>Localidad insular destacada: Boa de Cayos Cochinos / Islas Hog (Hog Island)</h2>
+      <p>Las célebres boas de las islas Hog (o Cayos Cochinos, en Honduras) no constituyen una especie ni una subespecie independiente, sino una fascinante población insular perteneciente a Boa imperator. Aunque los estudios de ADN confirman que comparten origen con las boas de América Central, la vida en el archipiélago las transformó por completo: al disponer de presas limitadas en las islas, desarrollaron un proceso de enanismo insular que redujo su tamaño a tan solo 1.2 o 1.5 metros y aclaró su piel con tonos pálidos y salmón de increíble belleza. Por su fragilidad ecológica y su valor biológico único, hoy cuentan con una estricta protección legal.</p>
+    </div>
+    <div class="image-content">
+    <img src="../img/Hi.png" alt="Boa imperator" class="lightbox-trigger" loading="lazy">    </div>
+  </div>
+
+    </div>
+
+      <!-- Panel 2: Boa sigma -->
+      <div id="sigma" class="tab-panel">
+
+        <!-- Encabezado del Panel -->
+        <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;"><em>Boa sigma</em></h2>
+        <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Boa mexicana del pacífico</p>
+    
+        <!-- Bloque 1: Descripción principal con Imagen al costado -->
         <p>
-          La <em>Boa imperator</em> es ampliamente reconocida como una especie independiente. Se distribuye desde el sur de México hasta Colombia y Ecuador.
+          Especie revalidada en estudios taxonómicos recientes para designar a las poblaciones de boas distribuidas a lo largo de la vertiente del Pacífico y sur de México.
         </p>
         <p>
-          Presenta una adaptabilidad excepcional y un tamaño promedio menor que el de <em>Boa constrictor</em>. Destaca en la herpetocultura por su inmensa variabilidad de mutaciones genéticas.
+          Presentan rasgos morfológicos distintivos en el conteo de escamas y patrones de coloración adaptados a zonas de bosque seco y templado.
         </p>
       </div>
 
-      <!-- Panel 2: Boa constrictor -->
-      <div id="constrictor" class="tab-panel">
-        <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;"><em>Boa constrictor</em> (BCC)</h2>
-        <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Boa de Cola Roja (Red-Tailed Boa)</p>
-        
-        <p>
-          Conocida como la "boa verdadera de cola roja", habita en la cuenca del Amazonas y el norte de Sudamérica (Surinam, Guyana, Perú, Brasil).
-        </p>
-        <p>
-          Tienen patrones geométricos muy marcados y un color rojo intenso o escarlata en la cola. Alcanzan tallas considerablemente mayores y requieren parámetros de humedad más altos.
-        </p>
-      </div>
-
-      <!-- Panel 3: Boa sigmoidea -->
-      <div id="sigmoidea" class="tab-panel">
-        <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;"><em>Boa sigmoidea</em></h2>
-        <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Boa Mexicana del Pacífico</p>
+      <!-- Panel 2: Boa sigma -->
+      <div id="sigma" class="tab-panel">
+        <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;"><em>Boa sigma</em></h2>
+        <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Boa mexicana del pacífico</p>
         
         <p>
           Especie revalidada en estudios taxonómicos recientes para designar a las poblaciones de boas distribuidas a lo largo de la vertiente del Pacífico y sur de México.
@@ -172,6 +192,17 @@
           Presentan rasgos morfológicos distintivos en el conteo de escamas y patrones de coloración adaptados a zonas de bosque seco y templado.
         </p>
       </div>
+
+      <!-- Bloque 2: Variedades -->
+  <div class="content-with-image">
+    <div class="text-content">
+        <h2>Subespecies y variaciones de Boa constrictor</h2>
+      <p>Debido a su amplia distribución geográfica en Sudamérica, Boa constrictor presenta distintas subespecies y linajes regionales bien documentados:</p>
+    </div>
+
+    <div class="image-content">
+    <img src="../img/Hi.png" alt="Boa imperator" class="lightbox-trigger" loading="lazy">    </div>
+  </div>
 
       <!-- Panel 4: Localidades Mexicanas -->
       <div id="mexicanas" class="tab-panel">
