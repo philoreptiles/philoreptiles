@@ -3,9 +3,11 @@
    ========================================================================== */
 @font-face {
   font-family: 'Peach Club';
-  src: url('PeachClub.ttf') format('truetype');
+  src: url('../fonts/PeachClub.ttf') format('truetype'),
+       url('PeachClub.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 :root {
@@ -20,7 +22,7 @@
   
   /* Tipografías */
   --font-rubik: 'Rubik', sans-serif;
-  --font-logo: 'Peach Club', cursive;
+  --font-logo: 'Peach Club', cursive, sans-serif;
 }
 
 /* ==========================================================================
@@ -32,12 +34,18 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-chocolate);
   color: var(--color-hueso);
   font-family: var(--font-rubik);
   font-weight: 400;
   line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
@@ -51,6 +59,12 @@ h1, h2, h3, h4 {
   font-weight: 700;
   color: var(--color-hueso);
   letter-spacing: 0.5px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* ==========================================================================
@@ -79,10 +93,6 @@ h1, h2, h3, h4 {
   letter-spacing: 1px;
 }
 
-.logo-text span {
-  color: var(--color-chocolate);
-}
-
 .main-nav ul {
   display: flex;
   list-style: none;
@@ -96,9 +106,33 @@ h1, h2, h3, h4 {
   transition: color 0.3s ease;
 }
 
-.main-nav a:hover, .main-nav a.active {
+.main-nav a:hover, 
+.main-nav a.active {
   color: var(--color-mostaza);
   font-weight: 700;
+  border-bottom: 2px solid var(--color-mostaza);
+  padding-bottom: 4px;
+}
+
+/* Botón Hamburguesa para Móviles */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 110;
+}
+
+.nav-toggle span {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-chocolate);
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
 /* ==========================================================================
@@ -141,6 +175,7 @@ h1, h2, h3, h4 {
   font-weight: 700;
   text-decoration: none;
   transition: all 0.3s ease;
+  will-change: transform;
 }
 
 .btn-primary {
@@ -166,7 +201,7 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================================================
-   5. SECCIONES GENERALES
+   5. SECCIONES GENERALES Y PÁGINA DE BOAS (LAYOUT CORREGIDO)
    ========================================================================== */
 .about-summary {
   padding: 5rem 0;
@@ -202,43 +237,105 @@ h1, h2, h3, h4 {
   font-size: 1.1rem;
 }
 
-/* ==========================================================================
-   6. PIE DE PÁGINA (Footer)
-   ========================================================================== */
-.main-footer {
+/* --- ESTRUCTURA DE PESTAÑAS (PÁGINA BOAS) --- */
+.boas-section {
+  padding: 2rem 0 5rem 0;
+}
+
+.boas-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Menú Lateral de Especies */
+.species-nav {
   background-color: var(--bg-dark-card);
-  padding: 2.5rem 0;
-  border-top: 1px solid rgba(196, 146, 62, 0.3);
-  margin-top: 3rem;
+  border: 1px solid rgba(196, 146, 62, 0.25);
+  border-radius: 10px;
+  padding: 1.5rem;
+  position: sticky;
+  top: 90px;
 }
 
-.footer-content {
+.species-nav h3 {
+  font-size: 1.1rem;
+  color: var(--color-mostaza);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.species-tabs {
+  list-style: none;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.footer-content p {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-}
-
-.social-links a {
+.tab-btn {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 1px solid transparent;
   color: var(--color-hueso);
-  text-decoration: none;
-  margin-left: 1.2rem;
-  font-weight: 700;
-  transition: color 0.3s ease;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-family: var(--font-rubik);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.social-links a:hover {
+.tab-btn:hover {
+  background-color: rgba(196, 146, 62, 0.15);
   color: var(--color-mostaza);
 }
 
+.tab-btn.active-tab {
+  background-color: var(--color-mostaza);
+  color: var(--color-chocolate);
+  font-weight: 700;
+}
+
+/* Contenido de Paneles */
+.tab-content {
+  background-color: var(--bg-dark-card);
+  border: 1px solid rgba(196, 146, 62, 0.25);
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active-panel {
+  display: block;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Layout Texto + Imagen al costado */
+.content-with-image {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.image-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(196, 146, 62, 0.3);
+}
+
 /* ==========================================================================
-   7. CATÁLOGO Y FICHAS DE EJEMPLARES (Corregido)
+   6. CATÁLOGO Y FICHAS DE EJEMPLARES
    ========================================================================== */
 .catalog-section {
   padding: 2rem 0 5rem 0;
@@ -259,6 +356,7 @@ h1, h2, h3, h4 {
   display: flex;
   flex-direction: column;
   height: 100%;
+  will-change: transform;
 }
 
 .specimen-card:hover {
@@ -278,10 +376,8 @@ h1, h2, h3, h4 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-/* Insignias/Etiquetas sobre la foto */
 .badge {
   position: absolute;
   top: 10px;
@@ -292,8 +388,8 @@ h1, h2, h3, h4 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  z-index: 10; /* Fuerza a la etiqueta a estar visible por encima de la foto */
-  pointer-events: none; /* Permite dar clic a la foto a través de la etiqueta */
+  z-index: 10;
+  pointer-events: none;
 }
 
 .badge-collection {
@@ -360,7 +456,7 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================================================
-   8. SECCIÓN SOBRE NOSOTROS
+   7. SECCIÓN SOBRE NOSOTROS & BLOG
    ========================================================================== */
 .about-page-content {
   max-width: 850px;
@@ -371,8 +467,7 @@ h1, h2, h3, h4 {
   margin-bottom: 2.5rem;
 }
 
-.about-block h2 {
-  font-size: 1.6rem;
+.about-block h2, .about-block h3 {
   color: var(--color-mostaza);
   margin-bottom: 0.8rem;
   border-bottom: 1px solid rgba(196, 146, 62, 0.2);
@@ -386,23 +481,6 @@ h1, h2, h3, h4 {
   margin-bottom: 1rem;
 }
 
-.about-block .lead-text {
-  font-size: 1.15rem;
-  color: var(--text-muted);
-}
-
-.about-cta {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 3.5rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(196, 146, 62, 0.3);
-}
-
-/* ==========================================================================
-   9. SECCIÓN BLOG
-   ========================================================================== */
 .blog-section {
   padding: 1rem 0 5rem 0;
 }
@@ -421,6 +499,7 @@ h1, h2, h3, h4 {
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
 }
 
 .blog-card:hover {
@@ -440,7 +519,6 @@ h1, h2, h3, h4 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
 }
 
 .blog-category {
@@ -473,7 +551,6 @@ h1, h2, h3, h4 {
   font-size: 1.25rem;
   color: var(--color-hueso);
   margin-bottom: 0.8rem;
-  line-height: 1.4;
 }
 
 .blog-body p {
@@ -495,51 +572,44 @@ h1, h2, h3, h4 {
   color: var(--color-hueso);
 }
 
-/* Configura la tarjeta completa para ocupar el alto adecuado */
-.specimen-card {
+/* ==========================================================================
+   8. PIE DE PÁGINA (Footer)
+   ========================================================================== */
+.main-footer {
+  background-color: var(--bg-dark-card);
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(196, 146, 62, 0.3);
+  margin-top: 3rem;
+}
+
+.footer-content {
   display: flex;
-  flex-direction: column;
-  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-/* El cuerpo interno de la tarjeta se estira verticalmente */
-.card-body {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; /* Ocupa todo el espacio vertical disponible */
-  padding: 1.5rem;
+.footer-content p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
 }
 
-/* Empuja el botón al fondo del contenedor */
-.card-body .btn-card {
-  margin-top: auto; 
-}
-
-/* Estilo para el enlace activo en el menú */
-.main-nav a.active {
-  color: var(--color-mostaza);
+.social-links a {
+  color: var(--color-hueso);
+  text-decoration: none;
+  margin-left: 1.2rem;
   font-weight: 700;
-  border-bottom: 2px solid var(--color-mostaza);
-  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--color-mostaza);
 }
 
 /* ==========================================================================
-   10. ANIMACIONES
+   9. LIGHTBOX Y MODALES
    ========================================================================== */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ==========================================
-   ESTILOS LIGHTBOX Y MÓVIL
-   ========================================== */
 .lightbox-trigger {
   cursor: pointer;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -583,7 +653,6 @@ h1, h2, h3, h4 {
   text-align: center;
   color: var(--color-hueso);
   padding: 12px 0;
-  font-family: var(--font-rubik);
   font-size: 1rem;
 }
 
@@ -602,12 +671,6 @@ h1, h2, h3, h4 {
   color: var(--color-mostaza);
 }
 
-@keyframes zoomIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-/* Botones de navegación del modal */
 .modal-nav-btn {
   position: absolute;
   top: 50%;
@@ -629,30 +692,11 @@ h1, h2, h3, h4 {
   color: var(--color-chocolate);
 }
 
-.modal-prev {
-  left: 20px;
-}
-
-.modal-next {
-  right: 20px;
-}
-
-/* Ajustes responsivos para pantallas pequeñas */
-@media (max-width: 768px) {
-  .modal-prev {
-    left: 10px;
-  }
-  .modal-next {
-    right: 10px;
-  }
-  .modal-nav-btn {
-    font-size: 1.5rem;
-    padding: 0.5rem 0.8rem;
-  }
-}
+.modal-prev { left: 20px; }
+.modal-next { right: 20px; }
 
 /* ==========================================================================
-   ESTILOS PÁGINA DE ERROR 404
+   10. PÁGINA DE ERROR 404
    ========================================================================== */
 .error-page {
   min-height: 65vh;
@@ -663,9 +707,7 @@ h1, h2, h3, h4 {
   padding: 4rem 1rem;
 }
 
-.error-content {
-  max-width: 600px;
-}
+.error-content { max-width: 600px; }
 
 .error-code {
   display: block;
@@ -674,52 +716,81 @@ h1, h2, h3, h4 {
   color: var(--color-mostaza);
   line-height: 1;
   margin-bottom: 0.5rem;
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-}
-
-.error-content h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--color-hueso);
-}
-
-.error-content p {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  margin-bottom: 2rem;
-}
-
-.error-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1.2rem;
-  flex-wrap: wrap;
 }
 
 /* ==========================================================================
-   DISPOSICIÓN DE TEXTO E IMAGEN AL COSTADO
+   11. ANIMACIONES Y MEDIA QUERIES (RESPONSIVE)
    ========================================================================== */
-.content-with-image {
-  display: grid;
-  grid-template-columns: 1fr 300px; /* Texto ocupa el espacio restante, imagen 300px */
-  gap: 2rem;
-  align-items: center;
-  margin-bottom: 2.5rem;
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.image-content img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* Adaptación responsive para celulares */
-@media (max-width: 768px) {
-  .content-with-image {
-    grid-template-columns: 1fr; /* Pasa a una sola columna en pantallas pequeñas */
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Tablet y Móvil */
+@media (max-width: 992px) {
+  .boas-layout {
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+  
+  .species-nav {
+    position: static;
+  }
+  
+  .species-tabs {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .tab-btn {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-hueso);
+    border-bottom: 2px solid var(--color-mostaza);
+    padding: 1rem 0;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+  }
+
+  .main-nav.nav-active {
+    display: block;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  .content-with-image {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .modal-prev { left: 10px; }
+  .modal-next { right: 10px; }
+  .modal-nav-btn { font-size: 1.5rem; padding: 0.5rem 0.8rem; }
 }
