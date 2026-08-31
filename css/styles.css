@@ -73,7 +73,7 @@ img {
 .main-header {
   background-color: var(--color-hueso);
   border-bottom: 2px solid var(--color-mostaza);
-  padding: 0.5rem 0; /* Reducido de 1rem para ganar espacio vertical */
+  padding: 0.5rem 0;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -87,7 +87,7 @@ img {
 
 .logo-text {
   font-family: var(--font-logo);
-  font-size: 2rem; /* Reducido ligeramente de 2.4rem */
+  font-size: 2rem;
   color: var(--color-chocolate);
   text-decoration: none;
   letter-spacing: 1px;
@@ -141,7 +141,7 @@ img {
 .hero {
   background: linear-gradient(135deg, rgba(43, 26, 18, 0.92), rgba(31, 18, 12, 0.95)), 
               url('../img/banner.jpg') center/cover no-repeat;
-  padding: 2.5rem 0 2rem 0; /* Reducido de 6rem */
+  padding: 2.5rem 0 2rem 0;
   text-align: center;
   border-bottom: 1px solid rgba(196, 146, 62, 0.2);
 }
@@ -205,7 +205,7 @@ img {
    5. LAYOUT DE NAVEGACIÓN Y PESTAÑAS (COMPACTADO)
    ========================================================================== */
 .about-summary {
-  padding: 2.5rem 0; /* Reducido de 5rem */
+  padding: 2.5rem 0;
   text-align: center;
 }
 
@@ -223,7 +223,7 @@ img {
 }
 
 .page-title {
-  padding: 1.25rem 0 1rem 0; /* Reducido de 3rem 0 1.5rem 0 */
+  padding: 1.25rem 0 1rem 0;
   text-align: center;
 }
 
@@ -243,13 +243,13 @@ img {
 
 /* Estructura Grid Compartida */
 .boas-section, .care-section {
-  padding: 1rem 0 3rem 0; /* Reducido de 2rem 0 5rem 0 */
+  padding: 1rem 0 3rem 0;
 }
 
 .boas-layout, .care-layout, .taxonomy-layout {
   display: grid;
   grid-template-columns: 240px 1fr;
-  gap: 1.5rem; /* Reducido de 2.5rem */
+  gap: 1.5rem;
   align-items: start;
 }
 
@@ -314,7 +314,7 @@ img {
   background-color: var(--bg-dark-card);
   border: 1px solid rgba(196, 146, 62, 0.25);
   border-radius: 10px;
-  padding: 1.5rem; /* Reducido de 2rem */
+  padding: 1.5rem;
 }
 
 .tab-panel {
@@ -378,7 +378,7 @@ img {
 .card-image {
   position: relative;
   width: 100%;
-  height: 130px; /* Reducido de 180px para acortar las tarjetas */
+  height: 130px;
   background-color: #120a06;
   overflow: hidden;
 }
@@ -424,7 +424,7 @@ img {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  padding: 1rem; /* Reducido de 1.5rem */
+  padding: 1rem;
 }
 
 .specimen-id {
@@ -467,7 +467,7 @@ img {
 }
 
 /* ==========================================================================
-   7. SECCIÓN SOBRE NOSOTROS & BLOG
+   7. SECCIÓN SOBRE NOSOTROS & ARTÍCULOS DEL BLOG
    ========================================================================== */
 .about-page-content {
   max-width: 850px;
@@ -480,7 +480,7 @@ img {
 
 .about-block h2, .about-block h3 {
   color: var(--color-mostaza);
-  margin-bottom: 0.5rem;
+  margin: 1.5rem 0 0.75rem 0;
   border-bottom: 1px solid rgba(196, 146, 62, 0.2);
   padding-bottom: 0.3rem;
 }
@@ -489,9 +489,64 @@ img {
   color: var(--color-hueso);
   font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 
+/* Listas en los artículos del Blog */
+.about-block ul {
+  margin: 1rem 0 1.5rem 1.5rem;
+  color: var(--color-hueso);
+}
+
+.about-block li {
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+
+.about-block li strong {
+  color: var(--color-mostaza);
+}
+
+/* Imagen proporcional al lado del texto */
+.post-content-with-img {
+  display: flex;
+  gap: 1.5rem;
+  align-items: stretch;
+  margin: 1.25rem 0;
+}
+
+.img-side {
+  width: 35%;
+  max-width: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(196, 146, 62, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+}
+
+.post-content-with-img p {
+  width: 65%;
+  margin: 0;
+}
+
+/* Imagen centrada a ancho completo */
+.post-img-centered {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.post-img-centered img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(196, 146, 62, 0.3);
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Tarjetas de vista previa en Blog.html */
 .blog-section {
   padding: 1rem 0 3rem 0;
 }
@@ -521,7 +576,7 @@ img {
 .blog-image {
   position: relative;
   width: 100%;
-  height: 140px; /* Reducido de 190px */
+  height: 140px;
   background-color: #120a06;
   overflow: hidden;
 }
@@ -799,6 +854,21 @@ img {
   .content-with-image {
     grid-template-columns: 1fr;
     gap: 1.25rem;
+  }
+
+  /* Ajuste de imágenes del blog para pantallas pequeñas */
+  .post-content-with-img {
+    flex-direction: column;
+  }
+
+  .img-side,
+  .post-content-with-img p {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .img-side {
+    max-height: 250px;
   }
 
   .modal-prev { left: 10px; }
