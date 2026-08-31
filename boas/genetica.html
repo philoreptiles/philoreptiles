@@ -314,7 +314,7 @@
   <!-- Título de la página -->
   <section class="page-title">
     <div class="container">
-      <h1>Introducción a la Genética y Morfos</h1>
+      <h1>Introducción a la genética en boas</h1>
       <p>Explora la ciencia y el arte detrás de los colores, patrones y herencia genética en boas.</p>
     </div>
   </section>
@@ -325,68 +325,207 @@
     <!-- Menú Lateral -->
     <aside class="genetics-nav">
       <h3>Temario</h3>
-      <button class="genetics-btn active-tab" onclick="switchTab(event, 'fundamentos')">1. Morfos y Fundamentos</button>
-      <button class="genetics-btn" onclick="switchTab(event, 'recesivos')">2. Genes Recesivos</button>
-      <button class="genetics-btn" onclick="switchTab(event, 'incompletos')">3. Dominancia Incompleta</button>
-      <button class="genetics-btn" onclick="switchTab(event, 'poligenicos')">4. Poligénicos y Pastelismos</button>
-      <button class="genetics-btn" onclick="switchTab(event, 'filosofia')">5. Valor y Visión Personal</button>
+      <button class="genetics-btn active-tab" onclick="switchTab(event, 'fundamentos')">1. Fundamentos</button>
+      <button class="genetics-btn" onclick="switchTab(event, 'recesivos')">2. Recesivos</button>
+      <button class="genetics-btn" onclick="switchTab(event, 'incompletos')">3. Dominantes incompletos</button>
+      <button class="genetics-btn" onclick="switchTab(event, 'poligenicos')">4. Poligénicos</button>
+      <button class="genetics-btn" onclick="switchTab(event, 'filosofia')">5. Valor y visión personal</button>
     </aside>
 
     <!-- Área de Contenido -->
     <section style="background-color: var(--bg-dark-card, #1e1e1e); padding: 2rem; border-radius: 8px; border: 1px solid rgba(196, 146, 62, 0.25); display: flex; flex-direction: column; justify-content: space-between;">
       
-      <div>
-        
-        <!-- PANEL 1: MORFOS Y FUNDAMENTOS BÁSICOS -->
-        <div id="fundamentos" class="tab-panel active-panel">
-          <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">De la Boa Silvestre al Universo de los Morfos</h2>
-          
-          <p>En el imaginario colectivo existe una idea bastante clara de cómo luce una boa: tonos grises o marrones acompañados por las clásicas “sillas de montar” a lo largo del cuerpo. Pero esa es solo una parte de la historia.</p>
-          
-          <p>Tanto en la naturaleza como en cautiverio, las boas presentan una diversidad sorprendente de colores, patrones y combinaciones. A estas variaciones se les conoce como <strong>morfos o fases</strong>. Un morfo es, en esencia, una expresión particular de color o patrón que distingue a ciertos ejemplares de la apariencia silvestre. Algunas variaciones existen de forma natural, mientras que muchas otras han surgido gracias a la crianza selectiva y al estudio de la herencia genética en cautiverio.</p>
+<div>
+<!-- PANEL 1: MORFOS Y FUNDAMENTOS BÁSICOS -->
+<div id="fundamentos" class="tab-panel active-panel">
 
-          <div class="info-card">
-            <h4>La Regla de las 2 Copias</h4>
-            <p style="margin: 0;">Para entender la genética en serpientes, vale la pena recordar este principio: <strong>cada boa hereda dos copias de cada gen</strong> (una de la madre y otra del padre).</p>
-          </div>
+  <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">
+    De la boa silvestre al universo de los morfos
+  </h2>
 
-          <div class="concept-grid">
-            <div class="concept-box">
-              <span class="badge badge-het">1 Copia</span>
-              <h4>Heterocigoto (Het)</h4>
-              <p style="margin: 0; font-size: 0.95rem;">Tiene <strong>una sola copia</strong> del gen. Cuando decimos que una boa es “Het para Albino”, significa que porta el gen, aunque no lo exprese visualmente.</p>
-            </div>
+  <p>
+    Cuando pensamos en una boa, probablemente imaginamos un animal de tonos grises o marrones,
+    con las características “sillas de montar” recorriendo el cuerpo. Esa apariencia, cercana a
+    la que encontramos en poblaciones silvestres, es nuestro punto de partida para entender algo
+    mucho más amplio: la diversidad de colores y patrones que puede presentar una boa.
+  </p>
 
-            <div class="concept-box">
-              <span class="badge badge-homo">2 Copias</span>
-              <h4>Homocigoto</h4>
-              <p style="margin: 0; font-size: 0.95rem;">Tiene <strong>las dos copias</strong> del mismo gen. En mutaciones recesivas, esto permite la expresión visual completa de la mutación.</p>
-            </div>
-          </div>
+  <p>
+    Algunas de estas diferencias forman parte de la variación natural de la especie, mientras que
+    otras son el resultado de mutaciones genéticas que pueden heredarse de una generación a otra.
+    En cautiverio, la selección y combinación de estas características ha dado lugar a numerosos
+    <strong>morfos</strong>: ejemplares cuya apariencia se distingue por determinados colores,
+    patrones o combinaciones de ambos.
+  </p>
 
-          <h3 style="color: var(--color-mostaza); margin-top: 2rem;">Términos Clave de Diagnóstico Genético</h3>
-          <ul>
-            <li><strong>Fenotipo (Lo que ves):</strong> Colores, patrones, tamaño... es la apariencia externa observable del animal.</li>
-            <li><strong>Genotipo (Lo que lleva en su ADN):</strong> Es la información genética interna que no vemos directamente, pero que define lo que el animal puede transmitir a su descendencia.</li>
-            <li><strong>Nominal / Normal / Wild Type:</strong> Ejemplar con la apariencia silvestre ancestral, sin mutaciones visibles.</li>
-            <li><strong>Visual:</strong> Ejemplar que expresa claramente una mutación en su aspecto físico.</li>
-            <li><strong>Posible Heterocigoto (Poss Het):</strong> A veces no se puede confirmar visualmente si un ejemplar porta un gen recesivo. En esos casos se habla de probabilidades genéticas (50% Poss Het, 66% Poss Het, etc.), dependiendo del cruce del que proviene.</li>
-          </ul>
-        </div>
+  <p>
+    Para comprender de dónde surgen estos morfos y cómo pueden transmitirse, primero necesitamos
+    conocer algunas ideas básicas de genética.
+  </p>
+
+
+  <!-- DOS COPIAS -->
+  <div class="info-card">
+    <h4>Dos copias, una de cada progenitor</h4>
+
+    <p style="margin: 0;">
+      Para muchos de los genes que estudiaremos, una boa posee
+      <strong>dos copias o alelos</strong>: una heredada de la madre y otra del padre.
+      La combinación de esas dos copias influye en las características que el animal expresa
+      y en aquellas que puede transmitir a su descendencia.
+    </p>
+  </div>
+
+
+  <!-- HET / HOMO -->
+  <div class="concept-grid">
+
+    <div class="concept-box">
+
+      <span class="badge badge-het">
+        Dos alelos distintos
+      </span>
+
+      <h4>Heterocigoto (Het)</h4>
+
+      <p style="margin: 0; font-size: 0.95rem;">
+        Un ejemplar es <strong>heterocigoto</strong> cuando posee dos versiones diferentes
+        de un mismo gen. En una mutación recesiva, una boa puede portar una copia de la mutación
+        sin mostrarla visualmente. Por eso, cuando encontramos términos como
+        <strong>“Het Albino”</strong>, significa que el animal porta esa mutación y puede
+        transmitirla.
+      </p>
+
+    </div>
+
+
+    <div class="concept-box">
+
+      <span class="badge badge-homo">
+        Dos alelos iguales
+      </span>
+
+      <h4>Homocigoto</h4>
+
+      <p style="margin: 0; font-size: 0.95rem;">
+        Un ejemplar es <strong>homocigoto</strong> cuando posee dos copias iguales de
+        un determinado alelo. En el caso de muchas mutaciones recesivas, recibir la copia
+        mutada de ambos progenitores es lo que permite que la característica se exprese
+        visualmente.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- FENOTIPO / GENOTIPO -->
+  <h3 style="color: var(--color-mostaza); margin-top: 2rem;">
+    Lo que vemos y lo que puede llevar una boa
+  </h3>
+
+  <p>
+    Hasta ahora hemos hablado de las copias que una boa puede recibir de sus progenitores.
+    Pero hay una diferencia importante entre <strong>lo que podemos observar en el animal</strong>
+    y la información genética que lleva consigo.
+  </p>
+
+
+  <div class="concept-grid">
+
+    <div class="concept-box">
+
+      <span class="badge badge-het">
+        Lo que vemos
+      </span>
+
+      <h4>Fenotipo</h4>
+
+      <p style="margin: 0; font-size: 0.95rem;">
+        Es el conjunto de características que podemos observar en una boa: su coloración,
+        patrón, tamaño y otras características físicas. Cuando una mutación se manifiesta
+        en la apariencia del animal, hablamos de un ejemplar
+        <strong>visual</strong> para esa mutación.
+      </p>
+
+    </div>
+
+
+    <div class="concept-box">
+
+      <span class="badge badge-homo">
+        Lo que lleva
+      </span>
+
+      <h4>Genotipo</h4>
+
+      <p style="margin: 0; font-size: 0.95rem;">
+        Es la información genética que posee el ejemplar. Parte de ella puede no ser evidente
+        a simple vista. Por ejemplo, una boa puede portar una mutación recesiva sin mostrarla
+        en su apariencia; en ese caso puede describirse como
+        <strong>heterocigota (Het)</strong> para esa mutación.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- POSS HET -->
+  <div class="info-card">
+
+    <h4>¿Y qué significa “Poss Het”?</h4>
+
+    <p style="margin: 0;">
+      En ocasiones sabemos que existe una posibilidad de que una boa porte una mutación recesiva,
+      pero no podemos confirmarlo únicamente por su apariencia. En estos casos se utiliza
+      <strong>Poss Het</strong> (posible heterocigoto), acompañado de una probabilidad como
+      <strong>50% Poss Het</strong> o <strong>66% Poss Het</strong>, calculada a partir de
+      la genética de sus progenitores.
+    </p>
+
+  </div>
+
+
+  <!-- NOMINAL -->
+  <p>
+    También encontrarás términos como <strong>Nominal</strong> o <strong>Normal</strong> 
+    para referirse a ejemplares que presentan una apariencia
+    silvestre y no expresan visualmente una mutación determinada.
+  </p>
+
+
+  <!-- CIERRE -->
+  <p>
+    Esta diferencia entre lo que vemos y lo que una boa lleva en su genética es fundamental
+    para entender los morfos. Dos ejemplares pueden parecer iguales y, sin embargo, tener
+    genotipos diferentes. Una boa que no muestra una mutación puede llevar una copia de ella
+    y transmitirla a su descendencia.
+  </p>
+
+  <p>
+    Con estas ideas como base, podemos comenzar a entender por qué algunas mutaciones aparecen
+    visualmente, otras pueden permanecer ocultas durante generaciones y ciertas combinaciones
+    producen resultados muy distintos. El siguiente paso es conocer
+    <strong>cómo se comportan estas mutaciones al heredarse</strong>.
+  </p>
+
+</div>
 
         <!-- PANEL 2: GENES RECESIVOS -->
         <div id="recesivos" class="tab-panel">
-          <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Herencia Recesiva</h2>
+          <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Herencia recesiva</h2>
           <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Mutaciones discretas que requieren dos copias para hacerse visibles.</p>
 
-          <p>Los <strong>genes recesivos</strong> necesitan imperativamente <strong>dos copias</strong> (homocigoto, una de cada progenitor) para manifestarse en la piel del ejemplar. Si la boa solo posee una copia, será un portador (heterocigoto / het) de aspecto silvestre o normal sin cambios aparentes.</p>
+          <p>Los <strong>genes recesivos</strong> necesitan obligatoriamente <strong>dos copias</strong> (homocigoto, una de cada progenitor) para manifestarse 
+            en la piel del ejemplar. Si la boa solo posee una copia, será un portador (heterocigoto / het) de aspecto silvestre o normal sin cambios aparentes.</p>
 
           <p><em>Ejemplos clásicos de genes recesivos:</em> Albino (Kahl, Sharp, VPI), Anery y Blood.</p>
 
           <!-- DIAGRAMA SVG DE ESFERAS -->
           <div class="genetics-diagram-box">
             <h3 style="color: #fff; text-align: center; margin-top: 0; margin-bottom: 0.5rem; font-size: 1.1rem;">
-              Representación Visual: Fenotipo (Ejemplar) vs. Genotipo (Genes)
+              Representación visual: Fenotipo vs. Genotipo 
             </h3>
             <p style="text-align: center; color: var(--text-muted, #aaa); font-size: 0.85rem; margin-bottom: 1.5rem;">
               La esfera exterior representa la apariencia visible del ejemplar. Las esferas interiores representan las dos copias del gen que posee.
@@ -427,7 +566,7 @@
                   <circle cx="44" cy="60" r="14" fill="#ed8936" stroke="#feebc8" stroke-width="2" />
                   <circle cx="76" cy="60" r="14" fill="#ed8936" stroke="#feebc8" stroke-width="2" />
                 </svg>
-                <strong style="color: #ed8936; margin-top: 0.75rem; display: block;">Albino Visual (aa)</strong>
+                <strong style="color: #ed8936; margin-top: 0.75rem; display: block;">Albino visual (aa)</strong>
                 <span style="font-size: 0.85rem; color: #a0aec0; margin-top: 0.25rem;">
                   Esfera exterior naranja.<br>2 copias recesivas visibles.
                 </span>
@@ -441,14 +580,14 @@
 <!-- CUADRO 1: NOMINAL x HET ALBINO -->
 <div class="punnett-container">
   <div class="punnett-title">1. Cruce: Nominal (NN) × Het Albino (Na)</div>
-  <div class="punnett-subtitle">Nomenclatura: <strong>N</strong> = Gene Normal | <strong>a</strong> = Gene Albino (Recesivo)</div>
+  <div class="punnett-subtitle">Nomenclatura: <strong>N</strong> = Gen nominal | <strong>a</strong> = Gen albino (recesivo)</div>
 
   <div class="punnett-table">
     <div class="punnett-cell cell-corner">♂ \ ♀</div>
-    <div class="punnett-cell cell-header">N <small>(Normal)</small></div>
+    <div class="punnett-cell cell-header">N <small>(Nominal)</small></div>
     <div class="punnett-cell cell-header">a <small>(Albino)</small></div>
 
-    <div class="punnett-cell cell-header">N <small>(Normal)</small></div>
+    <div class="punnett-cell cell-header">N <small>(Nominal)</small></div>
     <div class="punnett-cell cell-result">
       <span class="geno-tag">NN</span>
       <span class="pheno-tag">Nominal</span>
@@ -460,7 +599,7 @@
       <span class="percent-tag">25%</span>
     </div>
 
-    <div class="punnett-cell cell-header">N <small>(Normal)</small></div>
+    <div class="punnett-cell cell-header">N <small>(Nominal)</small></div>
     <div class="punnett-cell cell-result">
       <span class="geno-tag">NN</span>
       <span class="pheno-tag">Nominal</span>
@@ -474,11 +613,12 @@
   </div>
 
   <div class="punnett-legend">
-    <strong>Desglose de la Camada (Probabilidades por Cría):</strong>
+    <strong>Desglose de la camada (probabilidades por cría):</strong>
     <ul>
-      <li><strong>50% Nominal (NN):</strong> Ejemplares sin la mutación y sin capacidad de transmitir el gen albino.</li>
-      <li><strong>50% Het Albino (Na):</strong> Portadores del gen albino. Tienen fenotipo silvestre (se ven normales), pero transmiten el gen al 50% de su descendencia.</li>
-      <li><em>Nota: Visualmente toda la camada luce normal; los portadores se consideran <strong>50% Poss Het Albino</strong> al no poder distinguirse a simple vista de los nominales puros.</em></li>
+      <li><strong>50% Nominal (NN):</strong> Ejemplares nominales.</li>
+      <li><strong>50% Het Albino (Na):</strong> Ejemplares con aspecto nominal pero portadores de 1 copia del gen albino.</li>
+      <li><em>Nota: Visualmente toda la camada luce normal; cada cría es <strong>50% Het Albino</strong> pues no podemos determinar qué crías heredaron el gen 
+        albino.</em></li>
     </ul>
   </div>
 </div>
@@ -486,14 +626,14 @@
 <!-- CUADRO 2: HET ALBINO x HET ALBINO -->
 <div class="punnett-container">
   <div class="punnett-title">2. Cruce: Het Albino (Na) × Het Albino (Na)</div>
-  <div class="punnett-subtitle">Nomenclatura: <strong>N</strong> = Gene Normal | <strong>a</strong> = Gene Albino (Recesivo)</div>
+  <div class="punnett-subtitle">Nomenclatura: <strong>N</strong> = Gen nominal | <strong>a</strong> = Gen albino (recesivo)</div>
 
   <div class="punnett-table">
     <div class="punnett-cell cell-corner">♂ \ ♀</div>
-    <div class="punnett-cell cell-header">N <small>(Normal)</small></div>
+    <div class="punnett-cell cell-header">N <small>(Nominal)</small></div>
     <div class="punnett-cell cell-header">a <small>(Albino)</small></div>
 
-    <div class="punnett-cell cell-header">N <small>(Normal)</small></div>
+    <div class="punnett-cell cell-header">N <small>(Nominal)</small></div>
     <div class="punnett-cell cell-result">
       <span class="geno-tag">NN</span>
       <span class="pheno-tag">Nominal</span>
@@ -519,20 +659,20 @@
   </div>
 
   <div class="punnett-legend">
-    <strong>Desglose de la Camada (Probabilidades por Cría):</strong>
+    <strong>Desglose de la camada (probabilidades por cría):</strong>
     <ul>
-      <li><strong style="color: #ed8936;">25% Albino Visual (aa):</strong> Homocigotos recesivos que expresan la mutación física en su piel.</li>
-      <li><strong>50% Het Albino (Na):</strong> Ejemplares de apariencia normal pero portadores de 1 copia.</li>
-      <li><strong>25% Nominal (NN):</strong> Ejemplares silvestres puros sin la mutación.</li>
-      <li><em>Nota: De las crías de aspecto normal (75% del total), estadísticamente 2 de cada 3 son portadoras. Por ello, en el hobby a los ejemplares no visuales de este cruce se les etiqueta como <strong>66% Poss Het Albino</strong>.</em></li>
+      <li><strong style="color: #ed8936;">25% Albino visual (aa):</strong> Ejemplares homocigotos que expresan físicamente la mutación.</li>
+      <li><strong>50% Het Albino (Na):</strong> Ejemplares con aspecto nominal pero portadores de 1 copia del gen albino.</li>
+      <li><strong>25% Nominal (NN):</strong> Ejemplares nominales.</li>
+      <li><em>Nota: De las crías de aspecto nominal (75% del total), estadísticamente 2 de cada 3 son portadoras. Por ello, en el hobby a los ejemplares no visuales de este cruce se les etiqueta como <strong>66% Poss Het Albino</strong>.</em></li>
     </ul>
   </div>
 </div>
 
 <!-- CUADRO 3: NOMINAL x ALBINO VISUAL -->
 <div class="punnett-container">
-  <div class="punnett-title">3. Cruce: Nominal (NN) × Albino Visual (aa)</div>
-  <div class="punnett-subtitle">Nomenclatura: <strong>N</strong> = Gene Normal | <strong>a</strong> = Gene Albino (Recesivo)</div>
+  <div class="punnett-title">3. Cruce: Nominal (NN) × Albino visual (aa)</div>
+  <div class="punnett-subtitle">Nomenclatura: <strong>N</strong> = Gen nominal | <strong>a</strong> = Gen albino (recesivo)</div>
 
   <div class="punnett-table">
     <div class="punnett-cell cell-corner">♂ \ ♀</div>
@@ -567,16 +707,63 @@
   <div class="punnett-legend">
     <strong>Desglose de la Camada (Probabilidades por Cría):</strong>
     <ul>
-      <li><strong>100% Het Albino (Na):</strong> El progenitor albino (`aa`) aporta obligatoriamente un gen mutado a toda su descendencia. El progenitor nominal (`NN`) aporta un gen normal.</li>
-      <li><em>Nota: Todas las crías lucirán con fenotipo silvestre (normales), pero se garantiza genéticamente que el 100% son portadoras (<strong>100% Het Albino probados</strong>), sin necesidad de probarlas en reproducciones futuras.</em></li>
+      <li><strong>100% Het Albino (Na):</strong> El progenitor albino (aa) aporta obligatoriamente un gen mutado a toda su descendencia. El progenitor nominal (NN) 
+        aporta un gen normal.</li>
+      <li><em>Nota: Todas las crías lucirán como nominales, pero se garantiza genéticamente que el 100% son portadoras (<strong>Het Albino
+      </strong>), sin necesidad de probarlas en reproducciones futuras.</em></li>
     </ul>
   </div>
 </div>
 
-<!-- CUADRO 4: ALBINO VISUAL x ALBINO VISUAL -->
+<!-- CUADRO 4: HET ALBINO x ALBINO VISUAL -->
 <div class="punnett-container">
-  <div class="punnett-title">4. Cruce: Albino Visual (aa) × Albino Visual (aa)</div>
-  <div class="punnett-subtitle">Nomenclatura: <strong>N</strong> = Gene Normal | <strong>a</strong> = Gene Albino (Recesivo)</div>
+  <div class="punnett-title">4. Cruce: Het Albino (Na) × Albino visual (aa)</div>
+  <div class="punnett-subtitle">Nomenclatura: <strong>N</strong> = Gen nominal | <strong>a</strong> = Gen albino (recesivo)</div>
+
+  <div class="punnett-table">
+    <div class="punnett-cell cell-corner">♂ \ ♀</div>
+    <div class="punnett-cell cell-header">a <small>(Albino)</small></div>
+    <div class="punnett-cell cell-header">a <small>(Albino)</small></div>
+
+    <div class="punnett-cell cell-header">N <small>(Normal)</small></div>
+    <div class="punnett-cell cell-result">
+      <span class="geno-tag">Na</span>
+      <span class="pheno-tag">Het Albino</span>
+      <span class="percent-tag">25%</span>
+    </div>
+    <div class="punnett-cell cell-result">
+      <span class="geno-tag">Na</span>
+      <span class="pheno-tag">Het Albino</span>
+      <span class="percent-tag">25%</span>
+    </div>
+
+    <div class="punnett-cell cell-header">a <small>(Albino)</small></div>
+    <div class="punnett-cell cell-result" style="border-color: #ed8936; background: rgba(237, 137, 54, 0.15);">
+      <span class="geno-tag" style="color: #ed8936;">aa</span>
+      <span class="pheno-tag"><strong>ALBINO VISUAL</strong></span>
+      <span class="percent-tag" style="background: rgba(237, 137, 54, 0.3); color: #feebc8;">25%</span>
+    </div>
+    <div class="punnett-cell cell-result" style="border-color: #ed8936; background: rgba(237, 137, 54, 0.15);">
+      <span class="geno-tag" style="color: #ed8936;">aa</span>
+      <span class="pheno-tag"><strong>ALBINO VISUAL</strong></span>
+      <span class="percent-tag" style="background: rgba(237, 137, 54, 0.3); color: #feebc8;">25%</span>
+    </div>
+  </div>
+
+  <div class="punnett-legend">
+    <strong>Desglose de la camada (probabilidades por cría):</strong>
+    <ul>
+      <li><strong style="color: #ed8936;">50% Albino visual (aa):</strong> Ejemplares homocigotos que expresan físicamente la mutación.</li>
+      <li><strong>50% Het Albino (Na):</strong> Ejemplares con aspecto nominal pero portadores de 1 copia del gen albino.</li>
+      <li><em>Nota: Este cruce asegura que todas las crías de aspecto nominal sean <strong>Het Albino</strong>, eliminando la incertidumbre de los "poss hets".</em></li>
+    </ul>
+  </div>
+</div>
+
+<!-- CUADRO 5: ALBINO VISUAL x ALBINO VISUAL -->
+<div class="punnett-container">
+  <div class="punnett-title">5. Cruce: Albino visual (aa) × Albino visual (aa)</div>
+  <div class="punnett-subtitle">Nomenclatura: <strong>N</strong> = Gen nominal | <strong>a</strong> = Gen albino (Recesivo)</div>
 
   <div class="punnett-table">
     <div class="punnett-cell cell-corner">♂ \ ♀</div>
@@ -609,10 +796,11 @@
   </div>
 
   <div class="punnett-legend">
-    <strong>Desglose de la Camada (Probabilidades por Cría):</strong>
+    <strong>Desglose de la camada (probabilidades por cría):</strong>
     <ul>
-      <li><strong style="color: #ed8936;">100% Albino Visual (aa):</strong> Al no existir copias de genes normales (`N`) en ninguno de los dos padres, es imposible obtener descendencia de aspecto silvestre.</li>
-      <li><em>Nota: Es el cruce directo para fijar la mutación, donde el 100% de la camada expresa físicamente el morfo Albino.</em></li>
+      <li><strong style="color: #ed8936;">100% Albino visual (aa):</strong> Al no existir copias de genes nominales (N) en ninguno de los dos padres, 
+        todas las crías serán albinas.</li>
+      <li><em>Nota: Es el cruce definitivo para producir exclusivamente ejemplares visuales.</em></li>
     </ul>
   </div>
 </div>
@@ -620,7 +808,7 @@
 
 <!-- PANEL 3: DOMINANCIA INCOMPLETA -->
 <div id="incompletos" class="tab-panel">
-  <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Dominantes Incompletos (o Codominantes*)</h2>
+  <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Dominantes Incompletos (o codominantes*)</h2>
   <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Genes donde una copia altera el fenotipo y dos copias generan una Superforma.</p>
 
   <p>En este tipo de genes, una sola copia es suficiente para que el morfo sea visible. Cuando el ejemplar hereda las dos copias, el efecto no se repite simplemente: se intensifica o cambia, dando lugar a lo que comúnmente se conoce como <strong>Superforma</strong>.</p>
@@ -630,10 +818,10 @@
   <!-- DIAGRAMA SVG DE ESFERAS PARA DOMINANCIA INCOMPLETA -->
   <div class="genetics-diagram-box">
     <h3 style="color: #fff; text-align: center; margin-top: 0; margin-bottom: 0.5rem; font-size: 1.1rem;">
-      Representación Visual: Nominal vs. Jungle Visual vs. Super Jungle
+      Representación visual: Nominal vs. Jungle vs. Super Jungle
     </h3>
     <p style="text-align: center; color: var(--text-muted, #aaa); font-size: 0.85rem; margin-bottom: 1.5rem;">
-      A diferencia de los genes recesivos, una sola copia (jN) altera el aspecto exterior del ejemplar. Dos copias (jj) producen la Superforma.
+      A diferencia de los genes recesivos, una sola copia (Nj) altera el aspecto exterior del ejemplar. Dos copias (jj) producen la superforma.
     </p>
 
     <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1.5rem; text-align: center;">
@@ -658,7 +846,7 @@
           <circle cx="44" cy="60" r="14" fill="#718096" stroke="#cbd5e0" stroke-width="2" />
           <circle cx="76" cy="60" r="14" fill="#ab47bc" stroke="#e1bee7" stroke-width="2" />
         </svg>
-        <strong style="color: #e1bee7; margin-top: 0.75rem; display: block;">Jungle Visual (jN)</strong>
+        <strong style="color: #e1bee7; margin-top: 0.75rem; display: block;">Jungle (Nj)</strong>
         <span style="font-size: 0.85rem; color: #a0aec0; margin-top: 0.25rem;">
           Esfera exterior púrpura.<br>1 copia visible.
         </span>
@@ -681,17 +869,21 @@
   </div>
 
   <div class="note-box" style="margin-bottom: 1.5rem;">
-    <strong>*Aclaración Técnica sobre la Terminología:</strong><br>
-    En el mundo del hobby es común que a los genes dominantes incompletos se les llame “codominantes”. Aunque el término se ha popularizado, no es del todo preciso desde un punto de vista biológico. En la práctica, ambos se usan de forma intercambiable para describir genes cuya expresión cambia cuando están presentes en una o dos copias.<br><br>
-    Asimismo, aunque en mutaciones como <strong>Jungle</strong> la forma "Super" produce un cambio evidente y radical, esto no siempre ocurre de manera clara. En el caso de líneas como <strong>Hypo</strong>, la diferencia entre una y dos copias puede ser sutil, progresiva o difícil de distinguir, dependiendo del ejemplar y su linaje.
+    <strong>*Aclaración técnica sobre la terminología:</strong><br>
+    En el mundo del hobby es común que a los genes dominantes incompletos se les llame “codominantes”. Aunque el término se ha popularizado, no es del todo 
+    preciso desde un punto de vista biológico. En la práctica, ambos se usan de forma intercambiable para describir genes cuya expresión cambia cuando están 
+    presentes en una o dos copias.<br><br>
+    Asimismo, aunque en mutaciones como <strong>Jungle</strong> la forma "Super" produce un cambio evidente y radical, esto no siempre ocurre de manera clara. 
+    En el caso de líneas como <strong>Hypo</strong>, la diferencia entre una y dos copias puede ser sutil, progresiva o difícil de distinguir, dependiendo del 
+    ejemplar y su linaje.
   </div>
 
   <!-- SECCIÓN DE CUADROS DE PUNNETT (DOMINANCIA INCOMPLETA / JUNGLE) -->
 
 <!-- CUADRO 1: NOMINAL x JUNGLE VISUAL -->
 <div class="punnett-container">
-  <div class="punnett-title">1. Cruce: Nominal (NN) × Jungle Visual (Nj)</div>
-  <div class="punnett-subtitle">Nomenclatura: <strong>N</strong> = Gene Nominal | <strong>j</strong> = Gene Jungle (Dominante Incompleto)</div>
+  <div class="punnett-title">1. Cruce: Nominal (NN) × Jungle(Nj)</div>
+  <div class="punnett-subtitle">Nomenclatura: <strong>N</strong> = Gen nominal | <strong>j</strong> = Gen Jungle (Dominante incompleto)</div>
 
   <div class="punnett-table">
     <div class="punnett-cell cell-corner">♂ \ ♀</div>
@@ -706,7 +898,7 @@
     </div>
     <div class="punnett-cell cell-result">
       <span class="geno-tag">Nj</span>
-      <span class="pheno-tag">Jungle Visual</span>
+      <span class="pheno-tag">Jungle</span>
       <span class="percent-tag">25%</span>
     </div>
 
@@ -718,25 +910,25 @@
     </div>
     <div class="punnett-cell cell-result">
       <span class="geno-tag">Nj</span>
-      <span class="pheno-tag">Jungle Visual</span>
+      <span class="pheno-tag">Jungle</span>
       <span class="percent-tag">25%</span>
     </div>
   </div>
 
   <div class="punnett-legend">
-    <strong>Desglose de la Camada (Probabilidades por Cría):</strong>
+    <strong>Desglose de la camada (probabilidades por cría):</strong>
     <ul>
-      <li><strong>50% Jungle Visual (Nj):</strong> Ejemplares heterocigotos que heredan 1 copia del gen y expresan visiblemente la alteración de patrón.</li>
-      <li><strong>50% Nominal (NN):</strong> Ejemplares silvestres puros sin el gen Jungle.</li>
-      <li><em>Nota: En los genes dominantes incompletos no existen porta-genes ocultos ("hets"); si la boa porta el gen, lo expresa visualmente.</em></li>
+      <li><strong>50% Jungle (Nj):</strong> Ejemplares heterocigotos que heredan 1 copia del gen y expresan visiblemente la alteración de patrón.</li>
+      <li><strong>50% Nominal (NN):</strong> Ejemplares nominales.</li>
+      <li><em>Nota: En los genes dominantes incompletos no existen los portadores (hets); si la boa porta el gen, lo expresa visualmente.</em></li>
     </ul>
   </div>
 </div>
 
 <!-- CUADRO 2: JUNGLE VISUAL x JUNGLE VISUAL -->
 <div class="punnett-container">
-  <div class="punnett-title">2. Cruce: Jungle Visual (Nj) × Jungle Visual (Nj)</div>
-  <div class="punnett-subtitle">Nomenclatura: <strong>N</strong> = Gene Nominal | <strong>j</strong> = Gene Jungle (Dominante Incompleto)</div>
+  <div class="punnett-title">2. Cruce: Jungle(Nj) × Jungle(Nj)</div>
+  <div class="punnett-subtitle">Nomenclatura: <strong>N</strong> = Gen nominal | <strong>j</strong> = Gen Jungle (Dominante incompleto)</div>
 
   <div class="punnett-table">
     <div class="punnett-cell cell-corner">♂ \ ♀</div>
@@ -751,14 +943,14 @@
     </div>
     <div class="punnett-cell cell-result">
       <span class="geno-tag">Nj</span>
-      <span class="pheno-tag">Jungle Visual</span>
+      <span class="pheno-tag">Jungle</span>
       <span class="percent-tag">25%</span>
     </div>
 
     <div class="punnett-cell cell-header">j <small>(Jungle)</small></div>
     <div class="punnett-cell cell-result">
       <span class="geno-tag">Nj</span>
-      <span class="pheno-tag">Jungle Visual</span>
+      <span class="pheno-tag">Jungle</span>
       <span class="percent-tag">25%</span>
     </div>
     <div class="punnett-cell cell-result" style="border-color: #ab47bc; background: rgba(156, 39, 176, 0.15);">
@@ -769,11 +961,11 @@
   </div>
 
   <div class="punnett-legend">
-    <strong>Desglose de la Camada (Probabilidades por Cría):</strong>
+    <strong>Desglose de la camada (probabilidades por cría):</strong>
     <ul>
       <li><strong style="color: #e1bee7;">25% Super Jungle (jj):</strong> Forma homocigota que reúne 2 copias del gen (Superforma).</li>
-      <li><strong>50% Jungle Visual (Nj):</strong> Ejemplares heterocigotos con 1 copia del gen.</li>
-      <li><strong>25% Nominal (NN):</strong> Ejemplares de patrón ancestral sin el gen Jungle.</li>
+      <li><strong>50% Jungle (Nj):</strong> Ejemplares heterocigotos con 1 copia del gen.</li>
+      <li><strong>25% Nominal (NN):</strong> Ejemplares nominales.</li>
     </ul>
   </div>
 </div>
@@ -781,7 +973,7 @@
 <!-- CUADRO 3: NOMINAL x SUPER JUNGLE -->
 <div class="punnett-container">
   <div class="punnett-title">3. Cruce: Nominal (NN) × Super Jungle (jj)</div>
-  <div class="punnett-subtitle">Nomenclatura: <strong>N</strong> = Gene Nominal | <strong>j</strong> = Gene Jungle (Dominante Incompleto)</div>
+  <div class="punnett-subtitle">Nomenclatura: <strong>N</strong> = Gen nominal | <strong>j</strong> = Gen Jungle (Dominante incompleto)</div>
 
   <div class="punnett-table">
     <div class="punnett-cell cell-corner">♂ \ ♀</div>
@@ -791,32 +983,33 @@
     <div class="punnett-cell cell-header">N <small>(Nominal)</small></div>
     <div class="punnett-cell cell-result">
       <span class="geno-tag">Nj</span>
-      <span class="pheno-tag">Jungle Visual</span>
+      <span class="pheno-tag">Jungle</span>
       <span class="percent-tag">100% Total</span>
     </div>
     <div class="punnett-cell cell-result">
       <span class="geno-tag">Nj</span>
-      <span class="pheno-tag">Jungle Visual</span>
+      <span class="pheno-tag">Jungle</span>
       <span class="percent-tag">100% Total</span>
     </div>
 
     <div class="punnett-cell cell-header">N <small>(Nominal)</small></div>
     <div class="punnett-cell cell-result">
       <span class="geno-tag">Nj</span>
-      <span class="pheno-tag">Jungle Visual</span>
+      <span class="pheno-tag">Jungle</span>
       <span class="percent-tag">100% Total</span>
     </div>
     <div class="punnett-cell cell-result">
       <span class="geno-tag">Nj</span>
-      <span class="pheno-tag">Jungle Visual</span>
+      <span class="pheno-tag">Jungle</span>
       <span class="percent-tag">100% Total</span>
     </div>
   </div>
 
   <div class="punnett-legend">
-    <strong>Desglose de la Camada (Probabilidades por Cría):</strong>
+    <strong>Desglose de la camada (probabilidades por cría):</strong>
     <ul>
-      <li><strong style="color: #e1bee7;">100% Jungle Visual (Nj):</strong> Al ser un progenitor homocigoto (`jj`), transmite obligatoriamente una copia del gen a toda su descendencia, garantizando un 100% de crías Jungle.</li>
+      <li><strong style="color: #e1bee7;">100% Jungle (Nj):</strong> Al ser un progenitor homocigoto (jj), transmite obligatoriamente una copia del gen a 
+        toda su descendencia, garantizando un 100% de crías Jungle.</li>
     </ul>
   </div>
 </div>
@@ -824,23 +1017,26 @@
 
 <!-- PANEL 4: POLIGÉNICOS Y PASTELISMOS -->
 <div id="poligenicos" class="tab-panel">
-  <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Poligénicos y Pastelismos (Selección de Línea)</h2>
-  <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Crianza selectiva acumulativa: el arte de moldear tonalidades a lo largo del tiempo.</p>
+  <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Poligénicos (selección de línea)</h2>
+  <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Crianza selectiva acumulativa: el arte de moldear tonalidades a lo largo del 
+    tiempo.</p>
 
-  <p>Aquí no hay un solo “interruptor genético”. Estos rasgos dependen de la interacción de múltiples genes y se desarrollan gradualmente mediante selección a lo largo de generaciones.</p>
+  <p>Aquí no hay un solo “interruptor genético”. Estos rasgos dependen de la interacción de múltiples genes y se desarrollan gradualmente mediante selección a lo 
+    largo de generaciones.</p>
 
   <div class="info-card">
-    <h4>Sin "Hets" ni Atajos</h4>
-    <p style="margin: 0;">No existen “hets” en este caso. En lugar de eso, los rasgos se refinan y acentúan con el tiempo, generación tras generación, eligiendo siempre a los progenitores con mejor calidad de color o patrón.</p>
+    <h4>Sin "Hets" ni atajos</h4>
+    <p style="margin: 0;">No existen <strong>hets</strong> en este caso. En lugar de eso, los rasgos se refinan y acentúan con el tiempo, generación tras generación, 
+      eligiendo siempre a los progenitores con mejor calidad de color o patrón.</p>
   </div>
 
   <!-- DIAGRAMA SVG DE CLUSTERS PARA POLIGÉNICOS -->
   <div class="genetics-diagram-box" style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
     <h3 style="color: #fff; text-align: center; margin-top: 0; margin-bottom: 0.5rem; font-size: 1.1rem;">
-      Representación Visual: Acción Conjunta (Clusters Poligénicos)
+      Representación visual: Acción conjunta (clusters poligénicos)
     </h3>
     <p style="text-align: center; color: var(--text-muted, #aaa); font-size: 0.85rem; margin-bottom: 1.5rem;">
-      Las esferas dentro de cada grupo representan micro-genes individuales que actúan en red. Su efecto sumatorio es lo que define el resultado pastel.
+      Las esferas dentro de cada grupo representan micro-genes individuales que actúan en red. Su efecto sumatorio es lo que define el resultado.
     </p>
 
     <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem; text-align: center;">
@@ -868,9 +1064,9 @@
           <circle cx="130" cy="130" r="20" fill="#fef08a" stroke="#eab308" stroke-width="3" />
           <circle cx="70" cy="130" r="20" fill="#fef08a" stroke="#eab308" stroke-width="3" />
         </svg>
-        <strong style="color: #fef08a; margin-top: 0.75rem; display: block;">Cluster A: Factores de Limpieza</strong>
+        <strong style="color: #fef08a; margin-top: 0.75rem; display: block;">Cluster A: Factores de limpieza</strong>
         <span style="font-size: 0.85rem; color: #a0aec0; margin-top: 0.25rem;">
-          Red de micro-genes enfocados en la eliminación progresiva de pigmentos negros y grises (Líneas PD / RC).
+          Red de micro-genes enfocados en la eliminación progresiva de pigmentos negros y grises.
         </span>
       </div>
 
@@ -897,9 +1093,9 @@
           <circle cx="130" cy="130" r="20" fill="#fda4af" stroke="#f43f5e" stroke-width="3" />
           <circle cx="70" cy="130" r="20" fill="#fda4af" stroke="#f43f5e" stroke-width="3" />
         </svg>
-        <strong style="color: #fda4af; margin-top: 0.75rem; display: block;">Cluster B: Saturalización de Tono</strong>
+        <strong style="color: #fda4af; margin-top: 0.75rem; display: block;">Cluster B: Saturalización de tono</strong>
         <span style="font-size: 0.85rem; color: #a0aec0; margin-top: 0.25rem;">
-          Grupo de micro-genes que intensifican el brillo, los pigmentos amarillos, rosados y rojos (Línea Ferrari / Rojos).
+          Grupo de micro-genes que intensifican el brillo, los pigmentos amarillos, rosados y rojos.
         </span>
       </div>
     </div>
@@ -908,61 +1104,72 @@
   <!-- SUBSECCIÓN: HERENCIA CONTINUA Y CRITERIO DE SELECCIÓN -->
 <div class="herencia-seleccion-box" style="margin-top: 2rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 1.5rem;">
   <h3 style="color: var(--color-mostaza); margin-top: 0; margin-bottom: 0.75rem;">
-    Herencia Gradual: Gradiente en la Camada y Criterio del Criador
+    Herencia gradual: Gradiente en la camada y criterio del criador
   </h3>
   
-  <p>A diferencia de la genética mendeliana simple (donde un gen presente o ausente determina un resultado "sí/no"), en los rasgos poligénicos la herencia funciona como un <strong>espectro continuo</strong>. Debido a la combinación aleatoria de múltiples micro-genes, las crías de una misma camada no nacerán idénticas entre sí ni expresarán la misma calidad cromática.</p>
+  <p>A diferencia de la genética mendeliana simple (donde un gen presente o ausente determina un resultado "sí/no"), en los rasgos poligénicos la herencia funciona 
+    como un <strong>espectro continuo</strong>. Debido a la combinación aleatoria de múltiples micro-genes, las crías de una misma camada no nacerán idénticas entre 
+    sí ni expresarán la misma calidad cromática.</p>
 
   <!-- ESPECTRO DE VARIACIÓN DENTRO DE LA CAMADA -->
   <div style="margin: 1.5rem 0;">
-    <strong style="color: #fff; display: block; margin-bottom: 0.75rem;">Gradiente de Expresión en una Misma Camada:</strong>
+    <strong style="color: #fff; display: block; margin-bottom: 0.75rem;">Gradiente de expresión en una misma camada:</strong>
     
     <ul style="padding-left: 1.2rem; margin: 0;">
       <li style="margin-bottom: 0.75rem;">
-        <strong style="color: #fef08a;">Ejemplares Sobresalientes ("High Grade"):</strong> Nacen con una concentración óptima de los micro-genes deseados. Muestran la máxima limpieza, brillo o saturación de la camada, superando o igualando a sus progenitores.
+        <strong style="color: #fef08a;">Ejemplares sobresalientes ("High grade"):</strong> Nacen con una concentración óptima de los micro-genes deseados. 
+        Muestran la máxima limpieza, brillo o saturación de la camada, superando o igualando a sus progenitores.
       </li>
       <li style="margin-bottom: 0.75rem;">
-        <strong>Ejemplares Promedio ("Mid Grade"):</strong> Presentan una expresión moderada del rasgo. Muestran un avance respecto a una boa nominal, pero sin alcanzar el brillo o contraste superior de los mejores hermanos.
+        <strong>Ejemplares promedio ("Mid grade"):</strong> Presentan una expresión moderada del rasgo. Muestran un avance respecto a una boa nominal, 
+        pero sin alcanzar el brillo o contraste superior de los mejores hermanos.
       </li>
       <li style="margin-bottom: 0.5rem;">
-        <strong style="color: var(--text-muted, #aaa);">Ejemplares de Baja Expresión ("Low Grade"):</strong> Heredan muy pocos o ningún micro-gen del complejo pastel. Visualmente pueden parecer casi nominales, a pesar de provenir de padres de línea seleccionada.
+        <strong style="color: var(--text-muted, #aaa);">Ejemplares de baja expresión ("Low grade"):</strong> Heredan muy pocos o ningún micro-gen. 
+        Visualmente pueden parecer casi nominales, a pesar de provenir de padres de línea seleccionada.
       </li>
     </ul>
   </div>
 
   <!-- TARJETA DESTACADA: EL ROL DEL CRIADOR -->
   <div class="info-card" style="border-left: 4px solid var(--color-mostaza); background: rgba(234, 179, 8, 0.08); margin-bottom: 0;">
-    <h4 style="margin-top: 0; color: #fff;">El Rol del Criador en el "Mejoramiento de Línea"</h4>
+    <h4 style="margin-top: 0; color: #fff;">El Rol del Criador en el "Mejoramiento de línea"</h4>
     <p style="margin: 0; font-size: 0.95rem; line-height: 1.5;">
-      El progreso de una línea no ocurre de forma automática solo por cruzar dos ejemplares pastel. Es decisión directa y activa del criador evaluar minuciosamente cada camada, <strong>seleccionando únicamente a los ejemplares sobresalientes</strong> para continuar el programa de reproducción. Al destinar solo los mejores fenotipos a las siguientes generaciones, la línea genotípica se fortalece y estabiliza paulatinamente con los años.
+      El progreso de una línea no ocurre de forma automática solo por cruzar dos ejemplares seleccionados. Es decisión directa y activa del criador evaluar 
+      minuciosamente cada camada, <strong>seleccionando únicamente a los ejemplares sobresalientes</strong> para continuar el programa de reproducción. 
+      Al destinar solo los mejores fenotipos a las siguientes generaciones, la línea genotípica se fortalece y estabiliza paulatinamente con los años.
     </p>
   </div>
 </div>
 
-  <h3 style="color: var(--color-mostaza); margin-top: 2rem;">Los Pastelismos en el Hobby</h3>
-  <p>Los pastelismos corresponden a líneas de selección dedicadas a limpiar los pigmentos oscuros y acentuar la luminosidad cromática del animal. Ejemplos conocidos dentro del hobby incluyen:</p>
+  <h3 style="color: var(--color-mostaza); margin-top: 2rem;">Pastelismos</h3>
+  <p>Los pastelismos corresponden a líneas de selección dedicadas a limpiar los pigmentos oscuros y acentuar la luminosidad cromática del animal. 
+    Ejemplos conocidos incluyen:</p>
 
   <ul>
     <li><strong>Línea RC (Richard Ceniceros):</strong> Destacada por su notable claridad y marcado contraste.</li>
     <li><strong>Línea PD (Pastel Dream):</strong> Reconocida por limpiar los tonos grises e intensificar el brillo natural.</li>
-    <li><strong>Línea Ferrari:</strong> Crianza selectiva enfocada en lograr colores pastel sumamente limpios y encendidos.</li>
-    <li><strong>Proyectos de Intensificación de Rojos y Rosados:</strong> Líneas orientadas a acentuar los matices rojizos de la cola y tonos rosáceos en los costados.</li>
+    <li><strong>Línea Ferrari:</strong> Crianza selectiva enfocada en acentuar los matices rojizos.</li>
   </ul>
 </div>
 
         <!-- PANEL 5: FILOSOFÍA Y VALOR -->
         <div id="filosofia" class="tab-panel">
-          <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Valoración, Coleccionismo y Visión Personal</h2>
+          <h2 style="color: var(--color-mostaza); margin-bottom: 0.5rem;">Valoración, coleccionismo y visión personal</h2>
           <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">Cada boa es un ejemplar único en constante evolución.</p>
 
-          <p>A opinión personal, todas las boas tienen algo que las hace únicas. Puede ser una mancha en algún punto del cuerpo, un contraste particular o un color en los costados que llama la atención.</p>
+          <p>A opinión personal, todas las boas tienen algo que las hace únicas. Puede ser una mancha en algún punto del cuerpo, un contraste particular o un color 
+            en los costados que llama la atención.</p>
 
-          <p>Con el tiempo, uno empieza a desarrollar preferencias. En mi caso, me atraen especialmente la <strong>línea Sterling</strong> y las <strong>líneas poligénicas que tienden a producir boas con tonos rosados</strong>.</p>
+          <p>Con el tiempo, uno empieza a desarrollar preferencias. En mi caso, me atraen especialmente la <strong>línea Sterling</strong> y las <strong>líneas 
+            poligénicas que tienden a producir boas con tonos rosados</strong>.</p>
 
           <h3 style="color: var(--color-mostaza); margin-top: 1.5rem;">¿Por qué varía tanto su valor?</h3>
-          <p>Entender cómo se transmiten estas características, por qué una boa es distinta a otra y, más aún, por qué existe una diferencia tan marcada en su valor —desde ejemplares más accesibles hasta otros mucho más costosos— cambia por completo la forma de verlas.</p>
+          <p>Entender cómo se transmiten estas características, por qué una boa es distinta a otra y, más aún, por qué existe una diferencia tan marcada en su 
+            valor —desde ejemplares más accesibles hasta otros mucho más costosos— cambia por completo la forma de verlas.</p>
 
-          <p>Con el tiempo también cambian las cosas: surgen nuevos morfos, se entiende mejor lo que ya existe y lo que hoy es popular puede dejar de serlo mañana. Es un mundo en constante movimiento, y parte del proceso es mantenerse aprendiendo. Al final, cada boa es eso: un ejemplar único.</p>
+          <p>Con el tiempo también cambian las cosas: surgen nuevos morfos, se entiende mejor lo que ya existe y lo que hoy es popular puede dejar de serlo mañana. 
+            Es un mundo en constante movimiento, y parte del proceso es mantenerse aprendiendo. Al final, cada boa es eso: un ejemplar único.</p>
         </div>
 
       </div>
