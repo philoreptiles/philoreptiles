@@ -136,6 +136,73 @@ img {
 }
 
 /* ==========================================================================
+   MENÚ DESPLEGABLE CORREGIDO (SIN HUECOS DE INTERACCIÓN)
+   ========================================================================== */
+
+/* Contenedor del enlace principal */
+.main-nav ul li.dropdown {
+  position: relative;
+}
+
+/* Submenú desplegable */
+.main-nav .dropdown-menu {
+  display: none !important;
+  position: absolute;
+  top: 100%; /* Pegado justo debajo del botón */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #FFF2D9;
+  border: 1px solid rgba(196, 146, 62, 0.4);
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  padding: 0.5rem 0;
+  min-width: 200px;
+  z-index: 1000;
+  margin-top: 0; /* Se elimina el margen que rompía la detección */
+  list-style: none;
+}
+
+/* Puente invisible que detecta el mouse al desplazarse hacia abajo */
+.main-nav .dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: transparent;
+}
+
+/* Mantiene el menú abierto mientras el mouse esté sobre el botón o el menú */
+.main-nav li.dropdown:hover .dropdown-menu {
+  display: flex !important;
+  flex-direction: column;
+}
+
+/* Opciones individuales */
+.main-nav .dropdown-menu li {
+  width: 100%;
+  margin: 0;
+}
+
+.main-nav .dropdown-menu a {
+  display: block;
+  padding: 0.6rem 1.2rem;
+  color: #3a2412;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border: none !important;
+}
+
+.main-nav .dropdown-menu a:hover {
+  background-color: var(--color-mostaza);
+  color: #2B1A12;
+}
+
+/* ==========================================================================
    4. SECCIÓN HERO (COMPACTADO)
    ========================================================================== */
 .hero {
