@@ -24,7 +24,17 @@
         <ul>
           <li><a href="index.html">Inicio</a></li>
           <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
-          <li><a href="boas.html">Boas</a></li>
+          
+          <!-- Menú desplegable de Boas -->
+          <li class="dropdown">
+            <a href="boas.html">Boas <span class="arrow">&#9662;</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="boas/taxonomia.html">Taxonomía</a></li>
+              <li><a href="boas/cuidados.html">Cuidados en cautiverio</a></li>
+              <li><a href="boas/genetica.html">Genética</a></li>
+            </ul>
+          </li>
+
           <li><a href="blog.html">Blog</a></li>
           <li><a href="ejemplares.html">Ejemplares</a></li>
         </ul>
@@ -37,10 +47,9 @@
     <div class="error-content">
       <span class="error-code">404</span>
       <h1>¡Ups! Este terrario está vacío</h1>
-      <p>Parece que el enlace que buscas cambió de piel, no existe o se movió de sitio.</p>
+      <p>Parece que el enlace que buscas cambió de piel, no existe o se movió de sitio.</p><br>
       <div class="error-buttons">
         <a href="index.html" class="btn btn-primary">Volver al Inicio</a>
-        <a href="ejemplares.html" class="btn btn-primary">Ver Ejemplares</a>
       </div>
     </div>
   </main>

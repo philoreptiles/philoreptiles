@@ -26,8 +26,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
   <!-- Hoja de estilos local -->
-  <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/styles.css?v=2">
 
   <!-- Favicon Único y Directo -->
   <link rel="icon" type="image/png" href="img/favicon.png?v=999">
@@ -61,77 +62,165 @@
     </div>
   </header>
 
-  <!-- Explorando el mundo de las boas -->
-  <section class="hero">
-    <div class="container">
-      <h1>Explorando el mundo de las boas</h1>
-      <p>Philoreptiles es un espacio dedicado a la divulgación y el aprendizaje continuo en el mundo de las boas. Compartimos experiencias, observaciones y 
-        conocimientos de forma clara y honesta, documentando el proceso y promoviendo una herpetocultura responsable.</p>
+<!-- Explorando el mundo de las boas -->
+<!-- Hero Principal (2 Columnas) -->
+<section class="hero-section">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <h2>Explorando el mundo de las boas</h2>
+      <p>
+        Philoreptiles es un espacio dedicado a la divulgación y el aprendizaje continuo en el mundo de las boas. Compartimos experiencias, observaciones y conocimientos para promover una herpetocultura responsable.
+      </p>
       <div class="hero-buttons">
-        <a href="sobre-nosotros.html" class="btn btn-primary">Leer más</a>
+        <a href="blog.html" class="btn btn-primary">Leer más</a>
       </div>
     </div>
-  </section>
+    <div class="hero-image">
+      <img src="img/boa.png" alt="Boa imperator - Philoreptiles" onerror="this.src='https://via.placeholder.com/600x400/2B1A12/FFF2D9?text=Boa+Philoreptiles'">
+    </div>
+  </div>
+</section>
 
-  <!-- Sección Blog -->
-  <section class="hero">
-    <div class="container">
-      <h1>Blog</h1>
+<!-- Sección Hub de Boas (Categorías Rápidas) -->
+<section class="boas-hub-section" style="margin: 4rem 0;">
+  <div class="container" style="text-align: center;">
+    <h2>Lo que te podría interesar</h2>
+    <p style="color: var(--text-muted); max-width: 650px; margin: 0.5rem auto 2.5rem auto;">
+      Accede directamente a nuestras secciones especializadas sobre sistemática, parámetros de mantenimiento y herencia genética.
+    </p>
+
+    <!-- BLOQUE GRID CENTRADO -->
+    <div class="specimen-grid" style="justify-content: center; margin: 2rem auto; text-align: left;">
       
-      <!-- GRID DE POSTS (ENTRADAS RECIENTES) -->
-      <div class="blog-grid" style="margin: 2rem 0; text-align: left;">
-        
-        <!-- Entrada 1 -->
-        <article class="blog-card">
-          <a href="posts/post_bienvenida.html" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;">
-            <div class="blog-image">
-              <img src="img/Profile_IG.png" alt="Profile">
-              <span class="blog-category">Reflexión</span>
-            </div>
-            <div class="blog-body">
-              <span class="blog-date">23 de junio, 2026</span>
-              <h3>Un espacio para aprender sobre boas</h3>
-              <p>Este espacio nace de algo bastante sencillo: nuestro interés por las boas y las ganas de compartir todo aquello que hemos aprendido —y seguimos aprendiendo— sobre ellas.</p>
-              <span class="read-more">Leer artículo &rarr;</span>
-            </div>
-          </a>
-        </article>
+      <!-- Tarjeta 1: Taxonomía -->
+      <article class="specimen-card">
+        <div class="card-image">
+          <img src="img/imperator.png" alt="Taxonomía" onerror="this.src='https://via.placeholder.com/400x220/2B1A12/FFF2D9?text=Taxonom%C3%ADa'">
+          <span class="badge badge-collection">Biología</span>
+        </div>
+        <div class="card-body">
+          <h3>Taxonomía</h3>
+          <p class="genetics">Clasificación y distribución</p>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+            Diferencias entre especies, subespecies y variaciones morfológicas por región geográfica.
+          </p>
+          <a href="boas/taxonomia.html" class="btn btn-primary btn-card">Explorar taxonomía</a>
+        </div>
+      </article>
 
-        <!-- Entrada 2 -->
-        <article class="blog-card">
-          <a href="posts/blog1.html" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;">
-            <div class="blog-image">
-              <img src="img/nfi.jpg" alt="¿Un nuevo albinismo?">
-              <span class="blog-category">Noticias</span>
-            </div>
-            <div class="blog-body">
-              <span class="blog-date">06 de agosto, 2026</span>
-              <h3>¿Un nuevo albinismo?</h3>
-              <p>Durante casi dos décadas, los criadores de boas se han enfrentado a un rompecabezas genético que no encajaba en ninguna de las reglas conocidas.</p>
-              <span class="read-more">Leer artículo &rarr;</span>
-            </div>
-          </a>
-        </article>
-      </div>
+      <!-- Tarjeta 2: Cuidados en Cautiverio -->
+      <article class="specimen-card">
+        <div class="card-image">
+          <img src="img/guia.png" alt="Cuidados en cautiverio" onerror="this.src='https://via.placeholder.com/400x220/2B1A12/FFF2D9?text=Cuidados'">
+          <span class="badge badge-available">Manutención</span>
+        </div>
+        <div class="card-body">
+          <h3>Cuidados en cautiverio</h3>
+          <p class="genetics">Parámetros y bienestar</p>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+            Guías sobre temperatura, humedad, recintos y mantenimiento responsable.
+          </p>
+          <a href="boas/cuidados.html" class="btn btn-primary btn-card">Explorar cuidados</a>
+        </div>
+      </article>
 
-      <!-- BOTÓN DE ACCIÓN -->
-      <div class="hero-buttons">
-        <a href="blog.html" class="btn btn-primary">Todas las entradas</a>
-      </div>
+      <!-- Tarjeta 3: Genética -->
+      <article class="specimen-card">
+        <div class="card-image">
+          <img src="img/genetica.jpg" alt="Genética" onerror="this.src='https://via.placeholder.com/400x220/2B1A12/FFF2D9?text=Gen%C3%A9tica'">
+          <span class="badge badge-project">Herpetocultura</span>
+        </div>
+        <div class="card-body">
+          <h3>Genética</h3>
+          <p class="genetics">Herencia y mutaciones</p>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+            Principios genéticos, genes dominantes, recesivos y combinaciones populares en cautiverio.
+          </p>
+          <a href="boas/genetica.html" class="btn btn-primary btn-card">Explorar genética</a>
+        </div>
+      </article>
+
     </div>
-  </section>
 
-  <!-- Pie de Página -->
-  <footer class="main-footer">
-    <div class="container footer-content">
-      <p>&copy; 2026 Philoreptiles. Todos los derechos reservados.</p>
-      <div class="social-links">
-        <a href="https://www.instagram.com/philoreptiles/" rel="noopener noreferrer" target="_blank">Instagram</a>
-        <a href="https://www.youtube.com/@philoreptiles" rel="noopener noreferrer" target="_blank">YouTube</a>
-        <a href="https://www.facebook.com/profile.php?id=61590517358268" rel="noopener noreferrer" target="_blank">Facebook</a>
-      </div>
+    <!-- BOTÓN GENERAL -->
+    <div class="hero-buttons" style="margin-top: 2.5rem; justify-content: center;">
+      <a href="boas.html" class="btn btn-primary">Todos los apartados &rarr;</a>
     </div>
-  </footer>
+  </div>
+</section>
+
+<!-- Sección Blog -->
+<section class="blog-section" style="margin: 4rem 0;">
+  <div class="container" style="text-align: center;">
+    <h2>Últimas publicaciones del Blog</h2>
+    <p style="color: var(--text-muted); max-width: 650px; margin: 0.5rem auto 2.5rem auto;">
+      Nuevos artículos, notas sobre herpetocultura, observaciones e investigaciones del proyecto.
+    </p>
+
+    <!-- BLOQUE GRID CENTRADO -->
+    <div class="blog-grid" style="justify-content: center; margin: 2rem auto; text-align: left;">
+      
+      <!-- Entrada 1 -->
+      <article class="blog-card">
+        <a href="posts/post_bienvenida.html" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;">
+          <div class="blog-image">
+            <img src="img/Profile_IG.png" alt="Profile">
+            <span class="blog-category">Reflexión</span>
+          </div>
+          <div class="blog-body">
+            <span class="blog-date">23 de junio, 2026</span>
+            <h3>Un espacio para aprender sobre boas</h3>
+            <p>Este espacio nace de algo bastante sencillo: nuestro interés por las boas y las ganas de compartir todo aquello que hemos aprendido —y seguimos aprendiendo— sobre ellas.</p>
+            <span class="read-more">Leer artículo &rarr;</span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Entrada 2 -->
+      <article class="blog-card">
+        <a href="posts/blog1.html" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;">
+          <div class="blog-image">
+            <img src="img/nfi.jpg" alt="¿Un nuevo albinismo?">
+            <span class="blog-category">Noticias</span>
+          </div>
+          <div class="blog-body">
+            <span class="blog-date">06 de agosto, 2026</span>
+            <h3>¿Un nuevo albinismo?</h3>
+            <p>Durante casi dos décadas, los criadores de boas se han enfrentado a un rompecabezas genético que no encajaba en ninguna de las reglas conocidas.</p>
+            <span class="read-more">Leer artículo &rarr;</span>
+          </div>
+        </a>
+      </article>
+
+    </div>
+
+    <!-- BOTÓN DE ACCIÓN -->
+    <div class="hero-buttons" style="margin-top: 2.5rem; justify-content: center;">
+      <a href="blog.html" class="btn btn-primary">Todas las entradas</a>
+    </div>
+  </div>
+</section>
+
+<!-- Pie de Página -->
+<footer class="main-footer">
+  <div class="container footer-content">
+    <p>&copy; 2026 Philoreptiles</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/philoreptiles/" rel="noopener noreferrer" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+        Instagram
+      </a>
+      <a href="https://www.youtube.com/@philoreptiles" rel="noopener noreferrer" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.56 49.56 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><polygon points="10 15 15 12 10 9 10 15"/></svg>
+        YouTube
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61590517358268" rel="noopener noreferrer" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        Facebook
+      </a>
+    </div>
+  </div>
+</footer>
 
   <script src="js/main.js"></script>
 </body>

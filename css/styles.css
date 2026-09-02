@@ -728,16 +728,31 @@ img {
   font-size: 0.85rem;
 }
 
+/* Contenedor de redes sociales */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* Enlaces con iconos integrados */
 .social-links a {
   color: var(--color-hueso);
   text-decoration: none;
-  margin-left: 1rem;
   font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   transition: color 0.3s ease;
 }
 
 .social-links a:hover {
   color: var(--color-mostaza);
+}
+
+/* Iconos SVG */
+.social-icon {
+  flex-shrink: 0;
 }
 
 /* ==========================================================================
@@ -941,4 +956,140 @@ img {
   .modal-prev { left: 10px; }
   .modal-next { right: 10px; }
   .modal-nav-btn { font-size: 1.4rem; padding: 0.4rem 0.7rem; }
+}
+
+/* ==========================================================================
+   12. HERO EN 2 COLUMNAS
+   ========================================================================== */
+.hero-section {
+  padding: 3.5rem 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Centrado general en pantalla de escritorio */
+.hero-text {
+  text-align: center;
+}
+
+.hero-text h1,
+.hero-text h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+  color: var(--color-hueso);
+}
+
+.hero-text p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 1.8rem;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center; /* Centra el botón horizontalmente */
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Estilo para el botón secundario */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-hueso);
+  border: 1px solid var(--color-mostaza);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(196, 146, 62, 0.15);
+  color: var(--color-mostaza);
+}
+
+/* Imagen con bordes redondeados y resplandor dorado */
+.hero-image img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(196, 146, 62, 0.25);
+  border: 1px solid rgba(196, 146, 62, 0.3);
+  display: block;
+}
+
+/* Adaptación responsive para dispositivos móviles */
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-image img {
+    height: 260px;
+  }
+}
+
+/* ==========================================================================
+   ALTURA UNIFORME DEFINITIVA (GRID + FLEX)
+   ========================================================================== */
+
+/* 1. Rejilla que iguala automáticamente la altura de toda la fila */
+.specimen-grid,
+.blog-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 340px)) !important;
+  justify-content: center !important;
+  gap: 2rem !important;
+  width: 100% !important;
+  margin: 2rem auto !important;
+}
+
+/* 2. Fuerza a la tarjeta a llenar el 100% de la casilla de la rejilla */
+.specimen-card,
+.blog-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important; /* Propiedad clave para estirar la caja */
+}
+
+/* 3. Normaliza el tamaño de todas las imágenes */
+.card-image,
+.blog-image {
+  height: 200px !important;
+  width: 100% !important;
+  overflow: hidden;
+}
+
+.card-image img,
+.blog-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* 4. El cuerpo del texto absorbe el espacio vertical sobrante */
+.card-body,
+.blog-body {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+}
+
+/* 5. Ancla el botón en la parte inferior de la tarjeta */
+.card-body .btn,
+.card-body .btn-card,
+.blog-body .read-more {
+  margin-top: auto !important;
 }
