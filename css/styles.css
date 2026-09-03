@@ -414,12 +414,6 @@ img {
   padding: 1rem 0 3rem 0;
 }
 
-.specimen-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1.25rem;
-}
-
 .specimen-card {
   background-color: var(--bg-dark-card);
   border: 1px solid rgba(196, 146, 62, 0.25);
@@ -529,11 +523,11 @@ img {
 }
 
 /* ==========================================================================
-   7. SECCIÓN SOBRE NOSOTROS & ARTÍCULOS DEL BLOG (CENTRADO CORREGIDO)
+   7. SECCIÓN SOBRE NOSOTROS, ARTÍCULOS Y BOTONES DE ACCIÓN
    ========================================================================== */
 .about-page-content {
   max-width: 850px;
-  margin: 0 auto !important; /* Centra el bloque en el medio de la pantalla */
+  margin: 0 auto !important;
   padding: 1rem 1.5rem 3rem 1.5rem;
 }
 
@@ -578,6 +572,17 @@ img {
   color: var(--color-mostaza);
 }
 
+/* Botones de acción al final de secciones */
+.about-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
 .post-content-with-img {
   display: flex;
   gap: 1.5rem;
@@ -617,12 +622,6 @@ img {
 
 .blog-section {
   padding: 1rem 0 3rem 0;
-}
-
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
 }
 
 .blog-card {
@@ -1089,4 +1088,30 @@ body > :not(.main-header) {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* ==========================================================================
+   14. COLORES PARA GENES Y MUTACIONES
+   ========================================================================== */
+/* Poligénicos */
+.gene-pastel {
+  color: #bd6677; /* Rosa pastel */
+  font-weight: 600;
+}
+
+/* Dominantes incompletos */
+.gene-dominc {
+  color: #0c831c; /* Verde claro */
+  font-weight: 600;
+}
+
+/* Recesivos */
+.gene-recesivo {
+  color: #6d2169; /* Amarillo claro */
+  font-weight: 600;
+}
+
+/* Hets */
+.gene-het {
+  color: #dbd493; /* Hueso suavizado para genes recesivos */
 }
