@@ -40,8 +40,8 @@ html {
 
 body {
   background-color: var(--color-chocolate);
-  /* Textura de escamas geométricas incrustada en SVG Data URI (no requiere archivo externo) */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 0 L40 20 L20 40 L0 20 Z' fill='none' stroke='%23C4923E' stroke-opacity='0.15' stroke-width='1'/%3E%3Cpath d='M20 6 L34 20 L20 34 L6 20 Z' fill='none' stroke='%23FFF2D9' stroke-opacity='0.08' stroke-width='1'/%3E%3Ccircle cx='20' cy='20' r='1.5' fill='%23C4923E' fill-opacity='0.12'/%3E%3C/svg%3E");
+  /* Textura de escamas grandes y espaciadas (80x80px) */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M40 0 L80 40 L40 80 L0 40 Z' fill='none' stroke='%23C4923E' stroke-opacity='0.15' stroke-width='1.2'/%3E%3Cpath d='M40 15 L65 40 L40 65 L15 40 Z' fill='none' stroke='%23FFF2D9' stroke-opacity='0.06' stroke-width='1'/%3E%3Ccircle cx='40' cy='40' r='2' fill='%23C4923E' fill-opacity='0.2'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-attachment: fixed;
   color: var(--color-hueso);
