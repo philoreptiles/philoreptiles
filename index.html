@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Philoreptiles | Inicio</title>
 
+  <!-- Favicon / Ícono de la pestaña -->
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+
   <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,12 +18,19 @@
   <!-- CSS Principal -->
   <link rel="stylesheet" href="css/styles.css">
 
+    <!-- Hoja de estilos local (Ruta corregida) -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Favicon y Accesos Directos (Ruta e ícono optimizados) -->
+  <link rel="icon" type="image/png" href="img/favicon.png?v=2.0">
+
+
   <style>
     /* =========================================================
        ANIMACIÓN DE NAVEGACIÓN (PÁGINA)
        ========================================================= */
     body > :not(.main-header) {
-      animation: pageFadeIn 0.6s ease-out;
+      animation: pageFadeIn 0.4s ease-out;
     }
 
     @keyframes pageFadeIn {
@@ -55,16 +67,21 @@
 
     .carousel-track {
       display: flex;
-      transition: transform 0.5s ease-in-out;
+      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
       width: 100%;
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
 
     .carousel-slide {
       min-width: 100%;
+      width: 100%;
       position: relative;
       height: 480px;
       display: flex;
       align-items: flex-end;
+      flex-shrink: 0;
     }
 
     .carousel-slide img {
@@ -87,22 +104,9 @@
     .carousel-caption {
       position: relative;
       z-index: 3;
-      padding: 2.5rem;
+      padding: 2.5rem 2.5rem 2.5rem 5rem;
       max-width: 700px;
       color: #faf8f5;
-    }
-
-    .carousel-caption .badge {
-      display: inline-block;
-      background-color: var(--color-mostaza, #c4923e);
-      color: var(--color-chocolate, #2b1e10);
-      font-weight: 700;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 0.3rem 0.8rem;
-      border-radius: 4px;
-      margin-bottom: 0.8rem;
     }
 
     .carousel-caption h2 {
@@ -199,7 +203,7 @@
         height: 380px;
       }
       .carousel-caption {
-        padding: 1.5rem;
+        padding: 1.5rem 1.5rem 1.5rem 3.5rem;
       }
       .carousel-caption h2 {
         font-size: 1.5rem;
@@ -225,10 +229,8 @@
       }
     }
   </style>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
+
 <body>
 
 <!-- Encabezado Principal -->
@@ -254,49 +256,43 @@
   </div>
 </header>
 
-<!-- =========================================================
-     CARRUSEL PRINCIPAL (Ubicado entre Header y Explorando)
-     ========================================================= -->
+<!-- Carrusel Principal -->
 <section class="hero-carousel" aria-label="Carrusel de fotos y novedades">
   <div class="carousel-track-container">
     <ul class="carousel-track" id="carouselTrack">
       
       <!-- Slide 1 -->
       <li class="carousel-slide">
-        <img src="img/imperator.png" alt="Boa imperator en su hábitat">
+        <img src="img/boa.png" alt="Boa" loading="eager">
         <div class="carousel-overlay"></div>
         <div class="carousel-caption">
-          <span class="badge">Taxonomía & Especies</span>
-          <h2>Descubre el Género <em>Boa</em></h2>
-          <p>Explora la fascinante biodiversidad y las diferencias entre <em>Boa imperator</em>, <em>Boa constrictor</em> y linajes insulares.</p>
-          <a href="boas/taxonomia.html" class="carousel-btn-cta">Ver Taxonomía &rarr;</a>
+          <h2>Descubre el género <em>Boa</em></h2>
+          <p>Explora las diferentes especies de boas y sus características únicas.</p>
+          <a href="boas/taxonomia.html" class="carousel-btn-cta">Ver taxonomía &rarr;</a>
         </div>
       </li>
 
       <!-- Slide 2 -->
       <li class="carousel-slide">
-        <img src="img/constrictor.png" alt="Boa constrictor cola roja">
+        <img src="img/guia.png" alt="Boa constrictor cola roja" loading="lazy">
         <div class="carousel-overlay"></div>
         <div class="carousel-caption">
-          <span class="badge">Guía Especializada</span>
-          <h2>Cuidados en Cautiverio Responsable</h2>
-          <p>Parámetros de temperatura, humedad, terrarios y nutrición adecuada para garantizar el bienestar de tus ejemplares.</p>
-          <a href="boas/cuidados.html" class="carousel-btn-cta">Leer Guía de Cuidados &rarr;</a>
+          <h2>Cuidados en cautiverio</h2>
+          <p>Parámetros de temperatura, humedad y encierros adecuados para garantizar el bienestar de tus ejemplares.</p>
+          <a href="boas/cuidados.html" class="carousel-btn-cta">Leer guía de cuidados &rarr;</a>
         </div>
       </li>
 
       <!-- Slide 3 -->
       <li class="carousel-slide">
-        <img src="img/sigma.png" alt="Genética y morfos de boa">
+        <img src="img/genetica.jpg" alt="Genética y morfos de boa" loading="lazy">
         <div class="carousel-overlay"></div>
         <div class="carousel-caption">
-          <span class="badge">Genética Herpetológica</span>
-          <h2>Morfos y Herencia Genética</h2>
-          <p>Comprende cómo funcionan los genes recesivos, codominantes y dominantes en los patrones y mutaciones de color.</p>
-          <a href="boas/genetica.html" class="carousel-btn-cta">Aprender Genética &rarr;</a>
+          <h2>Genética</h2>
+          <p>Comprende los fundamentos, tipos de genes y su aplicación en la cría de boas.</p>
+          <a href="boas/genetica.html" class="carousel-btn-cta">Aprender genética &rarr;</a>
         </div>
       </li>
-
     </ul>
   </div>
 
@@ -312,29 +308,28 @@
   </div>
 </section>
 
-<!-- =========================================================
-     SECCIÓN: EXPLORANDO EL MUNDO DE LAS BOAS
-     ========================================================= -->
+<!-- Sección Explorando -->
 <main class="container">
   <section class="explorando-section" style="padding: 2rem 0;">
-    <h1 style="color: var(--color-mostaza, #c4923e); margin-bottom: 1rem; text-align: center;">Explorando el mundo de las boas</h1>
+    <h1 style="color: var(--color-hueso, #FFF2D9); margin-bottom: 1rem; text-align: center;">Explorando el mundo de las boas</h1>
     <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem auto; color: var(--text-muted, #ccc);">
-      Bienvenido a Philoreptiles, un espacio dedicado a la divulgación, conservación y manejo profesional de reptiles. Aquí encontrarás guías detalladas sobre taxonomía, cuidados esenciales y genética del género <em>Boa</em>.
+      Philoreptiles es un espacio dedicado a la divulgación y el aprendizaje continuo en el mundo de las boas. Compartimos experiencias, 
+      observaciones y conocimientos de forma clara y honesta, documentando el proceso y promoviendo una herpetocultura responsable
     </p>
     
-    <!-- Contenido general de inicio -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
       <div style="background: var(--bg-dark-card, #1a1a1a); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(196,146,62,0.2);">
-        <h3 style="color: var(--color-mostaza, #c4923e); margin-bottom: 0.5rem;">Herpetocultura Ética</h3>
-        <p style="font-size: 0.95rem; color: #ddd;">Promovemos la cría en cautiverio legal y responsable, respetando los estándares biológicos y legales internacionales.</p>
+        <h3 style="color: var(--color-mostaza, #c4923e); margin-bottom: 0.5rem;">Herpetocultura ética</h3>
+        <p style="font-size: 0.95rem; color: #FFF2D9;">Priorizamos el bienestar mediante observación diaria y manejo adaptativo.</p>
       </div>
       <div style="background: var(--bg-dark-card, #1a1a1a); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(196,146,62,0.2);">
-        <h3 style="color: var(--color-mostaza, #c4923e); margin-bottom: 0.5rem;">Investigación Actualizada</h3>
-        <p style="font-size: 0.95rem; color: #ddd;">Artículos basados en los últimos estudios filogenéticos de especies como <em>Boa sigma</em>, <em>nebulosa</em> y <em>orophias</em>.</p>
+        <h3 style="color: var(--color-mostaza, #c4923e); margin-bottom: 0.5rem;">Investigación actualizada</h3>
+        <p style="font-size: 0.95rem; color: #FFF2D9;">Compartimos guías útiles y honestas sobre qué funciona y qué no.</p>
       </div>
       <div style="background: var(--bg-dark-card, #1a1a1a); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(196,146,62,0.2);">
-        <h3 style="color: var(--color-mostaza, #c4923e); margin-bottom: 0.5rem;">Comunidad & Proyectos</h3>
-        <p style="font-size: 0.95rem; color: #ddd;">Conecta con nuestras redes oficiales para consultar disponibilidad de ejemplares y noticias del sector.</p>
+        <h3 style="color: var(--color-mostaza, #c4923e); margin-bottom: 0.5rem;">Comunidad</h3>
+        <p style="font-size: 0.95rem; color: #FFF2D9;">Explora los animales que integran Philoreptiles y visita el blog para consultar artículos 
+          sobre genética y experiencias detalladas de manejo.</p>
       </div>
     </div>
   </section>
@@ -361,9 +356,7 @@
   </div>
 </footer>
 
-<!-- =========================================================
-     JAVASCRIPT DEL CARRUSEL
-     ========================================================= -->
+<!-- JavaScript del Carrusel Corregido -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('carouselTrack');
@@ -375,58 +368,72 @@
 
     let currentIndex = 0;
     let autoPlayTimer = null;
+    let isTransitioning = false;
 
-    // Función para mover al slide deseado
     const moveToSlide = (index) => {
+      if (isTransitioning) return;
+      isTransitioning = true;
+
       if (index < 0) index = slides.length - 1;
       if (index >= slides.length) index = 0;
 
       track.style.transform = `translateX(-${index * 100}%)`;
       
-      // Actualizar dots
       dots.forEach(dot => dot.classList.remove('active'));
       dots[index].classList.add('active');
 
       currentIndex = index;
+
+      // Bloquea nuevos movimientos hasta que termine la animación (0.5s)
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 500);
     };
 
-    // Eventos de botones
+    const stopAutoPlay = () => {
+      if (autoPlayTimer) {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = null;
+      }
+    };
+
+    const startAutoPlay = () => {
+      stopAutoPlay(); // Garantiza que no existan timers duplicados activos
+      autoPlayTimer = setInterval(() => {
+        moveToSlide(currentIndex + 1);
+      }, 5000);
+    };
+
     nextBtn.addEventListener('click', () => {
       moveToSlide(currentIndex + 1);
-      resetAutoPlay();
+      startAutoPlay();
     });
 
     prevBtn.addEventListener('click', () => {
       moveToSlide(currentIndex - 1);
-      resetAutoPlay();
+      startAutoPlay();
     });
 
-    // Eventos de dots
     dots.forEach((dot, index) => {
       dot.addEventListener('click', () => {
         moveToSlide(index);
-        resetAutoPlay();
+        startAutoPlay();
       });
     });
 
-    // Reproducción automática
-    const startAutoPlay = () => {
-      autoPlayTimer = setInterval(() => {
-        moveToSlide(currentIndex + 1);
-      }, 5000); // Cambia cada 5 segundos
-    };
-
-    const resetAutoPlay = () => {
-      clearInterval(autoPlayTimer);
-      startAutoPlay();
-    };
-
-    // Pausar al pasar el mouse por encima
     const carouselSection = document.querySelector('.hero-carousel');
-    carouselSection.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
-    carouselSection.addEventListener('mouseleave', () => startAutoPlay());
+    carouselSection.addEventListener('mouseenter', stopAutoPlay);
+    carouselSection.addEventListener('mouseleave', startAutoPlay);
 
-    // Iniciar
+    // Pausa el carrusel cuando la pestaña del navegador no está activa
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopAutoPlay();
+      } else {
+        startAutoPlay();
+      }
+    });
+
     startAutoPlay();
   });
 </script>

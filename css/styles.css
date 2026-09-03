@@ -26,7 +26,7 @@
 }
 
 /* ==========================================================================
-   2. REINICIO GLOBAL Y ESTILOS BASE
+   2. REINICIO GLOBAL Y ESTILOS BASE (TEXTURA INTEGRADA DIRECTAMENTE)
    ========================================================================== */
 * {
   margin: 0;
@@ -40,6 +40,10 @@ html {
 
 body {
   background-color: var(--color-chocolate);
+  /* Textura de escamas geométricas incrustada en SVG Data URI (no requiere archivo externo) */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 0 L40 20 L20 40 L0 20 Z' fill='none' stroke='%23C4923E' stroke-opacity='0.15' stroke-width='1'/%3E%3Cpath d='M20 6 L34 20 L20 34 L6 20 Z' fill='none' stroke='%23FFF2D9' stroke-opacity='0.08' stroke-width='1'/%3E%3Ccircle cx='20' cy='20' r='1.5' fill='%23C4923E' fill-opacity='0.12'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-attachment: fixed;
   color: var(--color-hueso);
   font-family: var(--font-rubik);
   font-weight: 400;
@@ -135,20 +139,15 @@ img {
   transition: all 0.3s ease;
 }
 
-/* ==========================================================================
-   MENÚ DESPLEGABLE CORREGIDO (SIN HUECOS DE INTERACCIÓN)
-   ========================================================================== */
-
-/* Contenedor del enlace principal */
+/* Submenú desplegable */
 .main-nav ul li.dropdown {
   position: relative;
 }
 
-/* Submenú desplegable */
 .main-nav .dropdown-menu {
   display: none !important;
   position: absolute;
-  top: 100%; /* Pegado justo debajo del botón */
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   background-color: #FFF2D9;
@@ -158,11 +157,10 @@ img {
   padding: 0.5rem 0;
   min-width: 200px;
   z-index: 1000;
-  margin-top: 0; /* Se elimina el margen que rompía la detección */
+  margin-top: 0;
   list-style: none;
 }
 
-/* Puente invisible que detecta el mouse al desplazarse hacia abajo */
 .main-nav .dropdown-menu::before {
   content: "";
   position: absolute;
@@ -173,13 +171,11 @@ img {
   background: transparent;
 }
 
-/* Mantiene el menú abierto mientras el mouse esté sobre el botón o el menú */
 .main-nav li.dropdown:hover .dropdown-menu {
   display: flex !important;
   flex-direction: column;
 }
 
-/* Opciones individuales */
 .main-nav .dropdown-menu li {
   width: 100%;
   margin: 0;
@@ -203,7 +199,7 @@ img {
 }
 
 /* ==========================================================================
-   4. SECCIÓN HERO (COMPACTADO)
+   4. SECCIÓN HERO
    ========================================================================== */
 .hero {
   background: linear-gradient(135deg, rgba(43, 26, 18, 0.92), rgba(31, 18, 12, 0.95)), 
@@ -269,7 +265,7 @@ img {
 }
 
 /* ==========================================================================
-   5. LAYOUT DE NAVEGACIÓN Y PESTAÑAS (COMPACTADO)
+   5. LAYOUT DE NAVEGACIÓN Y PESTAÑAS
    ========================================================================== */
 .about-summary {
   padding: 2.5rem 0;
@@ -394,7 +390,6 @@ img {
   animation: fadeIn 0.4s ease-in-out;
 }
 
-/* Layout Texto + Imagen al costado */
 .content-with-image {
   display: grid;
   grid-template-columns: 1fr 260px;
@@ -413,7 +408,7 @@ img {
 }
 
 /* ==========================================================================
-   6. CATÁLOGO Y FICHAS DE EJEMPLARES (ALTURA REDUCIDA)
+   6. CATÁLOGO Y FICHAS DE EJEMPLARES
    ========================================================================== */
 .catalog-section {
   padding: 1rem 0 3rem 0;
@@ -534,32 +529,41 @@ img {
 }
 
 /* ==========================================================================
-   7. SECCIÓN SOBRE NOSOTROS & ARTÍCULOS DEL BLOG
+   7. SECCIÓN SOBRE NOSOTROS & ARTÍCULOS DEL BLOG (CENTRADO CORREGIDO)
    ========================================================================== */
 .about-page-content {
   max-width: 850px;
-  padding: 1rem 0 3rem 0;
+  margin: 0 auto !important; /* Centra el bloque en el medio de la pantalla */
+  padding: 1rem 1.5rem 3rem 1.5rem;
 }
 
 .about-block {
   margin-bottom: 1.8rem;
+  background-color: var(--bg-dark-card);
+  border: 1px solid rgba(196, 146, 62, 0.25);
+  border-radius: 10px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .about-block h2, .about-block h3 {
   color: var(--color-mostaza);
-  margin: 1.5rem 0 0.75rem 0;
+  margin: 0 0 1rem 0;
   border-bottom: 1px solid rgba(196, 146, 62, 0.2);
-  padding-bottom: 0.3rem;
+  padding-bottom: 0.5rem;
 }
 
 .about-block p {
   color: var(--color-hueso);
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.65;
   margin-bottom: 1rem;
 }
 
-/* Listas en los artículos del Blog */
+.about-block p:last-child {
+  margin-bottom: 0;
+}
+
 .about-block ul {
   margin: 1rem 0 1.5rem 1.5rem;
   color: var(--color-hueso);
@@ -574,7 +578,6 @@ img {
   color: var(--color-mostaza);
 }
 
-/* Imagen proporcional al lado del texto */
 .post-content-with-img {
   display: flex;
   gap: 1.5rem;
@@ -597,7 +600,6 @@ img {
   margin: 0;
 }
 
-/* Imagen centrada a ancho completo */
 .post-img-centered {
   text-align: center;
   margin: 2rem 0;
@@ -613,7 +615,6 @@ img {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-/* Tarjetas de vista previa en Blog.html */
 .blog-section {
   padding: 1rem 0 3rem 0;
 }
@@ -728,14 +729,12 @@ img {
   font-size: 0.85rem;
 }
 
-/* Contenedor de redes sociales */
 .social-links {
   display: flex;
   align-items: center;
   gap: 1.2rem;
 }
 
-/* Enlaces con iconos integrados */
 .social-links a {
   color: var(--color-hueso);
   text-decoration: none;
@@ -750,7 +749,6 @@ img {
   color: var(--color-mostaza);
 }
 
-/* Iconos SVG */
 .social-icon {
   flex-shrink: 0;
 }
@@ -884,7 +882,6 @@ img {
   to { transform: scale(1); opacity: 1; }
 }
 
-/* Tablet y Móvil */
 @media (max-width: 992px) {
   .boas-layout, .care-layout, .taxonomy-layout {
     grid-template-columns: 1fr;
@@ -938,7 +935,6 @@ img {
     gap: 1.25rem;
   }
 
-  /* Ajuste de imágenes del blog para pantallas pequeñas */
   .post-content-with-img {
     flex-direction: column;
   }
@@ -963,8 +959,8 @@ img {
    ========================================================================== */
 .hero-section,
 .hero {
-  padding-top: 4rem !important;    /* Separación fija contra el encabezado */
-  padding-bottom: 2.5rem !important; /* Separación fluida con la siguiente sección */
+  padding-top: 4rem !important;
+  padding-bottom: 2.5rem !important;
   width: 100%;
 }
 
@@ -972,7 +968,7 @@ img {
   display: grid !important;
   grid-template-columns: 1.8fr 1fr !important;
   gap: 3rem !important;
-  align-items: center !important; /* Centra la imagen respecto al texto */
+  align-items: center !important;
 }
 
 .hero-text {
@@ -1016,7 +1012,6 @@ img {
   display: block;
 }
 
-/* Adaptación responsive para celulares */
 @media (max-width: 768px) {
   .hero-section,
   .hero {
@@ -1037,8 +1032,6 @@ img {
 /* ==========================================================================
    13. ALTURA UNIFORME DEFINITIVA (GRID + FLEX)
    ========================================================================== */
-
-/* 1. Rejilla que iguala automáticamente la altura de toda la fila */
 .specimen-grid,
 .blog-grid {
   display: grid !important;
@@ -1049,15 +1042,13 @@ img {
   margin: 2rem auto !important;
 }
 
-/* 2. Fuerza a la tarjeta a llenar el 100% de la casilla de la rejilla */
 .specimen-card,
 .blog-card {
   display: flex !important;
   flex-direction: column !important;
-  height: 100% !important; /* Propiedad clave para estirar la caja */
+  height: 100% !important;
 }
 
-/* 3. Normaliza el tamaño de todas las imágenes */
 .card-image,
 .blog-image {
   height: 200px !important;
@@ -1072,7 +1063,6 @@ img {
   object-fit: cover !important;
 }
 
-/* 4. El cuerpo del texto absorbe el espacio vertical sobrante */
 .card-body,
 .blog-body {
   display: flex !important;
@@ -1080,15 +1070,12 @@ img {
   flex: 1 1 auto !important;
 }
 
-/* 5. Ancla el botón en la parte inferior de la tarjeta */
 .card-body .btn,
 .card-body .btn-card,
 .blog-body .read-more {
   margin-top: auto !important;
 }
 
- /* ---------------------------------------------------------------------
-/* Animar todos los elementos dentro de body EXCEPTO el encabezado principal */
 body > :not(.main-header) {
   animation: pageFadeIn 0.4s ease-out;
 }
